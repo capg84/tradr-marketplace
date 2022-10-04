@@ -10,5 +10,23 @@
     "mysql2": "^2.3.3",
     "prettier": "^2.7.1",
     "sequelize": "^6.24.0"
-  }
+  },
+  "scripts": {
+    "start": "node server.js"
+  },
+  "name": "tradr-marketplace",
+  "description": "[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)",
+  "version": "1.0.0",
+  "main": "server.js",
+  "devDependencies": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/capg84/tradr-marketplace.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/capg84/tradr-marketplace/issues"
+  },
+  "homepage": "https://github.com/capg84/tradr-marketplace#readme"
 }

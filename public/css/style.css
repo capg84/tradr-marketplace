@@ -52,6 +52,10 @@
     padding: 10px;
 }
 
+.product-details-cart {
+    padding: 7px;
+}
+
 .cross-btn-styling {
     border-radius: 20px;
     font-size: 10px;
@@ -103,4 +107,25 @@
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
+}
+
+.cart-bottom {
+    display: flex;
+    flex-direction: row;
+    justify-content: right;
+    align-items: center;
+    padding: 20px 0 40px 0;
+}
+
+.total-price {
+    text-align: center;
+    font-weight: 800;
+    font-size: 25px;
+    padding: 15px 50px 0 0;
+}
+
+.checkout-btn {
+    width: 200px;
+    font-size: 23px;
+    font-weight: 500;
 }

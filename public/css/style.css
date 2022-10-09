@@ -11,7 +11,7 @@
     color: white;
 }
 
-.product-container {
+.product-container, .product-container-dashboard {
     background-color: lightgray;
     padding: 0 15px 5px 15px;
     border-radius: 15px;
@@ -50,6 +50,10 @@
 
 .product-details {
     padding: 10px;
+}
+
+.product-details-active-listing {
+    padding: 0 10px;
 }
 
 .cross-btn-styling {
@@ -103,4 +107,31 @@
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
+}
+
+.second-navbar {
+    background-color: black;
+    margin-bottom: 25px;
+}
+
+.item-styling {
+    color: white;
+    height: 50px;
+    font-size: 16px;
+    font-weight: 500;
+    margin: 0 50px;
+    padding-top: 10px;
+}
+
+.btn-row {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    padding-bottom: 10px;
+}
+
+.active-listing-title {
+    font-size: 16px;
+    font-weight: 500;
+    padding-top: 10px;
 }

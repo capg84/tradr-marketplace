@@ -125,7 +125,7 @@
     font-size: 16px;
     font-weight: 500;
     margin: 0 50px;
-    padding-top: 10px;
+    padding: 10px 80px;
 }
 
 .btn-row {
@@ -159,4 +159,20 @@
     width: 200px;
     font-size: 23px;
     font-weight: 500;
+}
+
+.nav-alignment {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.nav-item {
+    border-right: 1px solid darkgray;
+    border-left: 1px solid darkgray;
+}
+
+.edit-btn, .delete-btn {
+    width: 150px;
+    margin-bottom: 10px;
 }

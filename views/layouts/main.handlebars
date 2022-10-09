@@ -33,9 +33,9 @@
           <input class="form-control me-2" type="search" placeholder="Search for items" aria-label="Search" style="width: 450px;">
           <button class="btn btn-outline-success" type="submit">Search</button>
         </form>
- 
         <ul class="d-flex">
-          <a class="nav-link disabled">Hello <p>Nene,</p></a>
+            {{#if logged_in}}
+          <a class="nav-link disabled">Hello <p>{{user.first_name}},</p></a>
           <div class="dropdown container">
             <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" style="margin-top: 10px;">
               Your account
@@ -47,9 +47,12 @@
               <li><a class="dropdown-item" href="/"><i class="bi bi-escape"></i> Signout</a></li>
             </ul>
           </div>
+          <a class="navbar-brand" href="/wishlist" style="margin-top: 5px; margin-left: 2px;"><i class="fa-solid fa-heart"></i> wishlist</a>
+          {{else}}
           <a class="navbar-brand active btn" href="/signup" style="margin-top: 5px;">Signup</a>
           <a class="navbar-brand active btn btn-primary" href="/login" style="margin-top: 5px;">Login</a>
-          <a class="navbar-brand" href="/" style="margin-top: 5px; margin-left: 2px;"><i class="fa-solid fa-heart"></i> wishlist</a>
+          <a class="navbar-brand" href="/login" style="margin-top: 5px; margin-left: 2px;"><i class="fa-solid fa-heart"></i> wishlist</a>
+          {{/if}}
           <a class="navbar-brand" href="/cart" style="margin-top: 5px; margin-left: 2px;"><i class="bi bi-cart4"></i> Your basket</a>
         </div>
       </div>

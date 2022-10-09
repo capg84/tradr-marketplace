@@ -15,10 +15,13 @@ const PORT = process.env.PORT || 3001;
 const hbs = exphbs.create({ helpers });
 
 const sess = {
-  secret: process.env.SESS_SECRET,
+  secret: 'tradr marketplace rules',
   cookie: {
-    // session expires in 10 minutes
-    expires: 10 * 60 * 1000
+    // maxAge: 300000,
+    // maxAge: 1000,
+    httpOnly: true,
+    secure: false,
+    sameSite: 'strict',
   },
   resave: false,
   saveUninitialized: true,

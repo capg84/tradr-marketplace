@@ -23,6 +23,10 @@ Product.init(
             type: DataTypes.INT,
             allowNull: false,
         },
+        image: {
+            type: DataTypes.STRING,
+            allowNull: false,
+        },
         stock: {
             type: DataTypes.INT,
             allowNull: false,

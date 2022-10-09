@@ -1,0 +1,44 @@
+[
+    {   
+        "id": 1,
+        "category_name": "electronics",
+        "product_id": 1
+    
+    },
+    {   
+        "id": 2,
+        "category_name": "Trainers",
+        "product_id": 1
+    
+    },
+    {   
+        "id": 3,
+        "category_name": "Clothing",
+        "product_id": 1
+    
+    },
+    {   
+        "id": 4,
+        "category_name": "Kitchenware",
+        "product_id": 1
+    
+    },
+    {   
+        "id": 5,
+        "category_name": "Tools",
+        "product_id": 1
+    
+    },
+    {   
+        "id": 6,
+        "category_name": "Garden",
+        "product_id": 1
+    
+    },
+    {   
+        "id": 7,
+        "category_name": "Art",
+        "product_id": 1
+    
+    }
+    ]

@@ -1,0 +1,3 @@
+DROP DATABASE IF EXISTS tradr_db;
+
+CREATE DATABASE tradr_db;

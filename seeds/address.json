@@ -1,40 +1,38 @@
 [
-    {
-        "id": 1,
-        "address_line1": "19 dave road",
-        "address_line2": "Failsworth",
-        "city": "manchester",
-        "county": "lancashire",
-        "post_code": "m1 1mu",
-        "user_id": 1
-    
-    },
-    {
-        "id": 2,
-        "address_line1": "1 nene street",
-        "address_line2": "solihul",
-        "city": "birmingham",
-        "county": "west midlands",
-        "post_code": "b1 1bu",
-        "user_id": 2
-    
-    },
-    {
-        "id": 3,
-        "address_line1": "1 precilla avenue",
-        "address_line2": "anfield",
-        "city": "liverpool",
-        "county": "merseyside",
-        "post_code": "l3 3tu",
-        "user_id": 3
-    },
-    {
-        "id": 4,
-        "address_line1": "1 cyprian way",
-        "address_line2": "cheadle",
-        "city": "stockort",
-        "county": "cheshire",
-        "post_code": "sk1 1bu",
-        "user_id": 4
-    }
-    ]
+  {
+    "id": 1,
+    "address_line1": "19 dave road",
+    "address_line2": "Failsworth",
+    "city": "manchester",
+    "county": "lancashire",
+    "post_code": "m1 1mu",
+    "user_id": 1
+  },
+  {
+    "id": 2,
+    "address_line1": "1 nene street",
+    "address_line2": "solihul",
+    "city": "birmingham",
+    "county": "west midlands",
+    "post_code": "b1 1bu",
+    "user_id": 2
+  },
+  {
+    "id": 3,
+    "address_line1": "1 precilla avenue",
+    "address_line2": "anfield",
+    "city": "liverpool",
+    "county": "merseyside",
+    "post_code": "l3 3tu",
+    "user_id": 3
+  },
+  {
+    "id": 4,
+    "address_line1": "1 cyprian way",
+    "address_line2": "cheadle",
+    "city": "stockort",
+    "county": "cheshire",
+    "post_code": "sk1 1bu",
+    "user_id": 4
+  }
+]

@@ -1,104 +1,101 @@
 [
-    {   
-        "id": 1,
-        "product_name": "Bose Noise Cancelling Headphones 700",
-        "description": "World-class adjustable noise cancellation—with situational awareness for when you want to let the world in.",
-        "price": 299.99,
-        "image": "/images/bose-headphones.webp",
-        "stock": 20,
-        "category_id": 1
-    
-    },
-    {   
-        "id": 2,
-        "product_name": "Nike Air Force 1 '07",
-        "description": "The radiance lives on in the Nike Air Force 1 '07, the basketball original that puts a fresh spin on what you know best: durably stitched overlays, clean finishes and the perfect amount of flash to make you shine..",
-        "price": 109.00,
-        "image": "/images/Nike-air.webp",
-        "stock": 33,
-        "category_id": 2
-    },
-    {   
-        "id": 3,
-        "product_name": "Gym Shark CRITICAL ZIP JOGGERS",
-        "description": "The joggers every gym bag needs: understated, comfortable and reliable. The multi-fabric construction of the Critical Joggers offers the stretch to support and endure training session upon training session.",
-        "price": 35.00,
-        "image": "/images/joggers.webp",
-        "stock": 15,
-        "category_id": 3
-    },
-    {   
-        "id": 4,
-        "product_name": "NINJA Foodi Dual Zone 7.6L Air Fryer",
-        "description": "2 FOODS, 2 WAYS TO COOK. The air fryer that cooks 2 foods, 2 ways, and finishes at the same time. With 2 separate cooking drawers, you can cook different foods with different temperatures, times and functions",
-        "price": 199.99,
-        "image": "/images/Nike air.webp",
-        "stock": 10,
-        "category_id": 4
-    
-    },
-    {   
-        "id": 5,
-        "product_name": "Xbox Series S",
-        "description": "Introducing the Xbox Series S, the smallest, sleekest Xbox console ever. Experience the speed and performance of a next-gen all-digital console at an accessible price point. Get started with an instant library of 100+ high quality games",
-        "price": 249.99,
-        "image": "/images/xbox.webp",
-        "stock": 63,
-        "category_id": 1
-    },
-    {   
-        "id": 6,
-        "product_name": "Nike Air Jordan Point Lane",
-        "description": "The Jordan Point Lane mixes elements from game shoes MJ wore during 3 of his most memorable seasons.Named after his Chicago address, this mash-up pulls in bits and pieces from the AJ3, AJ6 and AJ11 to create a shoe that's inspired by greatness and uncompromising in its comfort.",
-        "price": 109.00,
-        "image": "/images/jordans.jpg",
-        "stock": 33,
-        "category_id": 2
-    
-    },
-    {   
-        "id": 7,
-        "product_name": "All Saints BRACE PULLOVER HOODIE",
-        "description": "The Brace Hoodie. Cut from pure cotton and shaped to a regular fit. Hood, long sleeves and a kangaroo pocket. Finished with Ramskull embroidery - it's our signature.",
-        "price": 109.00,
-        "image": "/images/hoodie.webp",
-        "stock": 26,
-        "category_id": 3
-    },
-    {   
-        "id": 8,
-        "product_name": "Samsung 8 Series RH68B8830S9 Freestanding 65/35 American Fridge Freezer, Silver",
-        "description": "This American-style fridge freezer from Samsung boasts a spacious interior and comes equipped with the latest cooling technology to help preserve your fresh food. The cleverly designed outer walls are slim to allow for a larger capacity of 403L for the fridge and 224L in the freezer. LED lighting illuminates the interior while the impressively low 36db level keeps the noise down.",
-        "price": 2099.00,
-        "image": "/images/Nike air.webp",
-        "stock": 4,
-        "category_id": 4
-    },
-    {   
-        "id": 9,
-        "product_name": "DEWALT DCD778D2T-SFGB 18V 2 X 2.0AH LI-ION XR BRUSHLESS CORDLESS COMBI DRILL ",
-        "description": "Compact and ergonomic combi drill with 18V brushless motor and XR technology. Features include 65mm max torque, intelligent trigger design and spindle lock for quick and easy bit change. Ideal for consistent screw driving into a variety of materials with different screw sizes.",
-        "price": 2099.00,
-        "image": "/images/driver.webp",
-        "stock": 17,
-        "category_id": 5
-    },
-    {   
-        "id": 10,
-        "product_name": "3PC Corner Sofa Rattan Lounger Set",
-        "description": "Rattan set includes following. 1 x Three Seat Rattan Sofa- 1 x Rattan Glass Coffee Table - Perfect for any garden setting: Small, Medium or Large - Mix Grey Rattan garden furniture Patio 4 Piece Outdoor or Indoor Corner Set - Coffee Table Included -Luxury Foam Cushion covers are removable for washing & Showerproof",
-        "price": 100.00,
-        "image": "/images/sofa.webp",
-        "stock": 4,
-        "category_id": 6
-    },
-    {   
-        "id": 11,
-        "product_name": "Rolling Stones Colorful Contemporary Graffiti Pop Art Canvas Print Wall Art",
-        "description": "Pop art inspired Rainbow and Graffiti Rolling Stones. Fill in boring empty wall space with this beautiful print. This would fit right into your office or any contemporary style home!",
-        "price": 60.00,
-        "image": "/images/art.webp",
-        "stock": 9,
-        "category_id": 7
-    }
-    ]
+  {
+    "id": 1,
+    "product_name": "Bose Noise Cancelling Headphones 700",
+    "description": "World-class adjustable noise cancellation—with situational awareness for when you want to let the world in.",
+    "price": 299.99,
+    "image": "/images/bose-headphones.webp",
+    "stock": 20,
+    "category_id": 1
+  },
+  {
+    "id": 2,
+    "product_name": "Nike Air Force 1 '07",
+    "description": "The radiance lives on in the Nike Air Force 1 '07, the basketball original that puts a fresh spin on what you know best: durably stitched overlays, clean finishes and the perfect amount of flash to make you shine..",
+    "price": 109.0,
+    "image": "/images/Nike-air.webp",
+    "stock": 33,
+    "category_id": 2
+  },
+  {
+    "id": 3,
+    "product_name": "Gym Shark CRITICAL ZIP JOGGERS",
+    "description": "The joggers every gym bag needs: understated, comfortable and reliable. The multi-fabric construction of the Critical Joggers offers the stretch to support and endure training session upon training session.",
+    "price": 35.0,
+    "image": "/images/joggers.webp",
+    "stock": 15,
+    "category_id": 3
+  },
+  {
+    "id": 4,
+    "product_name": "NINJA Foodi Dual Zone 7.6L Air Fryer",
+    "description": "2 FOODS, 2 WAYS TO COOK. The air fryer that cooks 2 foods, 2 ways, and finishes at the same time. With 2 separate cooking drawers, you can cook different foods with different temperatures, times and functions",
+    "price": 199.99,
+    "image": "/images/Nike air.webp",
+    "stock": 10,
+    "category_id": 4
+  },
+  {
+    "id": 5,
+    "product_name": "Xbox Series S",
+    "description": "Introducing the Xbox Series S, the smallest, sleekest Xbox console ever. Experience the speed and performance of a next-gen all-digital console at an accessible price point. Get started with an instant library of 100+ high quality games",
+    "price": 249.99,
+    "image": "/images/xbox.webp",
+    "stock": 63,
+    "category_id": 1
+  },
+  {
+    "id": 6,
+    "product_name": "Nike Air Jordan Point Lane",
+    "description": "The Jordan Point Lane mixes elements from game shoes MJ wore during 3 of his most memorable seasons.Named after his Chicago address, this mash-up pulls in bits and pieces from the AJ3, AJ6 and AJ11 to create a shoe that's inspired by greatness and uncompromising in its comfort.",
+    "price": 109.0,
+    "image": "/images/jordans.jpg",
+    "stock": 33,
+    "category_id": 2
+  },
+  {
+    "id": 7,
+    "product_name": "All Saints BRACE PULLOVER HOODIE",
+    "description": "The Brace Hoodie. Cut from pure cotton and shaped to a regular fit. Hood, long sleeves and a kangaroo pocket. Finished with Ramskull embroidery - it's our signature.",
+    "price": 109.0,
+    "image": "/images/hoodie.webp",
+    "stock": 26,
+    "category_id": 3
+  },
+  {
+    "id": 8,
+    "product_name": "Samsung 8 Series RH68B8830S9 Freestanding 65/35 American Fridge Freezer, Silver",
+    "description": "This American-style fridge freezer from Samsung boasts a spacious interior and comes equipped with the latest cooling technology to help preserve your fresh food. The cleverly designed outer walls are slim to allow for a larger capacity of 403L for the fridge and 224L in the freezer. LED lighting illuminates the interior while the impressively low 36db level keeps the noise down.",
+    "price": 2099.0,
+    "image": "/images/Nike air.webp",
+    "stock": 4,
+    "category_id": 4
+  },
+  {
+    "id": 9,
+    "product_name": "DEWALT DCD778D2T-SFGB 18V 2 X 2.0AH LI-ION XR BRUSHLESS CORDLESS COMBI DRILL ",
+    "description": "Compact and ergonomic combi drill with 18V brushless motor and XR technology. Features include 65mm max torque, intelligent trigger design and spindle lock for quick and easy bit change. Ideal for consistent screw driving into a variety of materials with different screw sizes.",
+    "price": 2099.0,
+    "image": "/images/driver.webp",
+    "stock": 17,
+    "category_id": 5
+  },
+  {
+    "id": 10,
+    "product_name": "3PC Corner Sofa Rattan Lounger Set",
+    "description": "Rattan set includes following. 1 x Three Seat Rattan Sofa- 1 x Rattan Glass Coffee Table - Perfect for any garden setting: Small, Medium or Large - Mix Grey Rattan garden furniture Patio 4 Piece Outdoor or Indoor Corner Set - Coffee Table Included -Luxury Foam Cushion covers are removable for washing & Showerproof",
+    "price": 100.0,
+    "image": "/images/sofa.webp",
+    "stock": 4,
+    "category_id": 6
+  },
+  {
+    "id": 11,
+    "product_name": "Rolling Stones Colorful Contemporary Graffiti Pop Art Canvas Print Wall Art",
+    "description": "Pop art inspired Rainbow and Graffiti Rolling Stones. Fill in boring empty wall space with this beautiful print. This would fit right into your office or any contemporary style home!",
+    "price": 60.0,
+    "image": "/images/art.webp",
+    "stock": 9,
+    "category_id": 7
+  }
+]

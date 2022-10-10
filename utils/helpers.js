@@ -1,7 +1,6 @@
 const formatDate = (date) => {
-    // Format date as MM/DD/YYYY
-    return date.toLocaleDateString();
-  
-}
+  // Format date as MM/DD/YYYY
+  return date.toLocaleDateString();
+};
 
-module.exports = {formatDate}
+module.exports = { formatDate };

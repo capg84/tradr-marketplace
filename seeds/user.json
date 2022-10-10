@@ -1,34 +1,30 @@
 [
-{
+  {
     "id": 1,
     "email": "dave@gmail.com",
     "password": "dave12345",
     "first_name": "dave",
     "last_name": "monaghan"
-
-},
-{
+  },
+  {
     "id": 2,
     "email": "nene@gmail.com",
     "password": "nene12345",
     "first_name": "nene",
     "last_name": "beji"
-
-},
-{
+  },
+  {
     "id": 3,
     "email": "precilla@gmail.com",
     "password": "precilla12345",
     "first_name": "precilla",
     "last_name": "luong"
-
-},
-{
+  },
+  {
     "id": 4,
     "email": "cyprian@gmail.com",
     "password": "cyprian12345",
     "first_name": "cyprian",
     "last_name": "gomes"
-
-}
+  }
 ]

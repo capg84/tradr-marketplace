@@ -290,19 +290,11 @@
 
 /* LOG IN FORM */
 
-.login-parent {
+.login-parent, .signup-parent {
     display: flex;
     flex-direction: row;
     justify-content: center;
-    width: 90%;
     margin: 40px 0 50px 0;
-}
-
-.login-container {
- display: flex;
- flex-direction: column;
- justify-content: center;
- align-items: center;
 }
 
 .input-form {
@@ -322,4 +314,11 @@
 
 .login-btn {
     margin-top: 10px;
+}
+/* LOG IN FORM END */
+
+/* SIGN UP FORM */
+
+#passwordHelp {
+    margin-bottom: 30px;
 }

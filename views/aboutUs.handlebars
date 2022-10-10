@@ -1,0 +1,38 @@
+<div id="aboutus">
+  <h2>About TRADR</h2>
+  <hr />
+  <p>
+    TRADR is the marketplace that you were waiting for. TRADR launched its
+    services in the UK in October 2022. Within days of launching thousands of
+    shoppers used TRADR to buy and sell.
+  </p>
+  <div>
+    <h2>Benefits of usings TRADR</h2>
+    <div class="row">
+      <div class="col-sm-6">
+        <div class="card">
+          <div class="card-body">
+            <h5 class="card-title">No sellers fee</h5>
+            <p class="card-text">With TRADR you pay absolutely zero seller fee
+              for any item that you sell on this platform.</p>
+            {{#if logged_in}}
+              <a href="/create" class="btn btn-primary">Sell Now</a>
+            {{else}}
+              <a href="/login" class="btn btn-primary">Sell Now</a>
+            {{/if}}
+          </div>
+        </div>
+      </div>
+      <div class="col-sm-6">
+        <div class="card">
+          <div class="card-body">
+            <h5 class="card-title">State of the art security</h5>
+            <p class="card-text">TRADR uses state of the art technologies to
+              ensure the security of its ecosystem.</p>
+            <a href="/products" class="btn btn-primary">Shop Now</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

@@ -20,7 +20,7 @@ Product.init(
             allowNull: false,
         },
         price: {
-            type: DataTypes.INT,
+            type: DataTypes.DECIMAL,
             allowNull: false,
         },
         image: {
@@ -28,7 +28,7 @@ Product.init(
             allowNull: false,
         },
         stock: {
-            type: DataTypes.INT,
+            type: DataTypes.INTEGER,
             allowNull: false,
         },
         category_id: {

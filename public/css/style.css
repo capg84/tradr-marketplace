@@ -287,3 +287,39 @@
     width: 150px;
     margin-bottom: 10px;
 }
+
+/* LOG IN FORM */
+
+.login-parent {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    width: 90%;
+    margin: 40px 0 50px 0;
+}
+
+.login-container {
+ display: flex;
+ flex-direction: column;
+ justify-content: center;
+ align-items: center;
+}
+
+.input-form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+}
+
+.email-header-text, .password-header-text {
+    padding: 10px 5px;
+}
+
+#inputPassword {
+    margin-bottom: 30px;
+}
+
+.login-btn {
+    margin-top: 10px;
+}

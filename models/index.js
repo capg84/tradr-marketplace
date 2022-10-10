@@ -46,7 +46,7 @@ Wishlist.belongsTo(User, {
 
 Category.hasMany(Product, {
     foreignKey: 'category_id',
-    onDelete: 'CASCADE'
+
 });
 
 Product.belongsTo(Category, {
@@ -55,7 +55,7 @@ Product.belongsTo(Category, {
 
 Cart.hasMany(Product, {
     foreignKey: 'product_id',
-    onDelete: 'CASCADE'
+
 });
 
 Product.belongsTo(Cart, {
@@ -64,12 +64,34 @@ Product.belongsTo(Cart, {
 
 Wishlist.hasMany(Product, {
     foreignKey: 'user_id',
-    onDelete: 'CASCADE'
+
 });
 
 Product.belongsTo(Wishlist, {
     foreignKey: 'product_id'
 });
+
+// User.hasMany(Product, {
+//     through: Wishlist,
+//     // foreignKey: 'user_id',
+// });
+
+
+// Product.belongsToMany(User, {
+//     through: Wishlist,
+//     // foreignKey: 'product_id',
+// });
+
+// User.belongsToMany(Product, {
+//     through: Cart,
+//     // foreignKey: 'user_id',
+// });
+
+
+// Product.belongsToMany(User, {
+//     through: Cart,
+//     // foreignKey: 'product_id',
+// });
 
 
 module.exports = { Address, Cart, Category, Payment, Product, User, Wishlist };

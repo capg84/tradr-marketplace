@@ -2,7 +2,7 @@
     {   
         "id": 1,
         "product_name": "Bose Noise Cancelling Headphones 700",
-        "description": "World-class adjustable noise cancellation—with situational awareness for when you want to let the world in. High-fidelity audio with adjustable EQ so you can tune music to your liking. Unrivalled voice pickup for the clearest calls. And protein leather cushions for all-day comfort. It’s everything that you demand from wireless Bluetooth® headphones—amplified.",
+        "description": "World-class adjustable noise cancellation—with situational awareness for when you want to let the world in.",
         "price": 299.99,
         "image": "/images/bose-headphones.webp",
         "stock": 20,
@@ -30,7 +30,7 @@
     {   
         "id": 4,
         "product_name": "NINJA Foodi Dual Zone 7.6L Air Fryer",
-        "description": "2 FOODS, 2 WAYS TO COOK. The air fryer that cooks 2 foods, 2 ways, and finishes at the same time. With 2 separate cooking drawers, you can cook different foods with different temperatures, times and functions - both ready to serve at exactly the same time!.",
+        "description": "2 FOODS, 2 WAYS TO COOK. The air fryer that cooks 2 foods, 2 ways, and finishes at the same time. With 2 separate cooking drawers, you can cook different foods with different temperatures, times and functions",
         "price": 199.99,
         "image": "/images/Nike air.webp",
         "stock": 10,
@@ -40,7 +40,7 @@
     {   
         "id": 5,
         "product_name": "Xbox Series S",
-        "description": "Introducing the Xbox Series S, the smallest, sleekest Xbox console ever. Experience the speed and performance of a next-gen all-digital console at an accessible price point. Get started with an instant library of 100+ high quality games, including all new Xbox Game Studios titles like Halo Infinite the day they release, when you add Xbox Game Pass Ultimate (membership sold separately). Seamlessly move between multiple games in a flash with Quick Resume. At the heart of Series S is the Xbox Velocity Architecture, which pairs a custom-SSD with integrated software for faster, streamlined gameplay with significantly reduced load times.*.",
+        "description": "Introducing the Xbox Series S, the smallest, sleekest Xbox console ever. Experience the speed and performance of a next-gen all-digital console at an accessible price point. Get started with an instant library of 100+ high quality games",
         "price": 249.99,
         "image": "/images/xbox.webp",
         "stock": 63,
@@ -96,7 +96,7 @@
         "id": 11,
         "product_name": "Rolling Stones Colorful Contemporary Graffiti Pop Art Canvas Print Wall Art",
         "description": "Pop art inspired Rainbow and Graffiti Rolling Stones. Fill in boring empty wall space with this beautiful print. This would fit right into your office or any contemporary style home!",
-        "price": 2099.00,
+        "price": 60.00,
         "image": "/images/art.webp",
         "stock": 9,
         "category_id": 7

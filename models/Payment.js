@@ -31,35 +31,35 @@ Payment.init(
               key: 'id',
             },
           },
-
+        },
+        {
           hooks: {
             beforeCreate: async (newCardNumber) => {
-                newCardNumber.card_number = await bcrypt.hash(newCardNumber.card_number, 10);
+              newCardNumber.card_number = await bcrypt.hash(newCardNumber.card_number, 10);
               return newCardNumber;
             },
             beforeUpdate: async (updatedCardNumber) => {
-                updatedCardNumber.card_number = await bcrypt.hash(updatedCardNumber.card_number, 10);
+              updatedCardNumber.card_number = await bcrypt.hash(updatedCardNumber.card_number, 10);
               return updatedCardNumber;
             },
           },
+
           hooks: {
             beforeCreate: async (newExpiry) => {
-                newExpiry.expiry_date = await bcrypt.hash(newExpiry.expiry_date, 10);
+              newExpiry.expiry_date = await bcrypt.hash(newExpiry.expiry_date, 10);
               return newExpiry;
             },
             beforeUpdate: async (updatedExpiry) => {
-                updatedExpiry.expiry_date = await bcrypt.hash(updatedExpiry.expiry_date, 10);
+              updatedExpiry.expiry_date = await bcrypt.hash(updatedExpiry.expiry_date, 10);
               return updatedExpiry;
             },
           },
-    },
-    {
-        sequelize,
-        timestamps: false,
-        freezeTableName: true,
-        underscored: true,
-        modelName: 'payment',
-    }
-);
+          sequelize,
+          timestamps: false,
+          freezeTableName: true,
+          underscored: true,
+          modelName: 'payment',
+        }
+      );
 
 module.exports = Payment;

@@ -5,8 +5,9 @@
         "description": "World-class adjustable noise cancellation—with situational awareness for when you want to let the world in.",
         "price": 299.99,
         "image": "/images/bose-headphones.webp",
-        "stock": 20,
-        "category_id": 1
+        "stock": 2,
+        "category_id": 1,
+        "user_id": 1
     
     },
     {   
@@ -15,8 +16,9 @@
         "description": "The radiance lives on in the Nike Air Force 1 '07",
         "price": 109.00,
         "image": "/images/Nike-air.webp",
-        "stock": 33,
-        "category_id": 2
+        "stock": 1,
+        "category_id": 2,
+        "user_id": 2
     },
     {   
         "id": 3,
@@ -25,7 +27,8 @@
         "price": 35.00,
         "image": "/images/joggers.webp",
         "stock": 15,
-        "category_id": 3
+        "category_id": 3,
+        "user_id": 3
     },
     {   
         "id": 4,
@@ -34,7 +37,8 @@
         "price": 199.99,
         "image": "/images/Nike air.webp",
         "stock": 10,
-        "category_id": 4
+        "category_id": 4,
+        "user_id": 4
     
     },
     {   
@@ -44,7 +48,8 @@
         "price": 249.99,
         "image": "/images/xbox.webp",
         "stock": 63,
-        "category_id": 1
+        "category_id": 1,
+        "user_id": 1
     },
     {   
         "id": 6,
@@ -53,7 +58,8 @@
         "price": 109.00,
         "image": "/images/jordans.jpg",
         "stock": 33,
-        "category_id": 2
+        "category_id": 2,
+        "user_id": 2
     
     },
     {   
@@ -63,7 +69,8 @@
         "price": 109.00,
         "image": "/images/hoodie.webp",
         "stock": 26,
-        "category_id": 3
+        "category_id": 3,
+        "user_id": 3
     },
     {   
         "id": 8,
@@ -72,7 +79,8 @@
         "price": 2099.00,
         "image": "/images/Nike air.webp",
         "stock": 4,
-        "category_id": 4
+        "category_id": 4,
+        "user_id": 4
     },
     {   
         "id": 9,
@@ -81,7 +89,8 @@
         "price": 2099.00,
         "image": "/images/driver.webp",
         "stock": 17,
-        "category_id": 5
+        "category_id": 5,
+        "user_id": 1
     },
     {   
         "id": 10,
@@ -90,7 +99,8 @@
         "price": 100.00,
         "image": "/images/sofa.webp",
         "stock": 4,
-        "category_id": 6
+        "category_id": 6,
+        "user_id": 2
     },
     {   
         "id": 11,
@@ -99,6 +109,7 @@
         "price": 60.00,
         "image": "/images/art.webp",
         "stock": 9,
-        "category_id": 7
+        "category_id": 7,
+        "user_id": 3
     }
     ]

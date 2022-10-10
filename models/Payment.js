@@ -21,7 +21,7 @@ Payment.init(
       allowNull: false,
     },
     expiry_date: {
-      type: DataTypes.INTEGER,
+      type: DataTypes.STRING,
       allowNull: false,
     },
     user_id: {
@@ -35,7 +35,15 @@ Payment.init(
   },
 
   {
-/*     hooks: {
+   hooks: {
+    beforeCreate: async (newCard) => {
+      newCard.card_number = await bcrypt.hash(newCard.card_number, 10);
+      return newCard;
+    },
+    beforeUpdate: async (updatedCard) => {
+      updatedCard.card_number = await bcrypt.hash(updatedCard.card_number, 10);
+      return updatedCard;
+    },
       beforeCreate: async (newExpiry) => {
         newExpiry.expiry_date = await bcrypt.hash(newExpiry.expiry_date, 10);
         return newExpiry;
@@ -44,7 +52,7 @@ Payment.init(
         updatedExpiry.expiry_date = await bcrypt.hash(updatedExpiry.expiry_date, 10);
         return updatedExpiry;
       },
-    }, */
+    },
     sequelize,
     timestamps: false,
     freezeTableName: true,

@@ -17,11 +17,11 @@ User.init(
       autoIncrement: true,
     },
     email: {
-        type: DataTypes.STRING,
-        allowNull: false,
-        validate: {
-          isEmail: true 
-        }
+      type: DataTypes.STRING,
+      allowNull: false,
+      validate: {
+        isEmail: true
+      }
     },
     password: {
       type: DataTypes.STRING,
@@ -31,32 +31,33 @@ User.init(
       },
     },
     first_name: {
-        type: DataTypes.STRING,
-        allowNull: false,
+      type: DataTypes.STRING,
+      allowNull: false,
     },
     last_name: {
-        type: DataTypes.STRING,
-        allowNull: false,
+      type: DataTypes.STRING,
+      allowNull: false,
     },
-  
-    },
-    {
-      hooks: {
-        beforeCreate: async (newUserData) => {
-          newUserData.password = await bcrypt.hash(newUserData.password, 10);
-          return newUserData;
-        },
-        beforeUpdate: async (updatedUserData) => {
-          updatedUserData.password = await bcrypt.hash(updatedUserData.password, 10);
-          return updatedUserData;
-        },
+
+  },
+  {
+    hooks: {
+      beforeCreate: async (newPassword) => {
+        newPassword.password = await bcrypt.hash(newPassword.password, 10);
+        return newPassword;
       },
-      sequelize,
-      timestamps: false,
-      freezeTableName: true,
-      underscored: true,
-      modelName: 'user',
-    }
-  );
-    
+      beforeUpdate: async (updatedPassword) => {
+        updatedPassword.password = await bcrypt.hash(updatedPassword.password, 10);
+        return updatedPassword;
+      },
+
+    },
+    sequelize,
+    timestamps: false,
+    freezeTableName: true,
+    underscored: true,
+    modelName: 'payment',
+  }
+);
+
 module.exports = User;

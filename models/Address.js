@@ -28,7 +28,7 @@ Address.init(
             allowNull: false,
         },
         post_code: {
-            type: DataTypes.STRING.INT,
+            type: DataTypes.STRING,
             allowNull: false,
         },  
         

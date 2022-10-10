@@ -6,7 +6,9 @@
     <div class="container text-center">
        <!-- <h1 class="current-page-text">RECENTLY ADDED</h1> -->
         <div class="row parent-row-image-only">
+            {{#if featured}}
             <!---EACH INDIVIDUAL ITEM STARTS HERE-->
+            {{#each (limit product 5)}}
             <div class="col-lg-2 col-md-4 col-sm-6 product-container2" style="margin-bottom: 20px;">
                 <div class="row">
                     <div class="col product-overview">
@@ -17,7 +19,9 @@
                     </div>
                 </div>
             </div>
+            {{/each}}
             <!---EACH INDIVIDUAL ITEM ENDS HERE-->
+            {{/if}}
         </div>
     </div>
 </div>

@@ -8,7 +8,7 @@ const wishlistRoutes = require('./wishlistRoutes');
 router.use('/users', userRoutes);
 router.use('/products', productRoutes);
 router.use('/cart', cartRoutes);
-router.use('/categories', categoryRoutes);
+router.use('/category', categoryRoutes);
 router.use('/wishlist', wishlistRoutes);
 
 module.exports = router;

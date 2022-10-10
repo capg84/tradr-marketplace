@@ -11,25 +11,6 @@ Cart.init(
             primaryKey: true,
             autoIncrement: true,
         },
-        first_name: {
-            type: DataTypes.STRING,
-            allowNull: false,
-        },
-        last_name: {
-            type: DataTypes.STRING,
-            allowNull: false,
-        },
-        product_name: {
-            type: DataTypes.STRING,
-            allowNull: false,
-        },
-        price: {
-            type: DataTypes.DECIMAL,
-            allowNull: false,
-            validate: {
-                isDecimal: true,
-            },
-        },
         quantity: {
             type: DataTypes.INT,
             allowNull: false,

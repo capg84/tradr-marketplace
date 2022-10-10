@@ -1,5 +1,5 @@
 const sequelize = require('../config/connection');
-const { User, Category, Payment, Address, Product } = require('../models');
+const { User, Category, Payment, Product, Address } = require('../models');
 
 const userData = require('./user.json');
 const categoryData = require('./category.json');
@@ -15,23 +15,23 @@ const seedDatabase = async () => {
     returning: true,
   });
 
-  // const categories = await Category.bulkCreate(categoryData, {
-  //   returning: true,
-  // });
+  const categories = await Category.bulkCreate(categoryData, {
+    returning: true,
+  });
 
-  // const products = await Product.bulkCreate(productData, {
-  //   returning: true,
-  // });
 
-  // const address = await Address.bulkCreate(addressData, {
-  //   returning: true,
-  // });
+  const payments = await Payment.bulkCreate(paymentData, {
+    individualHooks: true,
+    returning: true,
+  });
 
-  // const payments = await Payment.bulkCreate(paymentData, {
-  //   individualHooks: true,
-  //   returning: true,
-  // });
+  const address = await Address.bulkCreate(addressData, {
+    returning: true,
+  });
 
+  const products = await Product.bulkCreate(productData, {
+    returning: true,
+  });
 
   process.exit(0);
 }

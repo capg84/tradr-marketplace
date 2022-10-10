@@ -108,6 +108,54 @@
 /* h1 end */
 /* End mainhandlebars */
 
+/* homehandlebars */
+
+/* hero banner */
+.hero {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    /* sets the height of the hero element */
+    height: 350px;
+    /* sets the width of the hero element */
+    width: 100%;
+    /* sets the bottom margin of the hero elememt */
+    margin-bottom: 25px;
+    /*sets the background image of the hero element */
+    background-image: url("./images/Hero.png") ;
+    /* sets the background size and position of the hero element */
+    background-size: cover;
+    /* object-fit: cover; */
+    background-position: center;
+    opacity: 0.82;
+    position: relative;
+}
+  
+#productbtn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 15%;
+    height: 15%;
+    font-size: 1.3rem;
+    font-weight: 500;
+    overflow: hidden;
+    transition: 1s all ease;
+    text-transform: uppercase;
+    position: absolute;
+    top: 240px;
+}
+  
+#featured {
+    font-family: 'Nunito', 'sans-serif';
+    margin-top: 15px;
+    padding: 5px;
+    display: flex;
+   align-items: center;
+   flex-wrap: wrap;
+} 
+/* hero banner end */
+
 .current-page-text {
     font-size: 30px;
     text-align: left;

@@ -12,15 +12,15 @@ Payment.init(
             autoIncrement: true,
         },
         payment_type: {
-            type: DataTypes.INT,
+            type: DataTypes.STRING,
             allowNull: false,
         },
         card_number: {
-            type: DataTypes.INT,
+            type: DataTypes.INTEGER,
             allowNull: false,
         },
         expiry_date: {
-            type: DataTypes.INT,
+            type: DataTypes.INTEGER,
             allowNull: false,
         },
         user_id: {

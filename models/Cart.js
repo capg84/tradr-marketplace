@@ -12,7 +12,7 @@ Cart.init(
             autoIncrement: true,
         },
         quantity: {
-            type: DataTypes.INT,
+            type: DataTypes.INTEGER,
             allowNull: false,
         },
         order_total: {

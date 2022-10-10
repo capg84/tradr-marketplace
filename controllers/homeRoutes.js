@@ -18,8 +18,7 @@ router.get('/', async (req, res) => {
 
     // Pass serialized data and session flag into template
     res.render('home', { 
-      products, 
-      logged_in: req.session.logged_in 
+      products
     });
   } catch (err) {
     res.status(500).json(err);
@@ -43,9 +42,8 @@ router.get('/product/:id', async (req, res) => {
 
     const product = productData.get({ plain: true });
 
-    res.render('comment', {
-      ...product,
-      logged_in: req.session.logged_in
+    res.render('product', {
+      ...product
     });
   } catch (err) {
     res.status(500).json(err);

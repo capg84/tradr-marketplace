@@ -329,7 +329,7 @@
   justify-content: space-between;
 }
 
-.nav-item {
+.nav-item-dashboard {
   border-right: 1px solid darkgray;
   border-left: 1px solid darkgray;
 }

@@ -2,7 +2,7 @@
     {
         "id": 1,
         "payment_type": "visa",
-        "card_number": 1234123412341234,
+        "card_number": "1234123412341234",
         "expiry_date": 1125,
         "user_id": 1
     
@@ -10,7 +10,7 @@
     {
         "id": 2,
         "payment_type": "mastercard",
-        "card_number": 5555111122223333,
+        "card_number": "5555111122223333",
         "expiry_date": 1226,
         "user_id": 2
     
@@ -18,14 +18,14 @@
     {
         "id": 3,
         "payment_type": "mastercard",
-        "card_number": 4444333322221111,
+        "card_number": "4444333322221111",
         "expiry_date": 1023,
         "user_id": 3
     },
     {
         "id": 4,
         "payment_type": "visa",
-        "card_number": 6666777788889999,
+        "card_number": "6666777788889999",
         "expiry_date": 1126,
         "user_id": 4
     }

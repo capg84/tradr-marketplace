@@ -33,7 +33,6 @@ Payment.init(
       },
     },
   },
-
   {
 /*     hooks: {
       beforeCreate: async (newExpiry) => {

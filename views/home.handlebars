@@ -8,7 +8,7 @@
         <div class="row parent-row-image-only">
             {{#if featured}}
             <!---EACH INDIVIDUAL ITEM STARTS HERE-->
-            {{#each (limit product 5)}}
+            {{#each products as |product| (limit product 5)}}
             <div class="col-lg-2 col-md-4 col-sm-6 product-container2" style="margin-bottom: 20px;">
                 <div class="row">
                     <div class="col product-overview">

@@ -38,34 +38,6 @@ User.init(
         type: DataTypes.STRING,
         allowNull: false,
     },
-    address_id: {
-        type: DataTypes.INTEGER,
-        references: {
-          model: 'address',
-          key: 'id',
-        },
-      },
-    payment_id: {
-        type: DataTypes.INTEGER,
-        references: {
-          model: 'payment',
-          key: 'id',
-        },
-      },
-      cart_id: {
-        type: DataTypes.INTEGER,
-        references: {
-          model: 'cart',
-          key: 'id',
-        },
-      },
-      wishlist_id: {
-        type: DataTypes.INTEGER,
-        references: {
-          model: 'wishlist',
-          key: 'id',
-        },
-      },
     },
     {
       hooks: {

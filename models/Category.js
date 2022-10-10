@@ -7,27 +7,15 @@ Category.init(
     {
         id: {
             type: DataTypes.INTEGER,
+            // unique: true,
             allowNull: false,
             primaryKey: true,
-            autoIncrement: true,
+            // autoIncrement: true,
         },
         category_name: {
             type: DataTypes.STRING,
-            allowNull: false,
+            // allowNull: false,
         },
-        description: {
-            type: DataTypes.STRING,
-            allowNull: false,
-        },
-        product_id: {
-            type: DataTypes.INTEGER,
-            allowNull: false,
-            references: {
-              model: 'product',
-              key: 'id',
-            },
-          },
-      
     },
     {
         sequelize,

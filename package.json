@@ -14,7 +14,8 @@
   },
   "scripts": {
     "start": "node server.js",
-    "seed": "node seeds/seed.js"
+    "seedDummy": "node seeds/seedDummy.js",
+    "seedStatic": "node seeds/seedStatic.js"
   },
   "name": "tradr-marketplace",
   "description": "[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)",

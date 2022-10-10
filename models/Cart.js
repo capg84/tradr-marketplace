@@ -15,13 +15,7 @@ Cart.init(
             type: DataTypes.INTEGER,
             allowNull: false,
         },
-        order_total: {
-            type: DataTypes.DECIMAL,
-            allowNull: true,
-            validate: {
-                isDecimal: true,
-            },
-        },
+    
         user_id: {
             type: DataTypes.INTEGER,
             allowNull: false,

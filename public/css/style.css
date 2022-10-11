@@ -455,7 +455,7 @@ footer {
 /* category page */
 #cattext {
   margin: 2% 0 2% 2%;
-  font-family: 'Nunito', 'sans-serif';
+  font-family: "Nunito", "sans-serif";
   font-size: 3rem;
   font-weight: 800;
 }
@@ -480,7 +480,9 @@ footer {
 }
 
 /* button */
-#create-btn, #update-btn, #delete-btn {
+#create-btn,
+#update-btn,
+#delete-btn {
   margin-top: 5%;
   width: 10%;
 }
@@ -492,4 +494,13 @@ footer {
 
 #delete-btn {
   margin-left: 5%;
+}
+
+/* contact us form */
+.contactUs {
+  margin: 50px 200px;
+}
+
+.form-group {
+  margin: 15px;
 }

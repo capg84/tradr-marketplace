@@ -20,6 +20,12 @@ router.post('/', async (req, res) => {
     }
   });
 
+  router.get('/edit', withAuth, (req, res) => {  
+    res.render('editlisting', {
+        logged_in: req.session.logged_in 
+      });
+});
+
 router.post('/login', async (req, res) => {
     try {
       const userData = await User.findOne({ where: { email: req.body.email } });

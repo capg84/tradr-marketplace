@@ -1,0 +1,54 @@
+<div id="mainprod" class="container text-center" style="margin-left: 10%;">
+    <div class="row justify-content-start">
+        <div class="col-lg-2 col-md-4 col-sm-6 prodimgcont">
+            <img id="product-image" src="https://media.4rgos.it/s/Argos/tuc140625694_R_SET?w=270&h=366&qlt=75&fmt.jpeg.interlaced=true" alt="bag">
+        </div>
+        <div class="col-lg-2 col-md-4 col-sm-6 prodcont">
+            <p class="text-end" style="font-style: italic;">Sold by: Dave M</p>
+            <h3 id="productname">Product Name</h3>
+            <div>
+                <h4>Product Details</h4>
+                <p id="proddesc">
+                    The bag is made from pure leather. Very durable and suitable for any weather. Can be worn for different occassions.
+                </p>
+            </div>
+            <h5 id="productprice">£28.00</h5>
+            <form class="purchaseform">
+                <!-- max value = product stock amount -->
+                <div class="qty">
+                    <label for="quantity">Quantity:</label>
+                    <input type="number" id="quantity" name="quantity" min="1" max="10" value="1"> 
+                </div>
+                <button type="submit" class="btn btn-dark btn-styling2" style="margin-bottom: 5px; margin-top: 8px; width: 200px;">Add to Cart</button>
+                <button type="submit" class="btn btn-success btn-styling2" style="margin-bottom: 5px; width: 200px;">Buy Now</button>
+            </form>
+            <p class="text-start" style="font-style: italic; margin-top: 10px;">Listed on </p>
+        </div>
+    </div>
+</div>
+
+<div class="recommendations">
+            <h2 id="recommtext">More from this seller</h2>
+            {{#contains product {{user_id}}}}
+            <div class="bg-col-white">
+                <div class="container text-center">
+                    <div class="row parent-row-image-only">
+                        <!---EACH INDIVIDUAL ITEM STARTS HERE-->
+                        {{#each products as |product|}}
+                        <div class="col-lg-2 col-md-4 col-sm-6 product-container2" style="margin-bottom: 20px;" id="ftproduct">
+                            <div class="row">
+                                <div class="col product-overview">
+                                    <a href="/product/:id"><img class="product-image-sizing" src="https://media.4rgos.it/s/Argos/tuc140625694_R_SET?w=270&h=366&qlt=75&fmt.jpeg.interlaced=true" alt="bag"></a>
+                                    <a href="/product/:id" style="text-decoration: none; color: black;"><h2 class="product-title2" id="fttitle">Product Name</h2></a>
+                                    <p class="product-price">£28.00</p>
+                                    <button type="submit" class="btn btn-dark btn-styling2">Add to Cart</button>
+                                </div>
+                            </div>
+                        </div>
+                        {{/each}}
+                        <!---EACH INDIVIDUAL ITEM ENDS HERE-->
+                    </div>
+                </div>
+            </div>
+            {{/contains}}
+</div>

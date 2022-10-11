@@ -465,7 +465,7 @@ footer {
   margin: 50px 200px;
 }
 
-/* create listing */
+/* create/edit listing */
 /* listing container */
 .createcont {
   margin: 5% 5% 10% 5%;
@@ -480,11 +480,16 @@ footer {
 }
 
 /* button */
-#create-btn {
+#create-btn, #update-btn, #delete-btn {
   margin-top: 5%;
+  width: 10%;
 }
 
 /* upload image container */
 #uploadcont p {
   margin-top: 5%;
+}
+
+#delete-btn {
+  margin-left: 5%;
 }

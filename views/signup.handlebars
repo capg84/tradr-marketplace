@@ -2,7 +2,7 @@
     <div class="container text-center">
         <div class="row parent-row">
             <!---sign up page-->
-            <div class="signup-parent">
+            <form class="signup-parent">
                 <div class="col-10 product-container-dashboard">
                     <div class="row active-listing">
                         <p class="active-listing-title">SIGN UP</p>
@@ -10,8 +10,10 @@
                     </div>
                     <div class="row">
                         <div class="col input-form">
-                            <label for="inputEmail" class="name-header-text">Name:</label>
-                            <input type="email" class="form-control" id="inputName2" placeholder="Enter name">
+                            <label for="fName" class="name-header-text">First name:</label>
+                            <input type="fname" class="form-control" id="inputFName" placeholder="Enter first name">
+                            <label for="lName" class="name-header-text">Last name:</label>
+                            <input type="lname" class="form-control" id="inputLName" placeholder="Enter last name">
                             <label for="inputEmail" class="email-header-text">Email address:</label>
                             <input type="email" class="form-control" id="inputEmail2" placeholder="Enter email">
                             <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
@@ -25,7 +27,7 @@
                         <button type="submit" class="btn btn-dark btn-styling login-btn">SIGN UP</button>
                     </div>
                 </div>
-            </div>
+            </form>
             <!---sign up page end-->
         </div>
     </div>

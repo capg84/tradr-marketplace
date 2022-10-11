@@ -3,6 +3,7 @@ const { Product, User, Category } = require('../../models');
 const withAuth = require('../../utils/auth');
 
 router.post('/', async (req, res) => {
+    console.log(req.body);
     try {
       const userData = await User.create(req.body);
   

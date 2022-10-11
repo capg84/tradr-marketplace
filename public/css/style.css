@@ -493,3 +493,13 @@ footer {
 #delete-btn {
   margin-left: 5%;
 }
+
+/* wishlist container */
+#heart {
+  margin-left: 10%;
+ }
+ 
+ .heart-prod-name {
+   display: flex;
+   justify-content: flex-start;
+ }

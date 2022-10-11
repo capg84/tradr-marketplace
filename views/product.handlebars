@@ -5,7 +5,12 @@
         </div>
         <div class="col-lg-2 col-md-4 col-sm-6 prodcont">
             <p class="text-end" style="font-style: italic;">Sold by: {{user.first_name}}</p>
-            <h3 id="productname">{{Product Name}}</h3>
+                <div class="heart-prod-name">
+                  <h3 id="productname">{{product.name}}</h3>
+                  <div id="heart" class="wrapper">
+                    <a class="heart btn btn-outline-danger" href="#" id="wishlist-btn"><i class="bi bi-heart"></i></a>
+                  </div>
+                </div>
             <div>
                 <h4>Product Details</h4>
                 <p id="proddesc">

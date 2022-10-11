@@ -464,3 +464,24 @@ footer {
 .terms {
   margin: 50px 200px;
 }
+
+/* create listing */
+/* listing container */
+.createcont {
+  margin: 5% 5% 10% 5%;
+}
+
+/* price quantity container */
+#price-qty-cont {
+  margin-bottom: 2%;
+}
+
+/* button */
+#create-btn {
+  margin-top: 5%;
+}
+
+/* upload image container */
+#uploadcont p {
+  margin-top: 5%;
+}

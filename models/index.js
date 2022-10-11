@@ -1,10 +1,10 @@
-const Address = require('./Address');
+const User = require('./User')
 const Cart = require('./Cart');
 const Category = require('./Category')
 const Payment = require('./Payment')
 const Product = require('./Product')
-const User = require('./User')
 const Wishlist = require('./Wishlist')
+const Address = require('./Address');
 
 User.belongsTo(Cart, {
     foreignKey: 'user_id',
@@ -12,7 +12,7 @@ User.belongsTo(Cart, {
 });
 
 Cart.belongsTo(User, {
-    foreignKey: 'user_id'
+    foreignKey: 'user_id',
 });
 
 
@@ -22,7 +22,7 @@ User.hasMany(Address, {
 });
 
 Address.belongsTo(User, {
-    foreignKey: 'user_id'
+    foreignKey: 'user_id',
 });
 
 User.hasMany(Payment, {
@@ -31,7 +31,7 @@ User.hasMany(Payment, {
 });
 
 Payment.belongsTo(User, {
-    foreignKey: 'user_id'
+    foreignKey: 'user_id',
 });
 
 User.hasMany(Wishlist, {
@@ -40,7 +40,7 @@ User.hasMany(Wishlist, {
 });
 
 Wishlist.belongsTo(User, {
-    foreignKey: 'user_id'
+    foreignKey: 'user_id',
 });
 
 
@@ -67,31 +67,19 @@ Wishlist.hasMany(Product, {
 
 });
 
-Product.belongsTo(Wishlist, {
-    foreignKey: 'product_id'
+Product.hasMany(Wishlist, {
+    foreignKey: 'product_id',
 });
 
-// User.hasMany(Product, {
-//     through: Wishlist,
-//     // foreignKey: 'user_id',
-// });
+User.hasMany(Product, {
+    foreignKey: 'user_id',
 
+});
 
-// Product.belongsToMany(User, {
-//     through: Wishlist,
-//     // foreignKey: 'product_id',
-// });
+Product.belongsTo(User, {
+    foreignKey: 'user_id',
+});
 
-// User.belongsToMany(Product, {
-//     through: Cart,
-//     // foreignKey: 'user_id',
-// });
-
-
-// Product.belongsToMany(User, {
-//     through: Cart,
-//     // foreignKey: 'product_id',
-// });
 
 
 module.exports = { Address, Cart, Category, Payment, Product, User, Wishlist };

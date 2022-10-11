@@ -1,6 +1,6 @@
 {
   "dependencies": {
-    "bcrypt": "^5.1.0",
+    "bcrypt": "^5.0.0",
     "bootstrap-icons": "^1.9.1",
     "connect-session-sequelize": "^7.1.5",
     "days": "^1.1.1",
@@ -14,7 +14,8 @@
   },
   "scripts": {
     "start": "node server.js",
-    "seed": "node seeds/seed.js"
+    "seedStatic": "node seeds/seedStatic.js",
+    "seedDummy": "node seeds/seedDummy.js"
   },
   "name": "tradr-marketplace",
   "description": "[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)",

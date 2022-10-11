@@ -19,7 +19,7 @@ Address.init(
             type: DataTypes.STRING,
             allowNull: false,
         },
-       city: {
+        city: {
             type: DataTypes.STRING,
             allowNull: false,
         },
@@ -30,18 +30,16 @@ Address.init(
         post_code: {
             type: DataTypes.STRING,
             allowNull: false,
-        },  
-        
-       
+        },
         user_id: {
             type: DataTypes.INTEGER,
             allowNull: false,
             references: {
-              model: 'user',
-              key: 'id',
+                model: 'user',
+                key: 'id',
             },
-          },
-      
+        },
+
     },
     {
         sequelize,

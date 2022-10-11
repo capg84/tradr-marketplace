@@ -1,4 +1,6 @@
 const router = require('express').Router();
+<<<<<<< HEAD
+=======
 const { Wishlist, Cart } = require('../../models');
 const withAuth = require('../../utils/auth');
 
@@ -42,5 +44,6 @@ router.delete('/delete/:id', withAuth, async (req, res) => {
 });
 
 
+>>>>>>> main
 
 module.exports = router;

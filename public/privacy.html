@@ -1,0 +1,251 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Privacy</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css2?family=PT+Sans:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,200;1,300;1,400;1,500;1,900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/bootstrap-icons.css">
+    <link rel="apple-touch-icon" sizes="180x180" href="./images/favicon_io-2/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon_io-2/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="./images/favicon_io-2/favicon-16x16.png">
+    <link rel="manifest" href="/site.webmanifest">
+    <link rel="stylesheet" href="./css/style.css" />
+    <link rel="stylesheet" href="./css/style2.css">
+  </head>
+<body>
+  <header>
+    <!-- First Navbar -->
+    <nav class="navbar bg-light" id="navacc">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="/">
+          <h1 id="tradr">
+            <span>Tradr</span>
+            <div class="message">
+              <div class="word1">Buy</div>
+              <div class="word2">Sell</div>
+              <div class="word3">Trade</div>
+            </div>
+          </h1>
+        </a>
+        <form class="d-flex justify-content-center" role="search">
+          <input class="form-control me-2" type="search" placeholder="Search for items" aria-label="Search" style="width: 450px;">
+          <button class="btn btn-outline-success" type="submit">Search</button>
+        </form>
+        <ul class="d-flex">
+            <!-- {{#if logged_in}}
+          <a class="nav-link disabled">Hello <p>{{user.first_name}},</p></a>
+          <div class="dropdown container">
+            <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" style="margin-top: 10px;">
+              Your account
+            </button>
+            <ul class="dropdown-menu dropdown-menu-dark">
+              <li><a class="dropdown-item" href="/dashboard">Dashboard</a></li>
+              <li><a class="dropdown-item" href="/purchases">Purchases</a></li>
+              <li><a class="dropdown-item" href="/createlisting">Create a listing</a></li>
+              <li><a class="dropdown-item" href="/"><i class="bi bi-escape"></i> Signout</a></li>
+            </ul>
+          </div>
+          <a class="navbar-brand" href="/wishlist" style="margin-top: 5px; margin-left: 2px;"><i class="fa-solid fa-heart"></i> wishlist</a>
+          {{else}} -->
+          <a class="navbar-brand active btn" href="/signup" style="margin-top: 5px;">Signup</a>
+          <a class="navbar-brand active btn btn-primary" href="/login" style="margin-top: 5px;">Login</a>
+          <a class="navbar-brand" href="/login" style="margin-top: 5px; margin-left: 2px;"><i class="fa-solid fa-heart"></i> wishlist</a>
+          <!-- {{/if}} -->
+          <a class="navbar-brand" href="/cart" style="margin-top: 5px; margin-left: 2px;"><i class="bi bi-cart4"></i> Your basket</a>
+        </div>
+      </div>
+    </nav>
+    <!-- End of first Navbar -->
+
+    <!-- Second Navbar -->
+    <nav class="navbar navbar-expand-lg bg-dark" id="secondnav">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="/" style="color: white; font-size: 1.5rem;">Homepage</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav">
+            <li class="nav-item" style="margin-left: 50px;">
+              <a class="nav-link active" aria-current="/products/clothing" href="#" style="color: white; font-size: 1.3rem;">Clothing</a>
+            </li>
+            <li class="nav-item" style="margin-left: 20px;">
+              <a class="nav-link active" href="/category/shoes" style="color: white; font-size: 1.3rem;">Shoes</a>
+            </li>
+            <li class="nav-item" style="margin-left: 20px;">
+              <a class="nav-link active" href="/category/accessories" style="color: white; font-size: 1.3rem;">Accessories</a>
+            </li>
+            <li class="nav-item" style="margin-left: 20px;">
+              <a class="nav-link active" href="/category/beauty" style="color: white; font-size: 1.3rem;">Beauty</a>
+            </li>
+            <li class="nav-item" style="margin-left: 20px;">
+              <a class="nav-link active" href="/category/homeware" style="color: white; font-size: 1.3rem;">Homeware</a>
+            </li>
+            <li class="nav-item" style="margin-left: 20px;">
+              <a class="nav-link active" href="/category/electronics" style="color: white; font-size: 1.3rem;">Electronics</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+    <!-- End of second Navbar -->
+  </header>
+  <main>
+    <div class="terms">
+      <h2>Privacy</h2>
+      <hr>
+      <p>
+        TRADR, our subsidiaries and affiliates ("TRADR" or "we" or “us”) are concerned about your privacy and are committed to processing your personal information in accordance with fair information practices and applicable data protection laws.
+        <br>
+        <br>
+        <h3>Scope of this Privacy Statement</h3>
+        This Privacy Statement describes how TRADR collects, uses, protects, and shares your personal information when you use our services in the European Economic Area (EEA), as well as your choices about the way your information is collected and used. Personal information means all information relating to an identified or identifiable individual. This Privacy Statement applies when you:
+        <br>
+        <br>
+        <ul>
+            <li>Use TRADR services, either directly or through our agents, mobile applications, or websites,</li>
+            <li>Interact with TRADR on social media,</li>
+            <li>Contact TRADR’s call centre, or</li>
+            <li>Apply to become a TRADR agent or business partner.</li>
+        </ul>
+        
+        This Privacy Statement does not apply to the policies and practices of companies that are not related to TRADR.
+        <br>
+        <br>        
+        <h3>Information we collect and how we collect it</h3>
+        When you use our digital or retail services, contact us, or join our loyalty programs (collectively, the “services”), we collect personal information about you and may use it along with other information collected or generated during our relationship with you. We collect different types of personal information relating to you, which may include:
+        <br>
+        <br>
+        <ul>
+            <li>Contact information, for example your name, postal address, e-mail address, telephone number, date of birth and national identification numbers,</li>
+            <li>All kinds of transaction information processed using any of TRADR’s infrastructures,</li>
+            <li>Business related information that helps us provide our services to you, such as membership in our loyalty programs, use of our services, and marketing choices,</li>
+            <li>Compliance information, including fraud prevention, identity verification, and sanctions and PEPS checks.</li> 
+        </ul>
+        To conduct any kind of transaction using TRADR’s infrastructure, you must provide certain information required by TRADR to execute the transfer and to enable us to comply with our legal obligations associated with transferring money. Failure to provide some of your personal information may affect our ability to provide our services to you. This may include information about the form of identification used to send or receive a transaction (where required by law) including the identification or a copy of the identification document, transaction activity, bank account and payment information.
+        <br>
+        <br>        
+        When you use our mobile applications, digital or online services, we also collect personal information about the domain and host from which you access the Internet, your computer’s IP address or device advertising ID, geolocation if enabled, information about your device (such as device properties, settings, applications, storage and usage information), browser and operating system software, social profile and network information, the date and time you access our websites and the address of the site from which you linked to our website when you visit us.
+        
+        TRADR collects your personal information in several ways:
+        <br>
+        <br>
+        <ul>
+            <li>Through transaction forms and your interactions with TRADR mobile/web app, agents and partners,</li>
+            <li>Through online forms, registrations for loyalty and rewards programs or competitions, and other online services we offer (some of which may be managed by third parties on behalf of TRADR),</li>
+            <li>While providing customer support or consultation, using email, post, call centres or live chat,</li>
+            <li>Through the process of maintaining and upgrading our services,</li>
+            <li>Through automated means such as communications protocols, e-mail communications and cookies,</li>
+            <li>Through our mobile applications and mobile websites (some of which may be managed or have functionalities provided by third parties on behalf of TRADR),</li>
+            <li>Through your use of social media or other public data sources, and</li>
+            <li>Through your interest in TRADR advertisements placed on third party sites.</li>
+        </ul>
+        
+        In addition to the personal information we collect from you, we may also collect your personal information from the person to whom you send and/or receive transfers, as well as our agents, service providers, business partners, identity verification companies, telecommunications providers, payments and fraud risk management companies, law enforcement bodies, and commercial and public data sources.
+        <br>
+        <br>
+        If you apply to become a TRADR Agent, we will use the personal information you provide to consider your application and verify your suitability and eligibility to be an agent.
+        <br>
+        <br>
+        <h3>Securing Personal Information</h3>
+        TRADR will take reasonable technical and organisational measures in order to prevent the loss, misuse or alteration of your personal information. The personal information you provide will be stored in secure servers. Any information entered on the TRADR Remittance portal will be protected by encryption technology.
+        <br>
+        <br>
+        <h3>Purpose and legal basis upon which we use your personal information</h3>
+        TRADR may use your personal information on the following grounds:
+        <br>
+        <br>
+        <ul>
+            <li><b>To provide our services to you:</b> This includes using personal information necessary for conducting mobile air-time top-up, utility bill payments, real-estate buying or management payments, money transfers, payment services, prepaid cards, or loyalty programmes. We may use this information in the performance of a contract with you or for taking steps to enter a contract for any of the above or for any other TRADR products or services. It is thus a precontractual condition to provide personal information failing which we may be unable to provide our services to you.</li>
+            <li><b>For legal and compliance purposes:</b> This includes using personal information to comply with our legal and regulatory obligations to the global financial system in relation to anti-money laundering and counter-terrorist financing; detection, prevention and prosecution of fraud and theft as well as preventing illegitimate or prohibited use of our services or other illegal or wrongful activity. This may also include establishing, exercising, or defending legal rights and claims of TRADR and others, and monitoring and reporting compliance issues. This may further include using your personal information to validate and authenticate your identity and utilizing third parties to help us do so.</li>
+            <li><b>For legitimate business purposes:</b> This includes using personal information to analyse and improve our products, services, locations, operations, the running of any website by TRADR and your customer experience, and for measuring marketing return on investment and brand satisfaction. This may include using your information to conduct market research surveys. We may also use your personal information to provide customer services and to help protect the security and integrity of our technology, systems, and services.</li>
+            <li><b>Based on your consent:</b> We may also use your information on this basis. At the time of entering a transaction with us you are consensually providing us with your information. This includes consent for receiving marketing communications, or where otherwise required by applicable law. If we request your consent, we will inform you of the intended purposes for which your information will be processed.</li>
+        </ul>
+        
+        <h3>Cookies & Internet Technology</h3>
+        We use internet technologies like cookies and web beacons for a variety of purposes, including, but not limited to those identified below:
+        <br>
+        <br>
+        <ul>
+            <li>To assist us in providing services to you and help you to receive the best experience using our websites and mobile apps,</li>
+            <li>To allow you to change webpages during your visit without having to re-enter your password,</li>
+            <li>To verify your identity when you use our mobile websites or applications, and we may contact your mobile carrier to assist us in verifying your identity,</li>
+            <li>To determine whether you came to our site from a banner ad or an affiliate website,</li>
+            <li>To deliver information specific to your interests on additional websites,</li>
+            <li>To better understand the effectiveness of our promotional campaigns and whether you acted on our promotional messages, and</li>
+            <li>To identify you when you visit the website, to personalize the content of the website for you and to assist you in carrying out transactions and accessing account information.</li>
+        </ul>
+                
+        TRADR has implemented the capability for the user to manage cookies on our websites. We will only read or write cookies based on your preference level. (Note: cookies set prior to you changing your preference level are maintained on your computer; to remove them please refer to your browser settings and, if needed, your browser’s “Help” function). If your browser does not support JavaScript, you can find out about the cookies used on our sites and can only manage the use of cookies through your web browser settings. Please note that if you disable all cookies on your browser, this will limit the features of this site and may impact the ability to complete your transaction.
+        <br>
+        <br>
+        <h3>External Websites</h3>
+        TRADR's websites may be linked to or from third party websites. TRADR has not reviewed, does not control, and is not responsible for the content or privacy practices employed by websites that are linked to or from our website. TRADR does not assume responsibility for any of these sites, their content, or their privacy policies. TRADR does not endorse third party websites or make any warranties about any information, software or other products or materials you may find there, or any results that may be obtained from using them.
+        <br>
+        <br>
+        <h3>Confidentiality and Security</h3>
+        We endeavour to maintain physical, technical, and organizational safeguards that comply with applicable government laws and regulations to protect your personal information against accidental or unlawful destruction, loss, alteration, unauthorized disclosure or access, and against all other unlawful forms of processing. We also endeavour to restrict information access to our employees, agents, and representatives on a “need to know basis”. Despite our efforts, third parties may unlawfully intercept, or access transmissions sent to us or may wrongly instruct you to disclose personal information to them while posing as TRADR.
+        <br>
+        <br>
+        <h3>Disclosure of your information</h3>
+        If there is a reasonable need to do so for any of the purposes listed above, we may disclose your personal information including, but not limited to, your name, customer ID number, address, transaction patterns and bank account information to the following types of organizations or parties:
+        <br>
+        <br>
+        <ul>
+            <li>TRADR group companies,</li>
+            <li>Our agents or business partners who facilitate the transactions or specific service you have requested,</li>
+            <li>Service providers, payments processors, banking partners and data processors contracted to provide business and customer services including marketing, advertising, and customer satisfaction research on our behalf,</li>
+            <li>Service providers and data processors contracted to help us validate the accuracy of the information provided by you, and to authenticate your identity and manage risks related to security, fraud, and identity.</li>
+            <li>Third parties that you have authorized to access your account and/or your account information to perform services for you, such as account information service providers and payment initiation service providers.</li>
+        </ul>
+
+        We may transmit personal information we possess in connection with a sale or transfer of all or part of our business. We may also disclose your personal information globally, as required or permitted by applicable laws and regulations, to regulatory and financial authorities, law enforcement bodies, courts, governments, or government agencies, to meet compliance and legal obligations or to assert or defend the rights and interests of TRADR or others.
+        <br>
+        <br>
+        <h3>Right to object to Direct Marketing</h3>
+        Subject to your choices and based on the contact information you provide, we may send you commercial communications about our products and loyalty programmes, which may include offers by email, telephone, post, SMS, social media and other communication or digital channels. We conduct analysis of the information we hold to better understand our customers, including profiling and/or analytics to help us customize or personalize our marketing (when you have agreed to marketing) and to tailor our products and services to help us better serve your needs and requirements. You can opt out of receiving marketing communications at any time. Please note that if you choose to withdraw your consent, you may not be able to participate in or benefit from our programs, services, and initiatives for which you previously provided consent.
+        <br>
+        <br>
+        <h3>Retention of Personal Information</h3>
+        Your personal information will be retained in accordance with statutory periods contained in regulations applicable to financial transactions including those in anti-money laundering, anti-terrorist financing and other laws applicable to us. Otherwise, we will retain your information only as long as necessary for the specific purposes it was collected, or to resolve any query you may raise. We are thus mandated by law to keep your information over a range of 5 to 10 years in our various jurisdictions after a given transaction, unless we have a legal obligation to keep it for a longer period.
+        <br>
+        <br>
+        <h3>Your Personal Information Rights and how to contact us</h3>
+        You have the right to know if we are processing your personal information and to ask us for a copy of your information free of charge. You have the right to request a structured copy of certain information you have provided to us. We may charge you a reasonable fee for providing the information, or not act upon your request, if the request is manifestly unfounded or excessive. You have the right to stop us sending you marketing communications. You have the right to ask us to correct information about you that is incomplete, inaccurate, or out-of-date. You have the right to ask us to erase certain information about you, to restrict certain uses of information relating to you, and to object to certain uses of it. Where we are processing personal information purely based on your consent, you may withdraw your consent as permitted by applicable law. You also have the right to lodge a complaint with the Information Commissioner as a supervisory authority via <a href="https://ico.org.uk/global/contact-us/" target="_blank">https://ico.org.uk/global/contact-us/</a> about our processing of personal information and to further judicial review against a decision taken by the supervisory authority. When we receive a request, we may ask for additional information from you to verify your identity. In some situations, we may refuse to act or may impose limitations on your rights, as permitted by applicable law. To exercise these rights, please contact TRADR by using the <b>Contact us</b> section. We will endeavour to respond to your request within 30 days but may be entitled to extend this period in certain circumstances. We will comply with your request to the extent required by applicable law. If you have a complaint about any of our services, you are entitled to report this by using the <b>Contact us</b> section.
+        <br>
+        <br>
+        <h3>Updates to this privacy statement</h3>
+        TRADR reserves the right to modify this Privacy Statement by posting an updated privacy statement on this website. You are advised to check for updates when visiting this website.
+        <br>
+        <hr>
+        <br>
+    </div>
+
+  </main>
+  <footer>
+    <nav class="navbar bg-warning" id="navacc">
+      <div class="container-fluid">
+        <!-- about, contact, terms and privacy -->
+        <ul class="d-flex">
+          <a class="navbar-brand" href="/about" style="margin-top: 5px;">About us</a>
+          <a class="navbar-brand" href="/contactus" style="margin-top: 5px;">Contact us</a>
+          <a class="navbar-brand" href="./terms.html" style="margin-top: 5px; margin-left: 2px;">Terms</a>
+          <a class="navbar-brand" href="./privacy.html" style="margin-top: 5px; margin-left: 2px;">Privacy</a>
+        </ul>
+        <!-- socials -->
+        <ul class="d-flex">
+          <a class="navbar-brand" href="/" style="margin-top: 5px; margin-left: 5px;"><i class="bi bi-twitter"></i></a>
+          <a class="navbar-brand" href="/" style="margin-top: 5px; margin-left: 5px;"><i class="bi bi-instagram"></i></a>
+          <a class="navbar-brand" href="/" style="margin-top: 5px; margin-left: 5px;"><i class="bi bi-facebook"></i></a>
+        </ul>
+      </div>
+    </nav>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3" crossorigin="anonymous"></script>
+  <script src="https://kit.fontawesome.com/0ca80f36f5.js" crossorigin="anonymous"></script>
+</body>
+</html>

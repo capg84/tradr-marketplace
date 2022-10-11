@@ -157,12 +157,12 @@
 
 /* All products */
 #AllProducts {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background-color: #909090;
-    height: 60px;
-  }
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #909090;
+  height: 60px;
+}
 
 .current-page-text {
   font-size: 30px;
@@ -387,5 +387,10 @@
 
 /* ABOUTUS */
 #aboutus {
+  margin: 50px 200px;
+}
+
+/* TERMS */
+.terms {
   margin: 50px 200px;
 }

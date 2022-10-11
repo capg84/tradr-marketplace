@@ -451,6 +451,15 @@ footer {
     margin-left: 10%;
   }
 }
+
+/* category page */
+#cattext {
+  margin: 2% 0 2% 2%;
+  font-family: 'Nunito', 'sans-serif';
+  font-size: 3rem;
+  font-weight: 800;
+}
+
 /* TERMS */
 .terms {
   margin: 50px 200px;

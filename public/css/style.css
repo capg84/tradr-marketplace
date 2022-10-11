@@ -445,13 +445,19 @@ footer {
   font-weight: 600;
 }
 
-
-
-
 /* Small smartphones */
   
 @media screen and (max-width: 576px) {
   .prodimgcont {
     margin-left: 10%;
   }
+}
+
+/* category page */
+
+#cattext {
+  margin: 2% 0 2% 2%;
+  font-family: 'Nunito', 'sans-serif';
+  font-size: 3rem;
+  font-weight: 800;
 }

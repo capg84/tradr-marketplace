@@ -35,7 +35,7 @@
         "product_name": "NINJA Foodi Dual Zone 7.6L Air Fryer",
         "description": "2 FOODS, 2 WAYS TO COOK. The air fryer that cooks 2 foods, 2 ways, and finishes at the same time. With 2 separate cooking drawers, you can cook different foods with different temperatures, times and functions",
         "price": 199.99,
-        "image": "/images/Nike air.webp",
+        "image": "/images/airfryer.webp", 
         "stock": 10,
         "category_id": 4,
         "user_id": 4
@@ -46,7 +46,7 @@
         "product_name": "Xbox Series S",
         "description": "peed and performance of a next-gen all-digital console at an accessible price point. Get started with an instant library of 100+ high quality games",
         "price": 249.99,
-        "image": "/images/xbox.webp",
+        "image": "/images/xbox.jpg",
         "stock": 63,
         "category_id": 1,
         "user_id": 1
@@ -56,7 +56,7 @@
         "product_name": "Nike Air Jordan Point Lane",
         "description": "The Jordan Point Lane mixes elements from game shoes MJ w",
         "price": 109.00,
-        "image": "/images/jordans.jpg",
+        "image": "/images/jordans.webp", 
         "stock": 33,
         "category_id": 2,
         "user_id": 2
@@ -67,7 +67,7 @@
         "product_name": "All Saints BRACE PULLOVER HOODIE",
         "description": "The Brace Hoodie. Cut from pure cotton ",
         "price": 109.00,
-        "image": "/images/hoodie.webp",
+        "image": "/images/hoodie.jpeg",
         "stock": 26,
         "category_id": 3,
         "user_id": 3
@@ -77,7 +77,7 @@
         "product_name": "Samsung 8 Series RH68B8830S9 Freestanding 65/35 American Fridge Freezer, Silver",
         "description": "This American-style fridge freezer from Samsung boasts a spac",
         "price": 2099.00,
-        "image": "/images/Nike air.webp",
+        "image": "/images/fridge.webp",
         "stock": 4,
         "category_id": 4,
         "user_id": 4
@@ -97,7 +97,7 @@
         "product_name": "3PC Corner Sofa Rattan Lounger Set",
         "description": "Rattan set includes following. 1 x Three Seat Rattan Sofa- 1",
         "price": 100.00,
-        "image": "/images/sofa.webp",
+        "image": "/images/sofa.jpg",
         "stock": 4,
         "category_id": 6,
         "user_id": 2

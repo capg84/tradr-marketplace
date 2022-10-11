@@ -18,7 +18,10 @@
                         <h2 class="product-title">{{product.product_name}}Product Name</h2>
                         <p class="product-price">{{product.price}}£28.00</p>
                         <p class="product-description">{{product.description}}Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo.</p>
-                        <p id="quantity">Quantity</p>
+                    <div class="qty">
+                    <label id="quantity" for="quantity">Quantity:</label>
+                    <input type="number" id="quantity" name="quantity" min="1" max="{{product.stock}}" value="1"> 
+                    </div>
                         <button type="submit" class="btn btn-dark btn-styling">Add to Cart</button>
                     </div>
                 </div>

@@ -469,6 +469,9 @@ footer {
 /* listing container */
 .createcont {
   margin: 5% 5% 10% 5%;
+  background-color: #333;
+  color: antiquewhite;
+  padding: 5%;
 }
 
 /* price quantity container */

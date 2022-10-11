@@ -1,5 +1,5 @@
 const signupFormHandler = async (event) => {
-  console.log("Sign up button clicked");
+    console.log("Sign up button clicked");
     event.preventDefault();
 
     const name = document.querySelector('#inputName2').value.trim();

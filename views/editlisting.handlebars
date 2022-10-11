@@ -1,0 +1,42 @@
+<a href="/dashboard" class="go-back"> &larr; Back to dashboard</a>
+<br>
+<div class="createcont">
+    <h2 class="createheading">Edit listing</h2>
+    <br>
+    <form class="new-listing-form" >
+        <div class="mb-3">
+            <label for="product_name" class="form-label">Product Name</label>
+            <input type="text" class="form-control" id="product_name" placeholder="Insert your product title" value="{{product.product_name}}">
+        </div>
+        <div class="mb-3">
+            <label for="description" class="form-label">Product description</label>
+            <textarea class="form-control" id="description" rows="3">{{poduct.description}}</textarea>
+        </div>
+        <div class="row" id="price-qty-cont">
+            <div class="col">
+                <label for="product_price" class="form-label">Price</label>
+                <input type="number" class="form-control" id="product_price" placeholder="price in £" value="£{{product.price}}">
+            </div>
+            <div class="col">
+                <label for="stock" class="form-label">Quantity</label>
+                <input type="number" class="form-control" id="stock" value="{{product.stock}}">
+            </div>
+        </div>
+        <select class="form-select" aria-label="select-category" style="margin-bottom: 3%;">
+            <option selected disabled>Category</option>
+            <option value="1">Clothing</option>
+            <option value="2">Shoes</option>
+            <option value="3">Accessories</option>
+            <option value="4">Beauty</option>
+            <option value="5">Homeware</option>
+            <option value="6">Electronics</option>
+        </select>
+        <form action="upload.php" method="post" enctype="multipart/form-data" id="uploadcont">
+            <p>Select image to upload:</p>
+            <input type="file" name="fileToUpload" id="fileToUpload">
+            <input class="btn btn-secondary" type="submit" value="Upload Image" name="submit">
+        </form>
+        <button type="submit" class="btn btn-primary" id="update-btn">Update</button><button type="button" class="btn btn-danger" id="delete-btn" data-id="1">Delete</button>
+    </form>
+</div>
+ <br>

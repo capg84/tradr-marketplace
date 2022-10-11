@@ -121,7 +121,7 @@
   /* sets the bottom margin of the hero elememt */
   margin-bottom: 25px;
   /*sets the background image of the hero element */
-  background-image: url("./images/Hero.png");
+  background-image: url("../images/Hero.png");
   /* sets the background size and position of the hero element */
   background-size: cover;
   /* object-fit: cover; */
@@ -494,6 +494,16 @@ footer {
 
 #delete-btn {
   margin-left: 5%;
+}
+
+/* wishlist container */
+#heart {
+  margin-left: 10%;
+}
+
+.heart-prod-name {
+  display: flex;
+  justify-content: flex-start;
 }
 
 /* contact us form */

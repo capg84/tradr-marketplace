@@ -20,6 +20,26 @@ router.post('/', async (req, res) => {
     }
   });
 
+router.get('/edit/:id', withAuth, async (req, res) => {
+    try {
+      const productData = await Product.findByPk(req.params.id);
+      
+      if (!productData) {
+        res.status(404).json({ message: 'No product found with this id!' });
+        return;
+      }
+      const product = productData.get({ plain: true });
+      console.log(product);
+      res.render('editlisting', {
+        product,
+        logged_in: req.session.logged_in
+      });
+    } catch (err) {
+      res.status(500).json(err);
+    }
+});
+
+
 router.post('/login', async (req, res) => {
     try {
       const userData = await User.findOne({ where: { email: req.body.email } });

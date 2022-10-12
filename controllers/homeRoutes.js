@@ -70,6 +70,26 @@ router.get('/', withAuth, async (req, res) => {
   }
 });
 
+router.get('/wishlist', withAuth, async (req, res) => {
+  try {
+    const wishlistData = await Wishlist.findAll({
+      where: {
+        userId: req.session.userId,
+      },
+      include: [{model: Product}]
+    });
+
+    const wishlists = wishlistData.map((wishlist) => wishlist.get({ plain: true }));
+
+    res.render('home', {
+      layout: 'main',
+      wishlists,
+    });
+  } catch (err) {
+    res.redirect('login');
+  }
+});
+
 router.get('/login', (req, res) => {
   // If the user is already logged in, redirect the request to another route
   if (req.session.logged_in) {

@@ -6,7 +6,7 @@ const Product = require('./Product');
 const Wishlist = require('./Wishlist');
 const Address = require('./Address');
 const Purchase = require('./Purchase');
-const Order = require('Order');
+const Order = require('./Order');
 
 User.belongsTo(Cart, {
     foreignKey: 'user_id',

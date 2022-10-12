@@ -27,11 +27,10 @@
             <option value="5">Homeware</option>
             <option value="6">Electronics</option>
         </select>
-        <form action="upload.php" method="post" enctype="multipart/form-data" id="uploadcont">
-            <p>Select image to upload:</p>
-            <input type="file" name="fileToUpload" id="fileToUpload">
-            <input class="btn btn-secondary" type="submit" value="Upload Image" name="submit">
-        </form>
+        <div class="mb-3">
+            <label for="image" class="form-label">Image link</label>
+            <textarea class="form-control" id="image" rows="3" placeholder="Please enter an Image url"></textarea>
+        </div>
         <button type="submit" class="btn btn-primary" id="create-btn">Submit</button>
     </form>
 </div>

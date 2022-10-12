@@ -1,30 +1,30 @@
 [
   {
     "id": 1,
-    "category_name": "Electronics"
+    "category_name": "electronics"
   },
   {
     "id": 2,
-    "category_name": "Shoes"
+    "category_name": "shoes"
   },
   {
     "id": 3,
-    "category_name": "Clothing"
+    "category_name": "clothing"
   },
   {
     "id": 4,
-    "category_name": "Accessories"
+    "category_name": "accessories"
   },
   {
     "id": 5,
-    "category_name": "Beauty"
+    "category_name": "beauty"
   },
   {
     "id": 6,
-    "category_name": "Garden"
+    "category_name": "garden"
   },
   {
     "id": 7,
-    "category_name": "Home"
+    "category_name": "homeware"
   }
 ]

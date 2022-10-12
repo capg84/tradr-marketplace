@@ -25,6 +25,20 @@ router.get('/', async (req, res) => {
   }
 });
 
+router.get('/categories', async (req, res) => {
+  try {
+    const categoryData = await Category.findAll({
+      include: [Product],
+    });
+
+    const categories = categoryData.map((category) => category.get({ plain: true }));
+
+    res.render('category', { categories });
+  } catch (err) {
+    res.status(500).json(err);
+  }
+});
+
 router.get('/product/:id', async (req, res) => {
   try {
     const productData = await Product.findByPk(req.params.id, {
@@ -74,7 +88,7 @@ router.get('/wishlist', withAuth, async (req, res) => {
   try {
     const wishlistData = await Wishlist.findAll({
       where: {
-        userId: req.session.userId,
+        user_id: req.session.user_id,
       },
       include: [{model: Product}],
     });
@@ -89,6 +103,7 @@ router.get('/wishlist', withAuth, async (req, res) => {
     res.redirect('login');
   }
 });
+
 
 router.get('/login', (req, res) => {
   // If the user is already logged in, redirect the request to another route
@@ -109,7 +124,7 @@ router.get('/signup', (req, res) => {
     }
   
     res.render('signup');
-  });
+});
 
 
 module.exports = router;

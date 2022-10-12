@@ -525,3 +525,77 @@ footer {
 .form-group {
   margin: 15px;
 }
+
+/* dashboard page */
+/* side nav for dashboard*/
+#wrapper #dashnav {
+  /* width: 300px;
+  height: 100%; */
+  background: #230820;
+  padding: 30px 0px;
+  min-width: 278px;
+  min-height: 100%;
+}  
+
+#wrapper #dashnav h3 {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+main, .main {
+  margin-bottom: 30px;
+}
+
+#wrapper #dashnav ul li {
+  padding: 15px;
+  border-bottom: solid rgba(0,0,0,0.05);
+  border-top: solid rgba(225,225,225,0.05);
+}
+
+#wrapper #dashnav ul li a {
+  display: block;
+}
+
+#wrapper #dashnav ul li a .fa-solid {
+  width: 25px;
+}
+
+#wrapper #dashnav ul li:hover {
+  background: #56144D;
+}
+
+#wrapper #dashnav ul li:active {
+  background: #56144D;
+}
+
+#wrapper .main {
+  width: 100%;
+  margin-left: 300px;
+}
+
+#wrapper .main .header {
+  padding: 20px;
+}
+
+
+
+@media screen and (min-width: 1060px) {
+  #wrapper #dashnav {
+    height: 120%;
+  }
+}
+
+@media screen and (min-width: 994px) {
+  #wrapper #dashnav {
+    height: 110%;
+  }
+
+  .row .main .mainbody {
+    margin-left: 5%;
+  }
+
+  .row .main .header {
+    margin-left: 5%;
+  }
+}
+/* end dashboard */

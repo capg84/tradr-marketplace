@@ -25,39 +25,30 @@ router.get('/', async (req, res) => {
   }
 });
 
-router.get('/category/beauty', async (req, res) => {
+// get single post
+router.get('/category/:id', async (req, res) => {
   try {
-    const categoryData = await Category.findAll({
-      where: {
-        category_name: "beauty",
-      },
-      include: [Product],
+    const categoryData = await Category.findByPk(req.params.id, {
+      include: [
+        {
+          model: Product,
+          attributes: ['product_name', 'price', 'image'],
+        },
+      ],
     });
 
-    const categories = categoryData.map((category) => category.get({ plain: true }));
+    if (categoryData) {
+      const category = categoryData.get({ plain: true });
 
-    res.render('category', { categories });
+      res.render('category', { category });
+    } else {
+      res.status(404).end();
+    }
   } catch (err) {
     res.status(500).json(err);
   }
 });
 
-router.get('/category/electronics', async (req, res) => {
-  try {
-    const categoryData = await Category.findAll({
-      where: {
-        category_name: "electronics",
-      },
-      include: [Product],
-    });
-
-    const categories = categoryData.map((category) => category.get({ plain: true }));
-
-    res.render('category', { categories });
-  } catch (err) {
-    res.status(500).json(err);
-  }
-});
 
 router.get('/product/:id', async (req, res) => {
   try {
@@ -65,7 +56,7 @@ router.get('/product/:id', async (req, res) => {
       include: [
         {
           model: User,
-          attributes: ['name'],
+          attributes: ['first_name'],
         },
         {
             model: Category,

@@ -31,6 +31,10 @@ Product.init(
             type: DataTypes.INTEGER,
             allowNull: false,
         },
+        featured: {
+            type: DataTypes.BOOLEAN,
+            allowNull: false,
+        },
         category_id: {
             type: DataTypes.INTEGER,
             allowNull: false,
@@ -47,7 +51,6 @@ Product.init(
                 key: 'id',
             },
         },
-
     },
     {
         sequelize,

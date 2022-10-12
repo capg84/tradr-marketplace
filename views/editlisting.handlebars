@@ -27,10 +27,10 @@
             <option value="5">Homeware</option>
             <option value="6">Electronics</option>
         </select>
-        <div class="col">
-            <label for="image" class="form-label">Image Link</label>
-            <input type="image" class="form-control" id="image" placeholder="image url" value="£{{product.image}}">
-        </div>
+                <div class="mb-3">
+                  <label for="image" class="form-label">Image link</label>
+                  <textarea class="form-control" id="image" rows="3" placeholder="Image url">{{product.image}}</textarea>
+                </div>
         <button type="submit" class="btn btn-primary" id="update-btn" data-id="{{product.id}}">Update</button><button type="button" class="btn btn-danger" id="delete-btn2" data-id="1">Delete</button>
     </form>
 </div>

@@ -124,7 +124,7 @@
     },
     {   
         "id": 13,
-        "product_name": "GG Matelassé mini bag in black",
+        "product_name": "GG Matelassé mini bag in Black",
         "description": "Black GG Matelassé leather,Gold-toned hardware, Cotton linen lining ,Double G, This style is sold with an additional shoulder strap which can be attached to the bag with a buckle closure, W19cm x H13cm x D11cm. Made in Italy",
         "price": 1900.00,
         "image": "/images/GBlackbag.webp",
@@ -141,5 +141,35 @@
         "stock": 1,
         "category_id": 4,
         "user_id": 3
+    },
+    {   
+        "id": 15,
+        "product_name": "Pure Shots Lines Away Serum",
+        "description": "HELPS TO REDUCE THE APPEARANCE OF LINES AND WRINKLES LINES AWAY SERUM contains 0.01% Hyaluronic Acid",
+        "price": 59.00,
+        "image": "/images/yslserum.jpeg",
+        "stock": 1,
+        "category_id": 5,
+        "user_id": 3
+    },
+    {   
+        "id": 16,
+        "product_name": "Rouge Pur Couture THE BOLD",
+        "description": "Couture shine SO INTENSE yet so thin in a buildable texture",
+        "price": 32.00,
+        "image": "/images/yslstick.jpeg",
+        "stock": 1,
+        "category_id": 5,
+        "user_id": 1
+    },
+    {   
+        "id": 17,
+        "product_name": "Rouge Pur Couture THE BOLD in Red",
+        "description": "Couture shine SO INTENSE yet so thin in a buildable texture",
+        "price": 32.00,
+        "image": "/images/yslstickred.jpeg",
+        "stock": 1,
+        "category_id": 5,
+        "user_id": 4
     }
-    ]
+]

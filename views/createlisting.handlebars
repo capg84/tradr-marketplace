@@ -1,5 +1,4 @@
-<a href="/dashboard" class="go-back"> &larr; Back to dashboard</a>
-<br>
+
 <div class="createcont">
     <h2 class="createheading">Create a new listing</h2>
     <br>
@@ -17,10 +16,6 @@
                 <label for="product_price" class="form-label">Price</label>
                 <input type="number" class="form-control" id="product_price" placeholder="price in £">
             </div>
-            <div class="col">
-                <label for="stock" class="form-label">Quantity</label>
-                <input type="number" class="form-control" id="stock">
-            </div>
         </div>
         <select class="form-select" aria-label="select-category" style="margin-bottom: 3%;">
             <option selected disabled>Category</option>
@@ -31,11 +26,10 @@
             <option value="5">Homeware</option>
             <option value="6">Electronics</option>
         </select>
-        <form action="upload.php" method="post" enctype="multipart/form-data" id="uploadcont">
-            <p>Select image to upload:</p>
-            <input type="file" name="fileToUpload" id="fileToUpload">
-            <input class="btn btn-secondary" type="submit" value="Upload Image" name="submit">
-        </form>
+        <div class="mb-3">
+            <label for="image" class="form-label">Image link</label>
+            <textarea class="form-control" id="image" rows="3" placeholder="Please enter an Image url"></textarea>
+        </div>
         <button type="submit" class="btn btn-primary" id="create-btn">Submit</button>
     </form>
 </div>

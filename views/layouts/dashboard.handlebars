@@ -1,0 +1,137 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Tradr</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css2?family=PT+Sans:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,200;1,300;1,400;1,500;1,900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/bootstrap-icons.css">
+    <link rel="apple-touch-icon" sizes="180x180" href="./images/favicon_io-2/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon_io-2/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="./images/favicon_io-2/favicon-16x16.png">
+    <link rel="manifest" href="/site.webmanifest">
+    <link rel="stylesheet" href="./style.css" />
+  </head>
+<body>
+  <header>
+    <!-- First Navbar -->
+    <nav class="navbar bg-light" id="navacc">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="/">
+          <h1 id="tradr">
+            <span>Tradr</span>
+            <div class="message">
+              <div class="word1">Buy</div>
+              <div class="word2">Sell</div>
+              <div class="word3">Trade</div>
+            </div>
+          </h1>
+        </a>
+        <form class="d-flex justify-content-center" role="search">
+          <input class="form-control me-2" type="search" placeholder="Search for items" aria-label="Search" style="width: 450px;">
+          <button class="btn btn-outline-success" type="submit">Search</button>
+        </form>
+ 
+        <ul class="d-flex">
+          <a class="navbar-brand active btn btn-danger" href="/" id="logout-btn" style="margin-top: 5px;">Logout</a>
+          <a class="navbar-brand" href="/" style="margin-top: 5px; margin-left: 2px;"><i class="fa-solid fa-heart"></i> wishlist</a>
+          <a class="navbar-brand" href="/cart" style="margin-top: 5px; margin-left: 2px;"><i class="bi bi-cart4"></i> Your basket</a>
+        </div>
+      </div>
+    </nav>
+    <!-- End of first Nav -->
+        <!-- Second Navbar -->
+        <nav class="navbar navbar-expand-lg bg-dark" id="secondnav">
+            <div class="container-fluid">
+              <a class="navbar-brand" href="/" style="color: white; font-size: 1.5rem;">Homepage</a>
+              <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+              </button>
+              <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav">
+                  <li class="nav-item" style="margin-left: 50px;">
+                    <a class="nav-link active" aria-current="/products/clothing" href="#" style="color: white; font-size: 1.3rem;">Clothing</a>
+                  </li>
+                  <li class="nav-item" style="margin-left: 20px;">
+                    <a class="nav-link active" href="/products/shoes" style="color: white; font-size: 1.3rem;">Shoes</a>
+                  </li>
+                  <li class="nav-item" style="margin-left: 20px;">
+                    <a class="nav-link active" href="/products/accessories" style="color: white; font-size: 1.3rem;">Accessories</a>
+                  </li>
+                  <li class="nav-item" style="margin-left: 20px;">
+                    <a class="nav-link active" href="/products/beauty" style="color: white; font-size: 1.3rem;">Beauty</a>
+                  </li>
+                  <li class="nav-item" style="margin-left: 20px;">
+                    <a class="nav-link active" href="/products/homeware" style="color: white; font-size: 1.3rem;">Homeware</a>
+                  </li>
+                  <li class="nav-item" style="margin-left: 20px;">
+                    <a class="nav-link active" href="/products/electronics" style="color: white; font-size: 1.3rem;">Electronics</a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+        </nav>
+        <!-- End of second Navbar -->
+  </header>
+  <main>
+    <div class="row justify-content-between"> 
+        <!-- Dashboard Nav -->
+        <div class="col-lg-2 col-md-4 col-sm-6" id="wrapper">
+            <nav id="dashnav">
+                <ul class="nav flex-sm-column">
+                    <a class="nav-link disabled" href="#" style="color: white;"><h3 style="color: white;"> Your Dashboard</h3></a>
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="/" style="color: white;"><i class="fa-solid fa-house-chimney"></i>HOME</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/dashboard/purchases" style="color: white;"><i class="fa-solid fa-bag-shopping"></i>PURCHASES</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/dashboard/address" style="color: white;"><i class="fa-solid fa-address-card"></i>ADDRESSES</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/" style="color: white;"><i class="fa-solid fa-chart-line"></i>SELLER STATS</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/dashboard/createlisting" style="color: white;"><i class="fa-solid fa-square-plus"></i>CREATE NEW LISTING</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/dashboard" style="color: white;"><i class="fa-solid fa-circle-check"></i>ACTIVE LISTING</a>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+        <!-- End Dashboard nav -->
+        <div class="main col-9">
+        {{{body}}}
+        </div>
+    </div>
+    </main>
+    <br>
+  <footer>
+      <nav class="navbar bg-warning" id="navacc">
+        <div class="container-fluid">
+          <!-- about, contact, terms and privacy -->
+          <ul class="d-flex">
+            <a class="navbar-brand" href="/about" style="margin-top: 5px;">About us</a>
+            <a class="navbar-brand" href="/contactus" style="margin-top: 5px;">Contact us</a>
+            <a class="navbar-brand" href="/" style="margin-top: 5px; margin-left: 2px;">Terms</a>
+            <a class="navbar-brand" href="/cart" style="margin-top: 5px; margin-left: 2px;">Privacy</a>
+          </ul>
+          <!-- socials -->
+          <ul class="d-flex">
+            <a class="navbar-brand" href="/" style="margin-top: 5px; margin-left: 5px;"><i class="bi bi-twitter"></i></a>
+            <a class="navbar-brand" href="/" style="margin-top: 5px; margin-left: 5px;"><i class="bi bi-instagram"></i></a>
+            <a class="navbar-brand" href="/" style="margin-top: 5px; margin-left: 5px;"><i class="bi bi-facebook"></i></a>
+          </ul>
+        </div>
+      </nav>
+    </footer>
+  
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3" crossorigin="anonymous"></script>
+    <script src="https://kit.fontawesome.com/0ca80f36f5.js" crossorigin="anonymous"></script>
+</body>
+</html>

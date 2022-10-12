@@ -37,7 +37,7 @@
         "price": 199.99,
         "image": "/images/airfryer.webp", 
         "stock": 10,
-        "category_id": 4,
+        "category_id": 7,
         "user_id": 4
     
     },
@@ -79,7 +79,7 @@
         "price": 2099.00,
         "image": "/images/fridge.webp",
         "stock": 4,
-        "category_id": 4,
+        "category_id": 7,
         "user_id": 4
     },
     {   
@@ -89,7 +89,7 @@
         "price": 2099.00,
         "image": "/images/driver.webp",
         "stock": 17,
-        "category_id": 5,
+        "category_id": 1,
         "user_id": 1
     },
     {   

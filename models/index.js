@@ -82,6 +82,15 @@ Product.belongsTo(User, {
     foreignKey: 'user_id',
 });
 
+User.hasMany(Purchase, {
+    foreignKey: 'user_id',
+
+});
+
+Purchase.belongsTo(User, {
+    foreignKey: 'user_id',
+});
+
 // Products belongToMany Purchase (through Order)
 Product.belongsToMany(Purchase, {
     through: {
@@ -99,4 +108,4 @@ Purchase.belongsToMany(Product, {
 });
 
 
-module.exports = { Address, Cart, Category, Payment, Product, User, Wishlist };
+module.exports = { Address, Cart, Category, Payment, Product, User, Wishlist, Purchase, Order };

@@ -1,5 +1,6 @@
 const sequelize = require('../config/connection');
-const { User, Category, Payment, Product, Address, Wishlist, Cart } = require('../models');
+
+const { User, Category, Payment, Product, Address, Purchase, Order, Wishlist, Cart } = require('../models');
 
 const userData = require('./user.json');
 const categoryData = require('./category.json');
@@ -8,11 +9,13 @@ const paymentData = require('./payment.json');
 const addressData = require('./address.json');
 const wishlistData = require('./wishlist.json');
 const cartData = require('./cart.json');
+const purchaseData = require('./purchase.json');
+const orderData = require('./order.json');
+
 
 const seedDatabase = async () => {
-  await sequelize.sync({ force: true });
-
-  const users = await User.bulkCreate(userData, {
+  
+    const users = await User.bulkCreate(userData, {
     individualHooks: true,
     returning: true,
   });
@@ -40,6 +43,11 @@ const seedDatabase = async () => {
   const cart = await Cart.bulkCreate(cartData, {
     returning: true,
   });
+  await Purchase.bulkCreate(purchaseData);
+  console.log('\n----- PURCHASES SYNCED -----\n');
+  await Order.bulkCreate(orderData);
+  console.log('\n----- ORDERS SYNCED -----\n');
+
 
   process.exit(0);
 }

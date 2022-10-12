@@ -76,7 +76,7 @@ router.get('/wishlist', withAuth, async (req, res) => {
       where: {
         userId: req.session.userId,
       },
-      include: [{model: Product}]
+      include: [{model: Product}],
     });
 
     const wishlists = wishlistData.map((wishlist) => wishlist.get({ plain: true }));

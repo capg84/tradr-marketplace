@@ -1,5 +1,5 @@
 const router = require('express').Router();
-const {Product, Purchase, Address, Category} = require('../models');
+const {Product, Purchase, Address, Category, Order} = require('../models');
 const withAuth = require('../utils/auth');
 
 // GET ALL ACTIVELISTINGS
@@ -72,6 +72,7 @@ router.get('/purchases', withAuth, async (req, res) => {
         where: {
           user_id: req.session.user_id,
         },
+        include: [{model: Category}, {model: Product, through: Order}],
       });
   
       const purchases = purchaseData.map((purchase) => purchase.get({ plain: true }));

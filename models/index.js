@@ -82,6 +82,21 @@ Product.belongsTo(User, {
     foreignKey: 'user_id',
 });
 
+// Products belongToMany Purchase (through Order)
+Product.belongsToMany(Purchase, {
+    through: {
+      model: Order,
+    //   unique: false
+    }
+});
+
+// Purchase belongToMany Products (through Order)
+Purchase.belongsToMany(Product, {
+    through: {
+      model: Order,
+    //   unique: false
+    }
+});
 
 
 module.exports = { Address, Cart, Category, Payment, Product, User, Wishlist };

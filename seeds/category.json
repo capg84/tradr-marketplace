@@ -1,11 +1,11 @@
 [
   {
     "id": 1,
-    "category_name": "electronics"
+    "category_name": "Electronics"
   },
   {
     "id": 2,
-    "category_name": "Trainers"
+    "category_name": "Shoes"
   },
   {
     "id": 3,
@@ -13,11 +13,11 @@
   },
   {
     "id": 4,
-    "category_name": "Kitchenware"
+    "category_name": "Accessories"
   },
   {
     "id": 5,
-    "category_name": "Tools"
+    "category_name": "Beauty"
   },
   {
     "id": 6,

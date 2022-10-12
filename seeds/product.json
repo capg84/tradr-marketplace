@@ -6,6 +6,7 @@
         "price": 299.99,
         "image": "/images/bose-headphones.webp",
         "stock": 2,
+        "featured": true,
         "category_id": 1,
         "user_id": 1
     
@@ -16,6 +17,7 @@
         "description": "The radiance lives on in the Nike Air Force 1 '07",
         "price": 109.00,
         "image": "/images/Nike-air.webp",
+        "featured": true,
         "stock": 1,
         "category_id": 2,
         "user_id": 2
@@ -27,6 +29,7 @@
         "price": 35.00,
         "image": "/images/joggers.webp",
         "stock": 15,
+        "featured": false,
         "category_id": 3,
         "user_id": 3
     },
@@ -37,7 +40,8 @@
         "price": 199.99,
         "image": "/images/airfryer.webp", 
         "stock": 10,
-        "category_id": 4,
+        "featured": false,
+        "category_id": 7,
         "user_id": 4
     
     },
@@ -48,6 +52,7 @@
         "price": 249.99,
         "image": "/images/xbox.jpg",
         "stock": 63,
+        "featured": true,
         "category_id": 1,
         "user_id": 1
     },
@@ -58,6 +63,7 @@
         "price": 109.00,
         "image": "/images/jordans.webp", 
         "stock": 33,
+        "featured": true,
         "category_id": 2,
         "user_id": 2
     
@@ -69,6 +75,7 @@
         "price": 109.00,
         "image": "/images/hoodie.jpeg",
         "stock": 26,
+        "featured": false,
         "category_id": 3,
         "user_id": 3
     },
@@ -79,7 +86,8 @@
         "price": 2099.00,
         "image": "/images/fridge.webp",
         "stock": 4,
-        "category_id": 4,
+        "featured": false,
+        "category_id": 7,
         "user_id": 4
     },
     {   
@@ -89,7 +97,8 @@
         "price": 2099.00,
         "image": "/images/driver.webp",
         "stock": 17,
-        "category_id": 5,
+        "featured": true,
+        "category_id": 1,
         "user_id": 1
     },
     {   
@@ -99,6 +108,7 @@
         "price": 100.00,
         "image": "/images/sofa.jpg",
         "stock": 4,
+        "featured": false,
         "category_id": 6,
         "user_id": 2
     },
@@ -109,7 +119,74 @@
         "price": 60.00,
         "image": "/images/art.webp",
         "stock": 9,
+        "featured": true,
         "category_id": 7,
         "user_id": 3
+    },
+    {   
+        "id": 12,
+        "product_name": "GG Matelassé mini bag in green",
+        "description": "Green GG Matelassé leather,Gold-toned hardware, Cotton linen lining ,Double G, This style is sold with an additional shoulder strap which can be attached to the bag with a buckle closure, W19cm x H13cm x D11cm. Made in Italy",
+        "price": 1900.00,
+        "image": "/images/GGreenbag.webp",
+        "stock": 1,
+        "featured": false,
+        "category_id": 4,
+        "user_id": 2
+    },
+    {   
+        "id": 13,
+        "product_name": "GG Matelassé mini bag in Black",
+        "description": "Black GG Matelassé leather,Gold-toned hardware, Cotton linen lining ,Double G, This style is sold with an additional shoulder strap which can be attached to the bag with a buckle closure, W19cm x H13cm x D11cm. Made in Italy",
+        "price": 1900.00,
+        "image": "/images/GBlackbag.webp",
+        "stock": 1,
+        "featured": true,
+        "category_id": 4,
+        "user_id": 2
+    },
+    {   
+        "id": 14,
+        "product_name": "Briefcase with Interlocking G",
+        "description": "Black GG Supreme canvas. Black leather trim with cotton linen lining, Oval leather Interlocking G tag. Inside: 1 padded laptop compartment. Outside: 1 front and 1 back open pocket. Shoulder strap with 50cm drop",
+        "price": 1490.00,
+        "image": "/images/GManBag.webp",
+        "stock": 1,
+        "featured": true,
+        "category_id": 4,
+        "user_id": 3
+    },
+    {   
+        "id": 15,
+        "product_name": "Pure Shots Lines Away Serum",
+        "description": "HELPS TO REDUCE THE APPEARANCE OF LINES AND WRINKLES LINES AWAY SERUM contains 0.01% Hyaluronic Acid",
+        "price": 59.00,
+        "image": "/images/yslserum.jpeg",
+        "stock": 1,
+        "featured": true,
+        "category_id": 5,
+        "user_id": 3
+    },
+    {   
+        "id": 16,
+        "product_name": "Rouge Pur Couture THE BOLD",
+        "description": "Couture shine SO INTENSE yet so thin in a buildable texture",
+        "price": 32.00,
+        "image": "/images/yslstick.jpeg",
+        "stock": 1,
+        "featured": true,
+        "category_id": 5,
+        "user_id": 1
+    },
+    {   
+        "id": 17,
+        "product_name": "Rouge Pur Couture THE BOLD in Red",
+        "description": "Couture shine SO INTENSE yet so thin in a buildable texture",
+        "price": 32.00,
+        "image": "/images/yslstickred.jpeg",
+        "stock": 1,
+        "featured": false,
+        "category_id": 5,
+        "user_id": 4
     }
-    ]
+]

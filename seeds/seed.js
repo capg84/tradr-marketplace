@@ -1,38 +1,37 @@
 const sequelize = require('../config/connection');
-const { User, Category, Payment, Product, Address } = require('../models');
+const { User, Category, Payment, Product, Address, Purchase, Order } = require('../models');
 
 const userData = require('./user.json');
 const categoryData = require('./category.json');
 const productData = require('./product.json');
 const paymentData = require('./payment.json');
 const addressData = require('./address.json');
+const purchaseData = require('./purchase.json');
+const orderData = require('./order.json');
 
 const seedDatabase = async () => {
   await sequelize.sync({ force: true });
-
-  const users = await User.bulkCreate(userData, {
+  console.log('\n----- DATABASE SYNCED -----\n');
+  await User.bulkCreate(userData, {
     individualHooks: true,
     returning: true,
   });
-
-  const categories = await Category.bulkCreate(categoryData, {
-    returning: true,
-  });
-
-
-  const payments = await Payment.bulkCreate(paymentData, {
+  console.log('\n----- USERS SYNCED -----\n');
+  await Category.bulkCreate(categoryData);
+  console.log('\n----- CATEGORIES SYNCED -----\n');
+  await Payment.bulkCreate(paymentData, {
     individualHooks: true,
     returning: true,
   });
-
-  const address = await Address.bulkCreate(addressData, {
-    returning: true,
-  });
-
-  const products = await Product.bulkCreate(productData, {
-    returning: true,
-  });
-
+  console.log('\n----- PAYMENTS SYNCED -----\n');
+  await Address.bulkCreate(addressData);
+  console.log('\n----- ADDRESSES SYNCED -----\n');
+  await Product.bulkCreate(productData);
+  console.log('\n----- PRODUCTS SYNCED -----\n');
+  await Purchase.bulkCreate(purchaseData);
+  console.log('\n----- PURCHASES SYNCED -----\n');
+  await Order.bulkCreate(orderData);
+  console.log('\n----- ORDERS SYNCED -----\n');
   process.exit(0);
 }
 seedDatabase();

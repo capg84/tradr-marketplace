@@ -25,9 +25,29 @@ router.get('/', async (req, res) => {
   }
 });
 
-router.get('/categories', async (req, res) => {
+router.get('/category/beauty', async (req, res) => {
   try {
     const categoryData = await Category.findAll({
+      where: {
+        category_name: "beauty",
+      },
+      include: [Product],
+    });
+
+    const categories = categoryData.map((category) => category.get({ plain: true }));
+
+    res.render('category', { categories });
+  } catch (err) {
+    res.status(500).json(err);
+  }
+});
+
+router.get('/category/electronics', async (req, res) => {
+  try {
+    const categoryData = await Category.findAll({
+      where: {
+        category_name: "electronics",
+      },
       include: [Product],
     });
 

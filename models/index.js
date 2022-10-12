@@ -1,10 +1,12 @@
 const User = require('./User')
 const Cart = require('./Cart');
-const Category = require('./Category')
-const Payment = require('./Payment')
-const Product = require('./Product')
-const Wishlist = require('./Wishlist')
+const Category = require('./Category');
+const Payment = require('./Payment');
+const Product = require('./Product');
+const Wishlist = require('./Wishlist');
 const Address = require('./Address');
+const Purchase = require('./Purchase');
+const Order = require('Order');
 
 User.belongsTo(Cart, {
     foreignKey: 'user_id',

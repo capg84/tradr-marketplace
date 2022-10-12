@@ -31,4 +31,4 @@ Purchase.init(
   }
 );
 
-module.exports = Order;
+module.exports = Purchase;

@@ -1,12 +1,38 @@
 const router = require('express').Router();
-const { Wishlist, Cart } = require('../../models');
+const { Wishlist, User, Product } = require('../../models');
 const withAuth = require('../../utils/auth');
 
-// Adds item to Cart
+
+router.post('/', async (req, res) => {
+    console.log(req, "hello")
+        try {
+            const blogs = await Wishlist.findAll({
+                where: {
+                    user_id: req.session.user_id
+                },
+    
+                attributes: ['id'],
+                include: [{ model: User, attributes: ['id'] },
+            {model: Product, attributes: ['id', 'Product_name', 'description', 'price', 'stock'] }],
+    
+            });
+            console.log(req, "hello")
+            const wishlistSerialized = products.map((product) => product.get({ plain: true }));
+            const obj = { products: wishlistSerialized, logged_in: req.session.logged_in }
+            console.log(obj, "hello")
+            res.render('wishlist', obj);
+    
+        } catch (err) {
+            res.status(500).json(err);
+        }
+    });
+
+
+// Adds item to wishlist
 router.post('/add', withAuth, async (req, res) => {
 
     try {
-        const wishlist = await Cart.create({
+        const wishlist = await Wishlist.create({
             product_id: req.body.id,
             user_id: req.session.user_id
           

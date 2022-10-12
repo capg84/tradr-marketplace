@@ -7,7 +7,7 @@ const withAuth = require('../../utils/auth');
 router.post('/add', withAuth, async (req, res) => {
 
     try {
-        const cart = await Cart({
+        const cart = await Cart.create({
             product_id: req.body.id,
             user_id: req.session.user_id,
             quantity: req.body.quantity

@@ -13,7 +13,7 @@ Cart.init(
         },
         quantity: {
             type: DataTypes.INTEGER,
-            allowNull: false,
+            allowNull: false
         },
         user_id: {
             type: DataTypes.INTEGER,

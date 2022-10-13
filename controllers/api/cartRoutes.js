@@ -1,7 +1,32 @@
 const router = require('express').Router();
-const { Cart } = require('../../models');
+const { Cart, User, Product } = require('../../models');
 const withAuth = require('../../utils/auth');
 
+
+router.get('/', async (req, res) => {
+
+        try {
+            const products = await Cart.findAll({
+                where: {
+                    user_id: 2
+                },
+    
+                attributes: ['id', 'product_id'],
+                include: [{ model: User, attributes: ['id'] },
+                {model: Product, attributes: ['id', 'Product_name', 'image', 'description', 'price'] }],
+    
+            });
+
+            const cartSerialized = products.map((product) => product.get({ plain: true }));
+            const obj = { products: cartSerialized, logged_in: req.session.logged_in }
+            console.log(obj)
+            res.render('cart', obj);
+    
+        } catch (err) {
+            res.status(500).json(err);
+            
+        }
+    });
 
 // Adds item to Cart
 router.post('/add', withAuth, async (req, res) => {

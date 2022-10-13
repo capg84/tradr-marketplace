@@ -1,8 +1,8 @@
-const router = require('express').Router();
-const { Product, User, Category } = require('../models');
-const withAuth = require('../utils/auth');
+const router = require("express").Router();
+const { Product, User, Category } = require("../models");
+const withAuth = require("../utils/auth");
 
-router.get('/', async (req, res) => {
+router.get("/", async (req, res) => {
   try {
     // Get all products and JOIN with user data
     const productData = await Product.findAll({
@@ -17,33 +17,33 @@ router.get('/', async (req, res) => {
     const products = productData.map((product) => product.get({ plain: true }));
 
     // Pass serialized data and session flag into template
-    res.render('home', { 
-      products
+    res.render("home", {
+      products,
     });
   } catch (err) {
     res.status(500).json(err);
   }
 });
 
-router.get('/product/:id', async (req, res) => {
+router.get("/product/:id", async (req, res) => {
   try {
     const productData = await Product.findByPk(req.params.id, {
       include: [
         {
           model: User,
-          attributes: ['name'],
+          attributes: ["name"],
         },
         {
-            model: Category,
-            attributes: ['category_name'],
+          model: Category,
+          attributes: ["category_name"],
         },
       ],
     });
 
     const product = productData.get({ plain: true });
 
-    res.render('product', {
-      ...product
+    res.render("product", {
+      ...product,
     });
   } catch (err) {
     res.status(500).json(err);
@@ -51,46 +51,54 @@ router.get('/product/:id', async (req, res) => {
 });
 
 // Use withAuth middleware to prevent access to route
-router.get('/dashboard', withAuth, async (req, res) => {
+router.get("/dashboard", withAuth, async (req, res) => {
   try {
     // Find the logged in user based on the session ID
     const userData = await User.findByPk(req.session.user_id, {
-      attributes: { exclude: ['password'] },
+      attributes: { exclude: ["password"] },
       include: [{ model: Product }],
     });
 
     const user = userData.get({ plain: true });
 
-    res.render('dashboard', {
+    res.render("dashboard", {
       ...user,
-      logged_in: true
+      logged_in: true,
     });
   } catch (err) {
     res.status(500).json(err);
   }
 });
 
-router.get('/login', (req, res) => {
+router.get("/login", (req, res) => {
   // If the user is already logged in, redirect the request to another route
   if (!req.session.logged_in) {
-    res.render('login');
+    res.render("login");
     return;
   }
-  res.redirect('/dashboard');
-  
-
+  res.redirect("/dashboard");
 });
 
+router.get("/signup", (req, res) => {
+  // If the user is already logged in, redirect the request to another route
+  if (req.session.logged_in) {
+    res.redirect("/dashboard");
+    return;
+  }
 
-router.get('/signup', (req, res) => {
-    // If the user is already logged in, redirect the request to another route
-    if (req.session.logged_in) {
-      res.redirect('/dashboard');
-      return;
-    }
-  
-    res.render('signup');
-  });
+  res.render("signup");
+});
 
+router.get("/terms", (req, res) => {
+  res.render("terms");
+});
+
+router.get("/privacy", (req, res) => {
+  res.render("privacy");
+});
+
+router.get("/contactus", (req, res) => {
+  res.render("contactus");
+});
 
 module.exports = router;

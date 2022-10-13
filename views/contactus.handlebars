@@ -1,22 +1,33 @@
 <div class="contactUs">
   <h2>Contact us</h2>
-  <form>
+  <form action="https://formsubmit.co/cyprian.gomes@live.co.uk" method="POST">
     <div class="form-group">
       <label for="yourName">Your name</label>
-      <input class="form-control" id="yourName" placeholder="Your full name" />
+      <input
+        class="form-control"
+        id="yourName"
+        placeholder="Your full name"
+        required
+      />
     </div>
     <div class="form-group">
-      <label for="yourEmail">Email address</label>
+      <label for="yourEmail" required>Email address</label>
       <input
         type="email"
         class="form-control"
         id="yourEmail"
         placeholder="your@email.com"
+        required
       />
     </div>
     <div class="form-group">
       <label for="yourMessage">Message</label>
-      <textarea class="form-control" id="yourMessage" rows="5"></textarea>
+      <textarea
+        class="form-control"
+        id="yourMessage"
+        rows="5"
+        required
+      ></textarea>
     </div>
     <button type="submit" class="btn btn-primary form-group">Submit</button>
   </form>

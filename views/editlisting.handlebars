@@ -13,8 +13,8 @@
         </div>
         <div class="row" id="price-qty-cont">
             <div class="col">
-                <label for="product_price" class="form-label">Price</label>
-                <input type="number" class="form-control" id="product_price" placeholder="price in £" value="£{{product.price}}">
+                <label for="product_price" class="form-label">Price (£)</label>
+                <input type="decimal" class="form-control" id="product_price" placeholder="£{{product.price}}" value="{{product.price}}">
             </div>
         </div>
         <select class="form-select" aria-label="select-category" style="margin-bottom: 3%;">

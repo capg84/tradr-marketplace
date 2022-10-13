@@ -1,37 +1,61 @@
-const router = require("express").Router();
-const { Product, User, Category } = require("../models");
-const withAuth = require("../utils/auth");
+const router = require('express').Router();
+const { Product, User, Category, Wishlist } = require('../models');
+const withAuth = require('../utils/auth');
 
-router.get("/", async (req, res) => {
+// get all products for homepage
+router.get('/', async (req, res) => {
   try {
-    // Get all products and JOIN with user data
     const productData = await Product.findAll({
-      include: [
-        {
-          model: Category,
-        },
-      ],
+      include: [Category],
     });
 
-    // Serialize data so the template can read it
     const products = productData.map((product) => product.get({ plain: true }));
+    console.log(products);
 
-    // Pass serialized data and session flag into template
-    res.render("home", {
+    res.render('home', { 
       products,
+      logged_in: req.session.logged_in
     });
   } catch (err) {
     res.status(500).json(err);
   }
 });
 
-router.get("/product/:id", async (req, res) => {
+
+// get a single category
+router.get('/category/:id', async (req, res) => {
+  try {
+    const categoryData = await Category.findByPk(req.params.id, {
+      include: [{model: Product,
+        attributes: ['id', 'product_name', 'price', 'image'],
+      }
+    ],
+    });
+
+    if (categoryData) {
+      const category = categoryData.get({ plain: true });
+      console.log(category);
+      res.render('category', { 
+        category,
+        logged_in: req.session.logged_in 
+      });
+    } else {
+      res.status(404).end();
+    }
+  } catch (err) {
+    res.status(500).json(err);
+  }
+});
+
+
+router.get('/product/:id', async (req, res) => {
   try {
     const productData = await Product.findByPk(req.params.id, {
       include: [
         {
           model: User,
-          attributes: ["name"],
+          attributes: ['first_name'],
+          include: [{model: Product, attributes: ['id', 'product_name', 'price', 'image']}]
         },
         {
           model: Category,
@@ -39,50 +63,67 @@ router.get("/product/:id", async (req, res) => {
         },
       ],
     });
-
+    
+    if (productData) {
     const product = productData.get({ plain: true });
-
-    res.render("product", {
-      ...product,
+    console.log(productData);
+    res.render('product', {
+      product,
+      logged_in: req.session.logged_in
     });
+  } else {
+    res.status(404).end();
+  }
   } catch (err) {
     res.status(500).json(err);
   }
 });
 
 // Use withAuth middleware to prevent access to route
-router.get("/dashboard", withAuth, async (req, res) => {
+router.get('/', withAuth, async (req, res) => {
   try {
     // Find the logged in user based on the session ID
     const userData = await User.findByPk(req.session.user_id, {
-      attributes: { exclude: ["password"] },
-      include: [{ model: Product }],
+      attributes: { exclude: ['password'] },
+      include: [{ model: Product }, {model: Wishlist}],
     });
 
     const user = userData.get({ plain: true });
 
-    res.render("dashboard", {
-      ...user,
-      logged_in: true,
+    res.render('home', {
+      user,
+      logged_in: true
     });
   } catch (err) {
     res.status(500).json(err);
   }
 });
 
-router.get("/login", (req, res) => {
-  // If the user is already logged in, redirect the request to another route
-  if (!req.session.logged_in) {
-    res.render("login");
-    return;
+router.get('/wishlist', withAuth, async (req, res) => {
+  try {
+    const wishlistData = await Wishlist.findAll({
+      where: {
+        user_id: req.session.user_id,
+      },
+      include: [User, {model: Product}],
+    });
+
+    const wishlists = wishlistData.map((wishlist) => wishlist.get({ plain: true }));
+    console.log(wishlists);
+    res.render('wishlist', {
+      wishlists,
+      logged_in: req.session.logged_in
+    });
+  } catch (err) {
+    res.redirect('login');
   }
-  res.redirect("/dashboard");
 });
 
-router.get("/signup", (req, res) => {
+
+router.get('/login', (req, res) => {
   // If the user is already logged in, redirect the request to another route
   if (req.session.logged_in) {
-    res.redirect("/dashboard");
+    res.redirect('/');
     return;
   }
 
@@ -91,6 +132,15 @@ router.get("/signup", (req, res) => {
 
 router.get("/terms", (req, res) => {
   res.render("terms");
+});
+
+router.get('/signup', (req, res) => {
+    // If the user is already logged in, redirect the request to another route
+    if (req.session.logged_in) {
+      res.redirect('/');
+      return;
+    }
+  res.render('signup');
 });
 
 router.get("/privacy", (req, res) => {

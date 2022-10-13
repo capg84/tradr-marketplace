@@ -18,17 +18,19 @@ router.post('/', withAuth, async (req, res) => {
 // update a listing api/product/:id
 router.put('/:id', withAuth, async (req, res) => {
   try {
-    const [productArr] = await Product.update(req.body, {
+    const productData = await Product.update(req.body, {
       where: {
         id: req.params.id,
+        user_id: req.session.user_id,
       },
     });
 
-    if (productArr > 0) {
-      res.status(200).end();
-    } else {
-      res.status(404).end();
-    }
+    if (!productData) {
+        res.status(404).json({ message: 'No product found with this id!' });
+        return;
+      }
+  
+    res.status(200).json(productData);
   } catch (err) {
     res.status(500).json(err);
   }
@@ -37,17 +39,19 @@ router.put('/:id', withAuth, async (req, res) => {
 // delete a listing api/product/:id
 router.delete('/:id', withAuth, async (req, res) => {
   try {
-    const [productArr] = Post.destroy({
+    const productData = Product.destroy({
       where: {
         id: req.params.id,
+        user_id: req.session.user_id,
       },
     });
 
-    if (productArr > 0) {
-      res.status(200).end();
-    } else {
-      res.status(404).end();
-    }
+    if (!productData) {
+        res.status(404).json({ message: 'No product found with this id!' });
+        return;
+      }
+  
+      res.status(200).json(productData);
   } catch (err) {
     res.status(500).json(err);
   }

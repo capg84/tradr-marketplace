@@ -4,6 +4,7 @@ const newItemHandler = async (event) => {
     const product_name = document.querySelector('#product_name').value.trim();
     const description = document.querySelector('#description').value.trim();
     const price = document.querySelector('#product_price').value.trim();
+    const category = document.querySelector('#category').value.trim();
   
     if (title && content) {
         console.log(title + content);

@@ -4,13 +4,13 @@
         <div class="container text-center">
            <div class="row parent-row-image-only">
         <!---EACH INDIVIDUAL ITEM STARTS HERE-->
-        {{#each products as |product|}}
+        {{#each purchases}}
                 <div class="col-lg-2 col-md-4 col-sm-6 product-container2" style="margin-bottom: 20px; margin-top: 10px;" id="ftproduct">
                     <div class="row">
                         <div class="col product-overview">
                            <a href="/product/{{product.id}}"><img class="product-image-sizing" src="https://media.4rgos.it/s/Argos/tuc140625694_R_SET?w=270&h=366&qlt=75&fmt.jpeg.interlaced=true" alt="bag"></a>
-                           <a href="/product/{{product.id}}" style="text-decoration: none; color: black;"><h2 class="product-title2" id="fttitle">{{product.product_name}}</h2></a>
-                           <p class="product-price">£{{product.price}}</p>
+                           <a href="/product/{{product.id}}" style="text-decoration: none; color: black;"><h2 class="product-title2" id="fttitle">{{this.products.product_name}}</h2></a>
+                           <p class="product-price">£{{this.products.price}}</p>
                         </div>
                     </div>
                 </div>

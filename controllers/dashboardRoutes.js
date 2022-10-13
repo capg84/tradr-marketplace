@@ -12,7 +12,7 @@ router.get('/', withAuth, async (req, res) => {
       });
   
       const products = productData.map((product) => product.get({ plain: true }));
-  
+     console.log(products);
       res.render('activelistings', {
         layout: 'dashboard',
         products,
@@ -72,11 +72,11 @@ router.get('/purchases', withAuth, async (req, res) => {
         where: {
           user_id: req.session.user_id,
         },
-        include: [{model: Category}, {model: Product, through: Order}],
+        include: [{model: Product, through: Order}],
       });
   
       const purchases = purchaseData.map((purchase) => purchase.get({ plain: true }));
-  
+      console.log(purchases);
       res.render('purchases', {
         layout: 'dashboard',
         purchases,

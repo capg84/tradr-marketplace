@@ -35,7 +35,7 @@
         </form>
         <ul class="d-flex">
             {{#if logged_in}}
-          <a class="nav-link disabled">Hello <p>{{user.first_name}},</p></a>
+          <a class="nav-link disabled">Hello <p>{{this.user.first_name}},</p></a>
           <div class="dropdown container">
             <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" style="margin-top: 10px;">
               Your account
@@ -47,7 +47,7 @@
               <li><a class="dropdown-item" href="/"><i class="bi bi-escape" id="logout-btn"></i> Signout</a></li>
             </ul>
           </div>
-          <a class="navbar-brand" href="/api/wishlist" style="margin-top: 5px; margin-left: 2px;"><i class="fa-solid fa-heart"></i> wishlist</a>
+          <a class="navbar-brand" href="/wishlist" style="margin-top: 5px; margin-left: 2px;"><i class="fa-solid fa-heart"></i> wishlist</a>
           {{else}}
           <a class="navbar-brand active btn" href="/signup" style="margin-top: 5px;">Signup</a>
           <a class="navbar-brand active btn btn-primary" href="/login" style="margin-top: 5px;">Login</a>

@@ -35,7 +35,10 @@ router.get('/category/:id', async (req, res) => {
     if (categoryData) {
       const category = categoryData.get({ plain: true });
       console.log(category);
-      res.render('category', { category });
+      res.render('category', { 
+        category,
+        logged_in: req.session.logged_in 
+      });
     } else {
       res.status(404).end();
     }
@@ -77,24 +80,24 @@ router.get('/product/:id', async (req, res) => {
 });
 
 // Use withAuth middleware to prevent access to route
-// router.get('/', withAuth, async (req, res) => {
-//   try {
-//     // Find the logged in user based on the session ID
-//     const userData = await User.findByPk(req.session.user_id, {
-//       attributes: { exclude: ['password'] },
-//       include: [{ model: Product }, {model: Wishlist}],
-//     });
+router.get('/', withAuth, async (req, res) => {
+  try {
+    // Find the logged in user based on the session ID
+    const userData = await User.findByPk(req.session.user_id, {
+      attributes: { exclude: ['password'] },
+      include: [{ model: Product }, {model: Wishlist}],
+    });
 
-//     const user = userData.get({ plain: true });
+    const user = userData.get({ plain: true });
 
-//     res.render('home', {
-//       user,
-//       logged_in: true
-//     });
-//   } catch (err) {
-//     res.status(500).json(err);
-//   }
-// });
+    res.render('home', {
+      user,
+      logged_in: true
+    });
+  } catch (err) {
+    res.status(500).json(err);
+  }
+});
 
 router.get('/wishlist', withAuth, async (req, res) => {
   try {
@@ -102,14 +105,14 @@ router.get('/wishlist', withAuth, async (req, res) => {
       where: {
         user_id: req.session.user_id,
       },
-      include: [{model: Product}],
+      include: [User, {model: Product}],
     });
 
     const wishlists = wishlistData.map((wishlist) => wishlist.get({ plain: true }));
-
-    res.render('home', {
-      layout: 'main',
-      ...wishlists,
+    console.log(wishlists);
+    res.render('wishlist', {
+      wishlists,
+      logged_in: req.session.logged_in
     });
   } catch (err) {
     res.redirect('login');

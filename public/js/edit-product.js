@@ -6,7 +6,8 @@ const editListingHandler = async (event) => {
     const description = document.querySelector('#description').value.trim();
     const price = document.querySelector('#product_price').value.trim();
     const image = document.querySelector('#image').value.trim();
-    const category = document.querySelector('.form-select').value.trim();
+    const category_id = document.querySelector('.form-select').value.trim();
+    const stock = 1;
 
     if (event.target.hasAttribute('data-id')) {
         const id = event.target.getAttribute('data-id');
@@ -26,4 +27,4 @@ const editListingHandler = async (event) => {
   
 document
 .querySelector('#update-btn')
-.addEventListener('submit', editListingHandler);
+.addEventListener('click', editListingHandler);

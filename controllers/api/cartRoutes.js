@@ -11,15 +11,15 @@ router.get('/', async (req, res) => {
                     user_id: 2
                 },
     
-                attributes: ['id', 'product_id'],
-                include: [{ model: User, attributes: ['id'] },
-                {model: Product, attributes: ['id', 'Product_name', 'image', 'description', 'price'] }],
+                // attributes: ['id', 'product_id', 'user_id'],
+                include: [{model: Product }],
     
             });
-
+            
             const cartSerialized = products.map((product) => product.get({ plain: true }));
+     
             const obj = { products: cartSerialized, logged_in: req.session.logged_in }
-            console.log(obj)
+            console.log("products", obj)
             res.render('cart', obj);
     
         } catch (err) {
@@ -29,18 +29,19 @@ router.get('/', async (req, res) => {
     });
 
 // Adds item to Cart
-router.post('/add', withAuth, async (req, res) => {
+router.post('/add',  async (req, res) => {
 
     try {
         const cart = await Cart.create({
             product_id: req.body.id,
-            user_id: req.session.user_id,
+            user_id: 2,
             quantity: req.body.quantity
           
         });
 
         res.json(cart)
     } catch (err) {
+        console.log(err)
         res.status(500).json(err)
     }
 });

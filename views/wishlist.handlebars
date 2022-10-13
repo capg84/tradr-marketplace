@@ -13,17 +13,17 @@
                         <img class="product-image-sizing" src="{{products.0.image}}" alt="bag">
                     </div>
                     <div class="col product-details">
-                        <input id="product-id" type="hidden" value="{{user.id}}">
-                        <input id="wishlist-id" type="hidden" value="{{product_id}}">
+                        <input id="wishlist-id" type="hidden" value="{{id}}">
+                        <input id="product-id" type="hidden" value="{{product_id}}">
                         <button type="submit" class="btn btn-light cross-btn-styling">X</button>
                         <h2 class="product-title">{{products.0.Product_name}}</h2>
                         <p class="product-price">{{products.0.price}}</p>
                         <p class="product-description">{{products.0.description}}</p>
                     <div class="qty">
-                    <label id="quantity" for="quantity">Quantity:</label>
-                    <input type="number" id="quantity" name="quantity" min="1" max="1" value="1"> 
+                    <label for="quantity">Quantity:</label>
+                    <input id="quantity" value="1" name="quantity" min="1" max="1"> 
                     </div>
-                        <button type="submit" class="btn btn-dark btn-styling">Add to Cart</button>
+                        <button id="cart" class="btn btn-dark btn-styling">Add to Cart</button>
                     </div>
                 </div>
             </div>
@@ -33,4 +33,4 @@
 </div>
 {{/each}}           
 
-<script src="/js/addwish.js"></script>
+<script src="/js/wishlist.js"></script>

@@ -21,6 +21,7 @@ Purchase.init(
         // unique: false
       }
     },
+    
   },
   {
     sequelize,

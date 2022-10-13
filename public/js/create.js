@@ -7,11 +7,10 @@ const newItemHandler = async (event) => {
     const category = document.querySelector('#category').value.trim();
     const stock = 1;
   
-    if (title && content) {
-        console.log(title + content);
-         const response = await fetch(`/api/posts`, {
+    if (product_name && description && price && category && stock) {
+         const response = await fetch(`/api/products`, {
             method: 'POST',
-            body: JSON.stringify({ title, content }),
+            body: JSON.stringify({ product_name, description, price, category, stock }),
             headers: {
             'Content-Type': 'application/json',
             },
@@ -20,7 +19,7 @@ const newItemHandler = async (event) => {
         if (response.ok) {
             document.location.replace('/dashboard');
         } else {
-            alert('Failed to create post');
+            alert('Failed to create listing');
         }
     }
   };

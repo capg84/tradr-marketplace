@@ -14,6 +14,9 @@ const loginFormHandler = async function(event) {
     });
   
     if (response.ok) {
+
+      // If successful, redirect the browser to the dashboard page
+
       document.location.replace('/dashboard');
     } else {
       alert('Failed to login');

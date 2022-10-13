@@ -33,7 +33,7 @@ Product.init(
     },
     featured: {
       type: DataTypes.BOOLEAN,
-      allowNull: false,
+      allowNull: true,
     },
     category_id: {
       type: DataTypes.INTEGER,

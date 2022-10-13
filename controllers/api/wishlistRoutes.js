@@ -3,29 +3,31 @@ const { Wishlist, User, Product } = require('../../models');
 const withAuth = require('../../utils/auth');
 
 
-router.post('/', async (req, res) => {
-    console.log(req, "hello")
-        try {
-            const products = await Wishlist.findAll({
-                where: {
-                    user_id: req.session.user_id
-                },
-    
-                attributes: ['id'],
-                include: [{ model: User, attributes: ['id'] },
-            {model: Product, attributes: ['id', 'Product_name', 'description', 'price', 'stock'] }],
-    
-            });
-            console.log(req, "hello")
-            const wishlistSerialized = products.map((product) => product.get({ plain: true }));
-            const obj = { products: wishlistSerialized, logged_in: req.session.logged_in }
-            console.log(obj, "hello")
-            res.render('wishlist', obj);
-    
-        } catch (err) {
-            res.status(500).json(err);
-        }
-    });
+router.get('/', async (req, res) => {
+
+    try {
+        const productData = await Wishlist.findAll({
+            where: {
+                user_id: 2
+            },
+
+            attributes: ['id', 'product_id'],
+            include: [{ model: User, attributes: ['id'] },
+            { model: Product, attributes: ['id', 'Product_name', 'image', 'description', 'price'] }],
+
+        });
+
+        const wishlistSerialized = productData.map((product) => product.get({ plain: true }));
+        const products = { products: wishlistSerialized, logged_in: req.session.logged_in }
+        console.log(products)
+       
+        res.render('wishlist', products);
+
+    } catch (err) {
+        res.status(500).json(err);
+
+    }
+});
 
 
 // Adds item to wishlist
@@ -35,7 +37,7 @@ router.post('/add', withAuth, async (req, res) => {
         const wishlist = await Wishlist.create({
             product_id: req.body.id,
             user_id: req.session.user_id
-          
+
         });
 
         res.json(wishlist)
@@ -49,6 +51,7 @@ router.post('/add', withAuth, async (req, res) => {
 
 // Deletes item from wishlist
 router.delete('/delete/:id', withAuth, async (req, res) => {
+    console.log("hello")
 
     try {
         const wishlist = await Wishlist.destroy({

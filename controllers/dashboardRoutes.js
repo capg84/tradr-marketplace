@@ -72,7 +72,7 @@ router.get('/purchases', withAuth, async (req, res) => {
         where: {
           user_id: req.session.user_id,
         },
-        include: [{model: Product, through: Order}],
+        include: [{model: Product}],
       });
   
       const purchases = purchaseData.map((purchase) => purchase.get({ plain: true }));

@@ -9,6 +9,8 @@ router.post('/', async (req, res) => {
       const newUser = await User.create({
         email: req.body.email,
         password: req.body.password,
+        first_name: req.body.first_name,
+        last_name: req.body.last_name,
       });
   
       req.session.save(() => {

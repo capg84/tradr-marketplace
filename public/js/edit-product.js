@@ -13,7 +13,7 @@ const editListingHandler = async (event) => {
         const id = event.target.getAttribute('data-id');
         const response = await fetch(`/api/products/${id}`, {
         method: 'PUT',
-        body: JSON.stringify({ product_name, description, price, image, category }),
+        body: JSON.stringify({ product_name, description, price, image, category_id, stock }),
         headers: { 'Content-Type': 'application/json' },
       });
   

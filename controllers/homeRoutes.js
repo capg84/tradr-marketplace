@@ -10,9 +10,11 @@ router.get('/', async (req, res) => {
     });
 
     const products = productData.map((product) => product.get({ plain: true }));
-    console.log(products);
 
-    res.render('home', { 
+
+    // Pass serialized data and session flag into template
+    res.render("home", {
+
       products,
       logged_in: req.session.logged_in
     });

@@ -6,7 +6,7 @@ const withAuth = require('../../utils/auth');
 router.post('/', async (req, res) => {
     console.log(req, "hello")
         try {
-            const blogs = await Wishlist.findAll({
+            const products = await Wishlist.findAll({
                 where: {
                     user_id: req.session.user_id
                 },
@@ -54,7 +54,7 @@ router.delete('/delete/:id', withAuth, async (req, res) => {
         const wishlist = await Wishlist.destroy({
             where: {
                 id: req.params.id,
-                user_id: req.session.user_id,
+                user_id: req.session.user_id
             },
         });
         if (!wishlist) {

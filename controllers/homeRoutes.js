@@ -58,8 +58,8 @@ router.get('/product/:id', async (req, res) => {
           include: [{model: Product, attributes: ['id', 'product_name', 'price', 'image']}]
         },
         {
-            model: Category,
-            attributes: ['category_name'],
+          model: Category,
+          attributes: ["category_name"],
         },
       ],
     });
@@ -127,9 +127,12 @@ router.get('/login', (req, res) => {
     return;
   }
 
-  res.render('login');
+  res.render("signup");
 });
 
+router.get("/terms", (req, res) => {
+  res.render("terms");
+});
 
 router.get('/signup', (req, res) => {
     // If the user is already logged in, redirect the request to another route
@@ -137,9 +140,15 @@ router.get('/signup', (req, res) => {
       res.redirect('/');
       return;
     }
-  
-    res.render('signup');
+  res.render('signup');
 });
 
+router.get("/privacy", (req, res) => {
+  res.render("privacy");
+});
+
+router.get("/contactus", (req, res) => {
+  res.render("contactus");
+});
 
 module.exports = router;

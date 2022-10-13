@@ -1,5 +1,5 @@
 const sequelize = require('../config/connection');
-const { User, Category, Payment, Product, Address, Purchase, Order, Wishlist, Cart} = require('../models')
+const { User, Category, Payment, Product, Address, Purchase, Wishlist, Cart} = require('../models')
 
 
 const userData = require('./user.json');
@@ -10,13 +10,10 @@ const addressData = require('./address.json');
 const wishlistData = require('./wishlist.json');
 const cartData = require('./cart.json');
 const purchaseData = require('./purchase.json');
-const orderData = require('./order.json');
 
 
 
 const seedDatabase = async () => {
-
-  
   await sequelize.sync({ force: true });
   console.log('\n----- DATABASE SYNCED -----\n');
   await User.bulkCreate(userData, {
@@ -41,10 +38,6 @@ const seedDatabase = async () => {
   console.log('\n----- CARTS SEEDED -----\n');
   await Purchase.bulkCreate(purchaseData);
   console.log('\n----- PURCHASES SEEDED -----\n');
-  await Order.bulkCreate(orderData);
-  console.log('\n----- ORDERS SEEDED -----\n');
-
-
 
   process.exit(0);
 }

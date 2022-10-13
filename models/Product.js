@@ -51,6 +51,15 @@ Product.init(
                 key: 'id',
             },
         },
+
+        // purchase_id: {
+        //     type: DataTypes.INTEGER,
+        //     allowNull: false,
+        //     references: {
+        //         model: 'purchase',
+        //         key: 'id',
+        //     },
+        // },
     },
     {
         sequelize,

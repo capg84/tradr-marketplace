@@ -14,39 +14,32 @@ const orderData = require('./order.json');
 
 
 const seedDatabase = async () => {
-  
-    const users = await User.bulkCreate(userData, {
+  await sequelize.sync({ force: true });
+  console.log('\n----- DATABASE SYNCED -----\n');
+  await User.bulkCreate(userData, {
     individualHooks: true,
     returning: true,
   });
-
-  const categories = await Category.bulkCreate(categoryData, {
-    returning: true,
-  });
-
-  const products = await Product.bulkCreate(productData, {
-    returning: true,
-  });
-  const payments = await Payment.bulkCreate(paymentData, {
+  console.log('\n----- USERS SEEDED -----\n');
+  await Category.bulkCreate(categoryData);
+  console.log('\n----- CATEGORIES SEEDED -----\n');
+  await Product.bulkCreate(productData);
+  console.log('\n----- PRODUCTS SEEDED -----\n');
+  await Payment.bulkCreate(paymentData, {
     individualHooks: true,
     returning: true,
   });
-
-  const address = await Address.bulkCreate(addressData, {
-    returning: true,
-  });
-
-  const wishlist = await Wishlist.bulkCreate(wishlistData, {
-    returning: true,
-  });
-
-  const cart = await Cart.bulkCreate(cartData, {
-    returning: true,
-  });
+  console.log('\n----- PAYMENTS SEEDED -----\n');
+  await Address.bulkCreate(addressData);
+  console.log('\n----- ADDRESSES SEEDED -----\n');
+  await Wishlist.bulkCreate(wishlistData);
+  console.log('\n----- WISHLISTS SEEDED -----\n');
+  await Cart.bulkCreate(cartData);
+  console.log('\n----- CARTS SEEDED -----\n');
   await Purchase.bulkCreate(purchaseData);
-  console.log('\n----- PURCHASES SYNCED -----\n');
+  console.log('\n----- PURCHASES SEEDED -----\n');
   await Order.bulkCreate(orderData);
-  console.log('\n----- ORDERS SYNCED -----\n');
+  console.log('\n----- ORDERS SEEDED -----\n');
 
 
   process.exit(0);

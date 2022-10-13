@@ -20,8 +20,7 @@ const newItemHandler = async (event) => {
       });
         console.log(response);
         if (response.ok) {
-            console.log("all good!")
-            /* document.location.replace('/activelistings'); */
+            document.location.replace('/dashboard'); 
         } else {
             alert('Failed to create listing');
         }

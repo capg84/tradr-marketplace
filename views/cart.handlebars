@@ -3,22 +3,21 @@
         <h1 class="current-page-text">MY CART</h1>
         <div class="row parent-row">
             <!---EACH INDIVIDUAL ITEM STARTS HERE-->
-            {{#each products as |product|}}
+            {{#each products as |productInfo|}}
             <div class="col-lg-4 col-md-6 col-sm-12 product-container">
                 <div class="row">
                     <div class="col product-image">
-                        <img class="product-image-sizing" src="{{product.image}}" alt="bag">
+                        <img class="product-image-sizing" src="{{productInfo.product.image}}" alt="bag">
                     </div>
                     <div class="col product-details-cart">
-                        <input id="stock" type="hidden" value="{{product.stock}}">
-                        <input id="product-id" type="hidden" value="{{product.id}}">
-                        <input id="user-id" type="hidden" value="{{user.id}}">
+                        <input id="product-id" type="hidden" value="{{productInfo.product_id}}">
+                        <input id="user-id" type="hidden" value="{{productInfo.user_id}}">
                         <button type="submit" class="btn btn-light cross-btn-styling">X</button>
-                        <h2 class="product-title">{{product.product_name}}Product Name</h2>
-                        <p class="product-price">{{product.price}}£28.00</p>
-                        <p class="product-description">{{product.description}}Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo.</p>
+                        <h2 class="product-title">{{productInfo.product.product_name}}</h2>
+                        <p class="product-price">{{productInfo.products.price}}</p>
+                        <p class="product-description">{{productInfo.product.description}}</p>
                         <div class="qty">
-                        <label id="quantity" for="quantity">{{product.quantity}}Quantity:</label>
+                        <label id="quantity" for="quantity">Quantity:</label>
                         <input type="number" id="quantity" name="quantity" min="1" max="1" value="1"> 
                         </div>
                     </div>

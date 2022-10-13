@@ -31,7 +31,7 @@ router.post('/', async (req, res) => {
 router.post('/login', async (req, res) => {
     try {
       const userData = await User.findOne({ where: { email: req.body.email } });
-      console.log(userData);
+
       if (!userData) {
         res
           .status(400)
@@ -39,10 +39,6 @@ router.post('/login', async (req, res) => {
         return;
       }
 
-
-      const validPassword = userData.checkPassword(req.body.password);
-
-  
       const validPassword = userData.checkPassword(req.body.password);
 
       if (!validPassword) {
@@ -67,11 +63,12 @@ router.post('/login', async (req, res) => {
 });  
 
 router.post('/logout', (req, res) => {
+  console.log("hello", req.session.logged_in)
     if (req.session.logged_in) {
       req.session.destroy(() => {
         res.status(204).end();
       });
-      res.redirect('/home');
+      res.redirect('/');
     } else {
       res.status(404).end();
     }

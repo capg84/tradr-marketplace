@@ -3,12 +3,12 @@ const { Wishlist, User, Product } = require('../../models');
 const withAuth = require('../../utils/auth');
 
 
-router.get('/', async (req, res) => {
+router.get('/',  async (req, res) => {
 
     try {
         const productData = await Wishlist.findAll({
             where: {
-                user_id: 2
+                user_id: req.session.id
             },
 
             attributes: ['id', 'product_id'],
@@ -19,8 +19,7 @@ router.get('/', async (req, res) => {
 
         const wishlistSerialized = productData.map((product) => product.get({ plain: true }));
         const products = { products: wishlistSerialized, logged_in: req.session.logged_in }
-        console.log(products)
-       
+
         res.render('wishlist', products);
 
     } catch (err) {
@@ -51,13 +50,12 @@ router.post('/add', withAuth, async (req, res) => {
 
 // Deletes item from wishlist
 router.delete('/delete/:id', withAuth, async (req, res) => {
-    console.log("hello")
 
     try {
         const wishlist = await Wishlist.destroy({
             where: {
                 id: req.params.id,
-                user_id: req.session.user_id
+                user_id: req.session.id
             },
         });
         if (!wishlist) {
@@ -66,6 +64,7 @@ router.delete('/delete/:id', withAuth, async (req, res) => {
         }
         res.status(200).json(wishlist);
     } catch (err) {
+        console.log(err)
         res.status(500).json(err);
     }
 });

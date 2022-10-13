@@ -19,9 +19,12 @@
         <div class="row btn-row">
             <hr>
             <a href="dashboard/edit/{{this.id}}" class="btn btn-dark btn-styling edit-btn">EDIT</a>
-            <button type="submit" class="btn btn-danger btn-styling delete-btn">DELETE</button>
+            <button type="submit" class="btn btn-danger btn-styling delete-btn" data-id="{{this.id}}">DELETE</button>
         </div>
       </div>
     {{/each}}
   <!--EACH INDIVIDUAL ITEM ENDS HERE --> 
 </div>
+<br>
+
+<script src="/js/delete.js"></script>

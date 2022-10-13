@@ -6,22 +6,21 @@ const newItemHandler = async (event) => {
     const description = document.querySelector('#description').value.trim();
     const price = document.querySelector('#product_price').value.trim();
     const image = document.querySelector('#image').value.trim();
-    const category = document.querySelector('#category').value.trim();
+    const category_id = document.querySelector('#category').value.trim();
     const stock = 1;
   
-    if (product_name && description && price && image && stock && category ) {
-        console.log(product_name && description && price && image && stock && category )
+    if (product_name && description && price && image && stock && category_id ) {
+            console.log(product_name + description + price + image + stock + category_id);
          const response = await fetch(`/api/products`, {
             method: 'POST',
-            body: JSON.stringify({ product_name, description, price, image, stock, category }),
+            body: JSON.stringify({ product_name, description, price, image, stock, category_id }),
             headers: {
             'Content-Type': 'application/json',
             },
       });
         console.log(response);
         if (response.ok) {
-            console.log("all good!")
-            /* document.location.replace('/activelistings'); */
+            document.location.replace('/dashboard'); 
         } else {
             alert('Failed to create listing');
         }
@@ -30,4 +29,4 @@ const newItemHandler = async (event) => {
 
   document
     .querySelector('#create-btn')
-    .addEventListener('submit', newItemHandler);
+    .addEventListener('click', newItemHandler);

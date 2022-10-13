@@ -55,14 +55,16 @@ Product.belongsTo(Category, {
     foreignKey: 'category_id'
 });
 
-Cart.hasMany(Product, {
+
+Product.hasMany(Cart, {
     foreignKey: 'product_id',
 
 });
 
-Product.belongsTo(Cart, {
+Cart.belongsTo(Product, {
     foreignKey: 'product_id'
 });
+
 
 Wishlist.hasMany(Product, {
     foreignKey: 'user_id',

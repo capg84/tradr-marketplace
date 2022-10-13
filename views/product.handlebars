@@ -1,12 +1,12 @@
-<div id="mainprod" class="container text-center" style="margin-left: 10%;">
+<div id="mainprod" class="container text-center" style="margin-left: 10%; margin-top: 2%; margin-bottom: 5%">
     <div class="row justify-content-start">
         <div class="col-lg-2 col-md-4 col-sm-6 prodimgcont">
-            <img id="product-image" src="https://media.4rgos.it/s/Argos/tuc140625694_R_SET?w=270&h=366&qlt=75&fmt.jpeg.interlaced=true" alt="bag">
+            <img id="product-image" src="{{product.image}}" alt="bag">
         </div>
         <div class="col-lg-2 col-md-4 col-sm-6 prodcont">
-            <p class="text-end" style="font-style: italic;">Sold by: {{user.first_name}}</p>
+            <p class="text-end" style="font-style: italic;">Sold by: {{product.user.first_name}}</p>
                 <div class="heart-prod-name">
-                  <h3 id="productname">{{product.name}}</h3>
+                  <h3 id="productname">{{product.product_name}}</h3>
                   <div id="heart" class="wrapper">
                     <a class="heart btn btn-outline-danger" href="#" id="wishlist-btn"><i class="bi bi-heart"></i></a>
                   </div>
@@ -21,7 +21,7 @@
             <form class="purchaseform">
                 <div class="qty">
                     <label for="quantity">Quantity:</label>
-                    <input type="number" id="quantity" name="quantity" min="1" max="{{product.stock}}" value="1"> 
+                    <input type="number" id="quantity" name="quantity" min="1" max="1" value="1"> 
                 </div>
                 <button type="submit" class="btn btn-dark btn-styling2" style="margin-bottom: 5px; margin-top: 8px; width: 200px;">Add to Cart</button>
                 <button type="submit" class="btn btn-success btn-styling2" style="margin-bottom: 5px; width: 200px;">Buy Now</button>
@@ -30,21 +30,20 @@
         </div>
     </div>
 </div>
-
-<div class="recommendations">
+<br>
+<div class="recommendations" style="margin-bottom: 10%;">
             <h2 id="recommtext">More from this seller</h2>
-            {{#contains product {{user_id}}}}
             <div class="bg-col-white">
                 <div class="container text-center">
                     <div class="row parent-row-image-only">
                         <!---EACH INDIVIDUAL ITEM STARTS HERE-->
-                        {{#each products as |product|}}
+                        {{#each product.user.products}}
                         <div class="col-lg-2 col-md-4 col-sm-6 product-container2" style="margin-bottom: 20px;" id="ftproduct">
                             <div class="row">
                                 <div class="col product-overview">
-                                    <a href="/product/{{id}}"><img class="product-image-sizing" src="https://media.4rgos.it/s/Argos/tuc140625694_R_SET?w=270&h=366&qlt=75&fmt.jpeg.interlaced=true" alt="bag"></a>
-                                    <a href="/product/{{id}}" style="text-decoration: none; color: black;"><h2 class="product-title2" id="fttitle">{{product.product_name}}</h2></a>
-                                    <p class="product-price">£{{product.price}}</p>
+                                    <a href="/product/{{this.id}}"><img class="product-image-sizing" src="{{this.image}}" alt="bag"></a>
+                                    <a href="/product/{{this.id}}" style="text-decoration: none; color: black;"><h2 class="product-title2" id="fttitle">{{this.product_name}}</h2></a>
+                                    <p class="product-price">£{{this.price}}</p>
                                     <button type="submit" class="btn btn-dark btn-styling2">Add to Cart</button>
                                 </div>
                             </div>
@@ -54,5 +53,4 @@
                     </div>
                 </div>
             </div>
-            {{/contains}}
 </div>

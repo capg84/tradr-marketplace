@@ -2,44 +2,39 @@ const router = require('express').Router();
 const { Product, User, Category, Wishlist } = require('../models');
 const withAuth = require('../utils/auth');
 
+// get all products for homepage
 router.get('/', async (req, res) => {
   try {
-    // Get all products and JOIN with user data
     const productData = await Product.findAll({
-      include: [
-        {
-          model: Category,
-        },
-      ],
+      include: [Category],
     });
 
-    // Serialize data so the template can read it
     const products = productData.map((product) => product.get({ plain: true }));
+    console.log(products);
 
-    // Pass serialized data and session flag into template
     res.render('home', { 
-      products
+      products,
+      logged_in: req.session.logged_in
     });
   } catch (err) {
     res.status(500).json(err);
   }
 });
 
-// get single post
+
+// get a single category
 router.get('/category/:id', async (req, res) => {
   try {
     const categoryData = await Category.findByPk(req.params.id, {
-      include: [
-        {
-          model: Product,
-          attributes: ['product_name', 'price', 'image'],
-        },
-      ],
+      include: [{model: Product,
+        attributes: ['id', 'product_name', 'price', 'image'],
+      }
+    ],
     });
 
     if (categoryData) {
       const category = categoryData.get({ plain: true });
-
+      console.log(category);
       res.render('category', { category });
     } else {
       res.status(404).end();
@@ -57,6 +52,7 @@ router.get('/product/:id', async (req, res) => {
         {
           model: User,
           attributes: ['first_name'],
+          include: [{model: Product, attributes: ['id', 'product_name', 'price', 'image']}]
         },
         {
             model: Category,
@@ -64,36 +60,41 @@ router.get('/product/:id', async (req, res) => {
         },
       ],
     });
-
+    
+    if (productData) {
     const product = productData.get({ plain: true });
-
+    console.log(productData);
     res.render('product', {
-      ...product
+      product,
+      logged_in: req.session.logged_in
     });
+  } else {
+    res.status(404).end();
+  }
   } catch (err) {
     res.status(500).json(err);
   }
 });
 
 // Use withAuth middleware to prevent access to route
-router.get('/', withAuth, async (req, res) => {
-  try {
-    // Find the logged in user based on the session ID
-    const userData = await User.findByPk(req.session.user_id, {
-      attributes: { exclude: ['password'] },
-      include: [{ model: Product }, {model: Wishlist}],
-    });
+// router.get('/', withAuth, async (req, res) => {
+//   try {
+//     // Find the logged in user based on the session ID
+//     const userData = await User.findByPk(req.session.user_id, {
+//       attributes: { exclude: ['password'] },
+//       include: [{ model: Product }, {model: Wishlist}],
+//     });
 
-    const user = userData.get({ plain: true });
+//     const user = userData.get({ plain: true });
 
-    res.render('home', {
-      ...user,
-      logged_in: true
-    });
-  } catch (err) {
-    res.status(500).json(err);
-  }
-});
+//     res.render('home', {
+//       user,
+//       logged_in: true
+//     });
+//   } catch (err) {
+//     res.status(500).json(err);
+//   }
+// });
 
 router.get('/wishlist', withAuth, async (req, res) => {
   try {
@@ -108,7 +109,7 @@ router.get('/wishlist', withAuth, async (req, res) => {
 
     res.render('home', {
       layout: 'main',
-      wishlists,
+      ...wishlists,
     });
   } catch (err) {
     res.redirect('login');

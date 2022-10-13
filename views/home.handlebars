@@ -13,7 +13,7 @@
       <!-- <h1 class="current-page-text">RECENTLY ADDED</h1> -->
       <div class="row parent-row-image-only">
         <!---CH INDIVIDUAL ITEM STARTS HERE (limit product 4)-->
-        {{#each products as |product|}}
+        {{#each product}}
           <div
             class="col-lg-2 col-md-4 col-sm-6 product-container2"
             style="margin-bottom: 20px;"
@@ -21,20 +21,20 @@
             <div class="row">
               <div class="col product-overview">
                 <div class="prod-image-box">
-                  <a href="/product/:id"><img
+                  <a href="/product/{{this.id}}"><img
                       class="product-image-sizing"
-                      src="{{product.image}}"
-                      alt="{{product.product_name}}"
+                      src="{{this.image}}"
+                      alt="{{this.product_name}}"
                     /></a>
                 </div>
                 <a
-                  href="/product/:id"
+                  href="/product/{{this.id}}"
                   style="text-decoration: none; color: black;"
                 ><h2
                     class="product-title2"
                     id="fttitle"
-                  >{{product.product_name}}</h2></a>
-                <p class="product-price">£{{product.price}}</p>
+                  >{{this.product_name}}</h2></a>
+                <p class="product-price">£{{this.price}}</p>
                 <button type="submit" class="btn btn-dark btn-styling2">Add to
                   Cart</button>
               </div>
@@ -61,7 +61,7 @@
           <div class="row">
             <div class="col product-overview">
               <div class="prod-image-box">
-                <a href="/product/:id"><img
+                <a href="/product/{{product.id}}"><img
                     class="product-image-sizing"
                     src="{{product.image}}"
                     alt="{{product.product_name}}"
@@ -69,7 +69,7 @@
               </div>
 
               <a
-                href="/product/:id"
+                href="/product/{{product.id}}"
                 style="text-decoration: none; color: black;"
               ><h2
                   class="product-title2"

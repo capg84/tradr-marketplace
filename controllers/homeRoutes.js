@@ -15,7 +15,7 @@ router.get("/", async (req, res) => {
 
     // Serialize data so the template can read it
     const products = productData.map((product) => product.get({ plain: true }));
-
+ console.log(products, "Dylson")
     // Pass serialized data and session flag into template
     res.render("home", {
       products,

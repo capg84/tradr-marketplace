@@ -1,3 +1,4 @@
+ {{#each products as |product|}}
  <div class="bg-col-grey">
     <div class="container text-center">
         <div class="text-space-between">
@@ -9,18 +10,18 @@
             <div class="col-lg-4 col-md-6 col-sm-12 product-container-white">
                 <div class="row">
                     <div class="col product-image">
-                        <img class="product-image-sizing" src="https://media.4rgos.it/s/Argos/tuc140625694_R_SET?w=270&h=366&qlt=75&fmt.jpeg.interlaced=true" alt="bag">
+                        <img class="product-image-sizing" src="{{products.0.image}}" alt="bag">
                     </div>
                     <div class="col product-details">
-                        <input id="product-id" type="hidden" value="{{product.id}}">
-                        <input id="wishlist-id" type="hidden" value="{{wishlist.id}}">
+                        <input id="product-id" type="hidden" value="{{user.id}}">
+                        <input id="wishlist-id" type="hidden" value="{{product_id}}">
                         <button type="submit" class="btn btn-light cross-btn-styling">X</button>
-                        <h2 class="product-title">{{product.product_name}}Product Name</h2>
-                        <p class="product-price">{{product.price}}£28.00</p>
-                        <p class="product-description">{{product.description}}Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo.</p>
+                        <h2 class="product-title">{{products.0.Product_name}}</h2>
+                        <p class="product-price">{{products.0.price}}</p>
+                        <p class="product-description">{{products.0.description}}</p>
                     <div class="qty">
                     <label id="quantity" for="quantity">Quantity:</label>
-                    <input type="number" id="quantity" name="quantity" min="1" max="{{product.stock}}" value="1"> 
+                    <input type="number" id="quantity" name="quantity" min="1" max="1" value="1"> 
                     </div>
                         <button type="submit" class="btn btn-dark btn-styling">Add to Cart</button>
                     </div>
@@ -30,6 +31,6 @@
         </div>
     </div>
 </div>
-              
+{{/each}}           
 
 <script src="/js/wishlist.js"></script>

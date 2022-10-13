@@ -1,4 +1,5 @@
 const newItemHandler = async (event) => {
+    console.log("create button clicked!")
     event.preventDefault();
   
     const product_name = document.querySelector('#product_name').value.trim();
@@ -8,7 +9,8 @@ const newItemHandler = async (event) => {
     const category = document.querySelector('#category').value.trim();
     const stock = 1;
   
-    if (product_name && description && price && category && stock) {
+    if (product_name && description && price && image && stock && category ) {
+        console.log(product_name && description && price && image && stock && category )
          const response = await fetch(`/api/products`, {
             method: 'POST',
             body: JSON.stringify({ product_name, description, price, image, stock, category }),
@@ -16,9 +18,10 @@ const newItemHandler = async (event) => {
             'Content-Type': 'application/json',
             },
       });
-    
+        console.log(response);
         if (response.ok) {
-            document.location.replace('/dashboard');
+            console.log("all good!")
+            /* document.location.replace('/activelistings'); */
         } else {
             alert('Failed to create listing');
         }

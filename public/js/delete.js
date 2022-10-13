@@ -9,9 +9,9 @@ const delButtonHandler = async (event) => {
       if (response.ok) {
         document.location.replace('/dashboard');
       } else {
-        alert('Failed to delete post');
+        alert('Failed to delete product');
       }
     }
 };
 
-document.querySelector('#delete-btn2').addEventListener('click', delButtonHandler);
+document.querySelector('delete-btn').addEventListener('click', delButtonHandler);

@@ -19,9 +19,9 @@ console.log(productId);
             'Content-Type': 'application/json',
         },
     });
-
     if (response.ok) {
-        document.location.replace(`/api/wishlist/delete/${id}`);
+        console.log("All good!");
+        /* document.location.replace(`/api/wishlist/delete/${id}`); */
     } else {
         alert('Failed to add to cart');
     }

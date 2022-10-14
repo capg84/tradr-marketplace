@@ -1,14 +1,15 @@
 const editFormHandler = async function(event) {
   event.preventDefault();
 
-  const address_line1 = document.querySelector('#inputAddress"]').value;
-  const address_line2 = document.querySelector('#inputAddress2"]').value;
-  const city = document.querySelector('#inputCity"]').value;
-  const county = document.querySelector('#inputCounty"]').value;
-  const post_code = document.querySelector('#inputPostcode"]').value;
-  const address_id = window.location.toString().split('/')[window.location.toString().split('/').length - 1];
+  const address_line1 = document.querySelector('#inputAddress').value;
+  const address_line2 = document.querySelector('#inputAddress2').value;
+  const city = document.querySelector('#inputCity').value;
+  const county = document.querySelector('#inputCounty').value;
+  const post_code = document.querySelector('#inputPostcode').value;
 
-  await fetch(`/api/post/${address_id}`, {
+  if (event.target.hasAttribute('data-id')) {
+  const id = event.target.getAttribute('data-id');
+  const response = await fetch(`/api/addresses/${id}`, {
     method: 'PUT',
     body: JSON.stringify({
       address_line1,
@@ -21,10 +22,13 @@ const editFormHandler = async function(event) {
       'Content-Type': 'application/json'
     }
   });
-
-  document.location.replace('/dashboard/addresses');
-};
+  if (response.ok) {
+    document.location.replace('/dashboard/addresses');
+  } else {
+    alert("Error");
+  }
+}};
 
 document
-  .querySelector('.edit-address-form')
-  .addEventListener('submit', editFormHandler);
+.querySelector('#edit-add')
+.addEventListener('click', editFormHandler);

@@ -27,6 +27,8 @@ console.log("Hello", req.session.id)
         }
     });
 
+
+
 // Adds item to Cart
 router.post('/add/:id',  async (req, res) => {
     console.log("hello1-----------------------")

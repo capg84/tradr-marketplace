@@ -121,6 +121,34 @@ router.get('/wishlist', withAuth, async (req, res) => {
   }
 });
 
+// SEARCH
+
+router.get('/search/:id', async (req, res) => {
+  try {
+    let input = req.params.id.split("%20").join("|");
+    const productData = await Product.findAll({
+      where: {
+        name: {
+          [Op.regexp]: `*(${input})*`,
+        },
+      },
+    });
+
+    if (categoryData) {
+      const category = categoryData.get({ plain: true });
+      console.log(category);
+      res.render('category', { 
+        category,
+        logged_in: req.session.logged_in 
+      });
+    } else {
+      res.status(404).end();
+    }
+  } catch (err) {
+    res.status(500).json(err);
+  }
+});
+
 
 router.get('/login', (req, res) => {
   // If the user is already logged in, redirect the request to another route

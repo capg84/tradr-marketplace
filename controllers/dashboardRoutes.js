@@ -93,4 +93,11 @@ router.get('/createlisting', withAuth, (req, res) => {
     });
 });
 
+// Get seller stats
+router.get('/stats', withAuth, (req, res) => {
+  res.render('stats', {
+    layout: 'dashboard',
+  });
+});
+
 module.exports = router;

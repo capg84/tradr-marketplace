@@ -11,11 +11,13 @@
                     <p class="card-text">City: {{this.city}}</p>
                     <p class="card-text">County: {{this.county}}</p>
                     <p class="card-text">Postcode: {{this.post_code}}</p>
-                    <a class="btn btn-warning" href="/dashboard/address/edit/{{this.id}}" class="card-link">Edit</a>
-                    <a class="btn btn-danger" href="#" class="card-link">Delete</a>
+                    <a class="btn btn-warning" href="/dashboard/address/edit/{{this.id}}">Edit</a>
+                    <a class="btn btn-danger" id="delete-btn" href="#" data-id="{{this.id}}">Delete</a>
                 </div>
             </div>
         </div>
         {{/each}}
     </div>
 </div>
+
+<script src="/js/deleteadd.js"></script>

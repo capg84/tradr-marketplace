@@ -1,0 +1,20 @@
+<h4 style="margin-top: 2%; font-family: Nunito, sans-serif; font-size: 1.2rem; font-weight: 600;">YOUR ADDRESSES</h4>
+<div class="container">
+    <div class="row justify-content-start" style="margin-top: 5%;">
+        {{#each addresses}}
+        <div class="col-lg-4 col-md-6 col-sm-12">
+            <div class="card" style="width: 18rem;">
+                <div class="card-body">
+                    <p class="card-text">Address line 1: {{this.address_line1}} </p>
+                    <p class="card-text">Address line 2: {{this.address_line2}}</p>
+                    <p class="card-text">City: {{this.city}}</p>
+                    <p class="card-text">County: {{this.county}}</p>
+                    <p class="card-text">Postcode: {{this.post_code}}</p>
+                    <a href="#" class="card-link">View</a>
+                    <a href="#" class="card-link">Delete</a>
+                </div>
+            </div>
+        </div>
+        {{/each}}
+    </div>
+</div>

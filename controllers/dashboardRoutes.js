@@ -55,6 +55,7 @@ router.get('/addresses', withAuth, async (req, res) => {
       });
   
       const addresses = addressData.map((address) => address.get({ plain: true }));
+      console.log(addresses);
   
       res.render('address', {
         layout: 'dashboard',

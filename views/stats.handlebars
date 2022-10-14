@@ -5,8 +5,8 @@
 <canvas id="myChart" style="width:100%;max-width:700px"></canvas>
 
 <script>
-var xValues = ["January", "6,70,80,90,100,110,120,130,140,150];
-var yValues = [7,8,8,9,9,9,10,11,14,14,15];
+var xValues = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December",];
+var yValues = [25,50,75,100,125,150,175,200,225,250];
 
 new Chart("myChart", {
   type: "line",
@@ -24,6 +24,10 @@ new Chart("myChart", {
     legend: {display: false},
     scales: {
       yAxes: [{ticks: {min: 6, max:16}}],
+    }
+    title: {
+    display: true,
+    text: "Net sales in (£) across the year"
     }
   }
 });

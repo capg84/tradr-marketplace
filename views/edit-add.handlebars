@@ -1,0 +1,31 @@
+<div class="createcont" style="background: #E49B0F; color:black;">
+    <h2 class="createheading">Edit Address</h2>
+    <br>
+    <form class="edit-address-form" >
+        <div class="col-12">
+           <label for="inputAddress" class="form-label">Address line 1</label>
+           <input type="text" class="form-control" id="inputAddress" placeholder="1234 Main St" value="{{address.address_line1}}">
+        </div>
+        <div class="col-12">
+            <label for="inputAddress2" class="form-label">Address line 2</label>
+            <input type="text" class="form-control" id="inputAddress2" placeholder="Apartment, studio, or floor" value="{{address.address_line2}}">
+        </div>
+        <div class="col-md-6">
+            <label for="inputCity" class="form-label">City</label>
+            <input type="text" class="form-control" id="inputCity" value="{{address.city}}">
+        </div>
+        <div class="col-md-4">
+            <label for="inputCounty" class="form-label">County</label>
+            <input type="text" class="form-control" id="inputCounty" value="{{address.county}}">
+        </div>
+        <div class="col-md-2">
+            <label for="inputPostcode" class="form-label">Postcode</label>
+            <input type="text" class="form-control" id="inputPostcode" value="{{address.post_code}}">
+        </div>
+        <div class="col-12">
+            <button type="submit" class="btn btn-primary" id="edit-add" style="margin-top: 5%;" data-id="{{address.id}}">Submit</button>
+        </div>
+    </form>
+</div>
+
+<script src="/js/editadd.js"></script>

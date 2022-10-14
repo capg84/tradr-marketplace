@@ -1,0 +1,23 @@
+<h4 style="margin-top: 2%; font-family: Nunito, sans-serif; font-size: 1.2rem; font-weight: 600;">YOUR ADDRESSES</h4> 
+<a class="btn btn-success" href="/dashboard/address/create" style="margin-bottom: -2%;"> + ADD NEW ADDRESS </a>
+<div class="container">
+    <div class="row justify-content-start" style="margin-top: 5%;">
+        {{#each addresses}}
+        <div class="col-lg-4 col-md-6 col-sm-12">
+            <div class="card" style="width: 18rem;">
+                <div class="card-body">
+                    <p class="card-text">Address line 1: {{this.address_line1}} </p>
+                    <p class="card-text">Address line 2: {{this.address_line2}}</p>
+                    <p class="card-text">City: {{this.city}}</p>
+                    <p class="card-text">County: {{this.county}}</p>
+                    <p class="card-text">Postcode: {{this.post_code}}</p>
+                    <a class="btn btn-warning" href="/dashboard/address/edit/{{this.id}}" data-id="{{this.id}}">Edit</a>
+                    <a class="btn btn-danger" id="delete-add" href="#" data-id="{{this.id}}">Delete</a>
+                </div>
+            </div>
+        </div>
+        {{/each}}
+    </div>
+</div>
+
+<script src="/js/deleteadd.js"></script>

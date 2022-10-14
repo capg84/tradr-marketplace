@@ -11,9 +11,9 @@
       <p class="text-end" style="font-style: italic;">Sold by:
         {{product.user.first_name}}</p>
       <div class="heart-prod-name">
-        <h3 id="productname">{{product.product_name}}</h3>
+        <h3 value= "{{user.id}}" id="productname">{{product.product_name}}</h3>
         <div id="heart" class="wrapper">
-          <a class="heart btn btn-outline-danger" href="#" id="wishlist-btn"><i
+          <a class="heart btn btn-outline-danger"  id="wishlist-btn"><i
               class="bi bi-heart"
             ></i></a>
         </div>
@@ -94,4 +94,5 @@
   </div>
 </div>
 
+<script src="/js/products.js"></script>
 <script src="/js/wishlist.js"></script>

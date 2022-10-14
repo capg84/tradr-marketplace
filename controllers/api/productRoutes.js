@@ -5,8 +5,7 @@ const withAuth = require('../../utils/auth');
 // create a listing api/products
 router.post('/', withAuth, async (req, res) => {
   const body = req.body;
-  console.log(body);
-  console.log("In post route");
+
   try {
     const newProduct = await Product.create({ ...body, user_id: req.session.user_id });
     res.json(newProduct);

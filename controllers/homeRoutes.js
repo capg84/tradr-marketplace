@@ -134,12 +134,11 @@ router.get('/search/:id', async (req, res) => {
       },
     });
 
-    if (categoryData) {
-      const category = categoryData.get({ plain: true });
-      console.log(category);
-      res.render('category', { 
-        category,
-        logged_in: req.session.logged_in 
+    if (productData) {
+      const product = productData.get({ plain: true });
+      console.log(product);
+      res.render('search', { 
+        product
       });
     } else {
       res.status(404).end();

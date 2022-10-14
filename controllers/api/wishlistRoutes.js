@@ -30,7 +30,7 @@ router.get('/',  async (req, res) => {
 
 // Adds item to wishlist
 router.post('/add/:id',  async (req, res) => {
-console.log("hello------------------------------------------------------------------------------href=/api/wishlist/add/{{product.id}}")
+
     try {
         const wishlist = await Wishlist.create({
             product_id: req.params.id,

@@ -3,17 +3,17 @@
 const addToCart = async () => {
 console.log("hello")
 // Variables for all the the product information on the wishlist page
-const productId = document.getElementById("product-id").value
-const quantity = document.getElementById("quantity").value
-const id = document.getElementById("wishlist-id").value
+ const productId = document.getElementById("product-id").value
+/* const quantity = document.getElementById("quantity").value */
+/* const id = document.getElementById("wishlist-id").value */
+const quantity = 1;
 
-console.log(productId, quantity)
-    const response = await fetch(`/api/cart/add`, {
+console.log(productId);
+    const response = await fetch(`/api/cart/add/${productId}`, {
         method: 'POST',
         body: JSON.stringify({
-            id: productId,
-            quantity: quantity
-
+            product_id: productId,
+            quantity: quantity,
         }),
         headers: {
             'Content-Type': 'application/json',

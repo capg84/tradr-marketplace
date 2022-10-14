@@ -34,14 +34,11 @@ router.post('/add/:id',  async (req, res) => {
     console.log("hello1-----------------------")
     try {
         const cart = await Cart.create({
-            product_id: req.params.id,
-            user_id: 1,
-            quantity: 1
-
-          
+            ...req.body,
+            user_id: req.session.user_id,
         });
-console.log("userID",req.session.user_id )
-        res.json(cart)
+        console.log("userID",req.session.user_id )
+        res.status(200).json(cart);
     } catch (err) {git 
         console.log(err)
         res.status(500).json(err)

@@ -128,7 +128,6 @@ router.get('/search/:id', async (req, res) => {
   console.log("in search route");
   try {
     let input = req.params.id.split("%20").join("|");
-    let id = req.params.id;
     const productData = await Product.findAll({
       where: {
         product_name: {
@@ -138,9 +137,9 @@ router.get('/search/:id', async (req, res) => {
     });
     const products = productData.map((product) => product.get({ plain: true }));
     console.log(products);
-/*     res.render('search', { 
+    res.render('search', { 
         products,
-    }); */
+    });
   } catch (err) {
     res.status(500).json(err);
   }

@@ -1,4 +1,4 @@
- {{#each products as |product|}}
+
  <div class="bg-col-grey">
     <div class="container text-center">
         <div class="text-space-between">
@@ -7,6 +7,7 @@
         </div>
         <div class="row parent-row">
             <!---EACH INDIVIDUAL ITEM STARTS HERE-->
+            {{#each wishlist}}
             <div class="col-lg-4 col-md-6 col-sm-12 product-container-white">
                 <div class="row">
                     <div class="col product-image">
@@ -27,10 +28,10 @@
                     </div>
                 </div>
             </div>
-            <!---EACH INDIVIDUAL ITEM ENDS HERE-->
+           {{/each}}
         </div>
     </div>
 </div>
-{{/each}}           
+         
 
 <script src="/js/wishlist.js"></script>

@@ -29,7 +29,9 @@ router.get('/', withAuth, async (req, res) => {
 
 
 // Adds item to wishlist
+
 router.post('/add/:id', withAuth,  async (req, res) => {
+
 
     try {
         const wishlist = await Wishlist.create({

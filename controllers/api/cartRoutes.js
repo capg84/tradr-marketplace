@@ -4,14 +4,13 @@ const withAuth = require('../../utils/auth');
 
 
 router.get('/', async (req, res) => {
-
+console.log("Hello", req.session.id)
         try {
             const products = await Cart.findAll({
                 where: {
-                    user_id: 2
+                    user_id: req.session.user_id
                 },
     
-                // attributes: ['id', 'product_id', 'user_id'],
                 include: [{model: Product }],
     
             });
@@ -29,18 +28,19 @@ router.get('/', async (req, res) => {
     });
 
 // Adds item to Cart
-router.post('/add',  async (req, res) => {
-
+router.post('/add/:id',  async (req, res) => {
+    console.log("hello1-----------------------")
     try {
         const cart = await Cart.create({
-            product_id: req.body.id,
-            user_id: 2,
-            quantity: req.body.quantity
+            product_id: req.params.id,
+            user_id: 1,
+            quantity: 1
+
           
         });
-
+console.log("userID",req.session.user_id )
         res.json(cart)
-    } catch (err) {
+    } catch (err) {git 
         console.log(err)
         res.status(500).json(err)
     }

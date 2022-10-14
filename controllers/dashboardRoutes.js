@@ -12,7 +12,7 @@ router.get('/', withAuth, async (req, res) => {
       });
   
       const products = productData.map((product) => product.get({ plain: true }));
-     console.log(products);
+      
       res.render('activelistings', {
         layout: 'dashboard',
         products,
@@ -29,7 +29,7 @@ router.get('/edit/:id', withAuth, async (req, res) => {
       
       if (productData) {
       const product = productData.get({ plain: true });
-      console.log(product);
+
 
       res.render('editlisting', {
         layout: 'dashboard',

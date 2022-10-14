@@ -14,9 +14,10 @@
                         <img class="product-image-sizing" src="{{productInfo.product.image}}" alt="bag">
                     </div>
                     <div class="col product-details">
+                        <input id="wishlist-id" type="hidden" value="{{id}}">
                         <input id="user-id" type="hidden" value="{{user_id}}">
                         <input id="product-id" type="hidden" value="{{productInfo.product_id}}">
-                        <button type="submit" class="btn btn-light cross-btn-styling">X</button>
+                        <button type="submit" id="x" class="btn btn-light cross-btn-styling">X</button>
                         <h2 class="product-title">{{productInfo.product.product_name}}</h2>
                         <p class="product-price">{{productInfo.products.price}}</p>
                         <p class="product-description">{{productInfo.product.description}}</p>

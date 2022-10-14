@@ -4,7 +4,7 @@ const { afterBulkCreate } = require('../../models/User');
 const withAuth = require('../../utils/auth');
 
 
-router.get('/',  async (req, res) => {
+router.get('/', withAuth, async (req, res) => {
 
     try {
         const products = await Wishlist.findAll({
@@ -29,7 +29,9 @@ router.get('/',  async (req, res) => {
 
 
 // Adds item to wishlist
-router.post('/add/:id',  async (req, res) => {
+
+router.post('/add/:id', withAuth,  async (req, res) => {
+
 
     try {
         const wishlist = await Wishlist.create({
@@ -41,7 +43,7 @@ router.post('/add/:id',  async (req, res) => {
         res.json(wishlist)
 
     } catch (err) {
-        console.log(err)
+
         res.status(500).json(err)
     }
 });
@@ -56,7 +58,6 @@ router.delete('/delete/:id', withAuth, async (req, res) => {
         const wishlist = await Wishlist.destroy({
             where: {
                 id: req.params.id,
-                user_id: req.session.id
             },
         });
         if (!wishlist) {

@@ -18,7 +18,7 @@ const sess = {
   secret: "tradr marketplace rules",
   cookie: {
 
-    maxAge: 300000,
+    // maxAge: 300000,
     // maxAge: 1000,
     httpOnly: true,
     secure: false,

@@ -1,5 +1,5 @@
 <h4 style="margin-top: 2%; font-family: Nunito, sans-serif; font-size: 1.2rem; font-weight: 600;">YOUR ADDRESSES</h4> 
-<a class="btn btn-success" href="#" style="margin-bottom: -2%;"> + ADD NEW ADDRESS </a>
+<a class="btn btn-success" href="/dashboard/address/create" style="margin-bottom: -2%;"> + ADD NEW ADDRESS </a>
 <div class="container">
     <div class="row justify-content-start" style="margin-top: 5%;">
         {{#each addresses}}
@@ -11,7 +11,7 @@
                     <p class="card-text">City: {{this.city}}</p>
                     <p class="card-text">County: {{this.county}}</p>
                     <p class="card-text">Postcode: {{this.post_code}}</p>
-                    <a class="btn btn-warning" href="#" class="card-link">Edit</a>
+                    <a class="btn btn-warning" href="/dashboard/address/edit/{{this.id}}" class="card-link">Edit</a>
                     <a class="btn btn-danger" href="#" class="card-link">Delete</a>
                 </div>
             </div>

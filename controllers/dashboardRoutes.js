@@ -66,6 +66,36 @@ router.get('/addresses', withAuth, async (req, res) => {
     }
 });
 
+// Create Address
+router.get('/address/create', withAuth, (req, res) => {
+  res.render('create-add', {
+    layout: 'dashboard',
+  });
+});
+
+// EDIT ADDRESS
+router.get('/address/edit/:id', withAuth, async (req, res) => {
+  try {
+    const addressData = await Address.findByPk(req.params.id);
+    
+    if (addressData) {
+    const address = addressData.get({ plain: true });
+    console.log(address);
+
+    res.render('edit-add', {
+      layout: 'dashboard',
+      address,
+      logged_in: req.session.logged_in
+    });
+  }
+    else {
+      res.status(404).end();
+    }
+  } catch (err) {
+    res.redirect('login');
+  }
+});
+
 // Get all Purchases 
 router.get('/purchases', withAuth, async (req, res) => {
     try {

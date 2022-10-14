@@ -1,5 +1,5 @@
 const sequelize = require('../config/connection');
-const { User, Category, Payment, Product, Address, Purchase, Wishlist, Cart} = require('../models')
+const { User, Category, Payment, Product, Address, Purchase, Wishlist, Cart } = require('../models')
 
 
 const userData = require('./user.json');

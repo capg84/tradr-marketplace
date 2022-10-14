@@ -54,9 +54,11 @@ const deleteFromWishlist = async () => {
 }
 
 // event listeners for buttons
-const deleteButton =
-    document.querySelector(".cross-btn-styling")
-        .addEventListener("click", deleteFromWishlist)
+const deleteButton = document.querySelectorAll("#x");
+deleteButton.forEach(btn => {
+    btn.addEventListener('click', deleteFromWishlist);
+});
+
 
 
 const addToCartButton = document.querySelectorAll(".wl-add-cart-btn");

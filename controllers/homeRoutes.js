@@ -56,8 +56,8 @@ router.get('/product/:id', async (req, res) => {
       include: [
         {
           model: User,
-          attributes: ['first_name'],
-          include: [{model: Product, attributes: ['id', 'product_name', 'price', 'image']}]
+          attributes: ['id','first_name'],
+          include: [{model: Product, attributes: ['id', 'product_name', 'price', 'image', 'user_id']}]
         },
         {
           model: Category,
@@ -65,7 +65,7 @@ router.get('/product/:id', async (req, res) => {
         },
       ],
     });
-    
+   
     if (productData) {
     const product = productData.get({ plain: true });
     console.log(productData);

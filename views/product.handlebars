@@ -37,16 +37,17 @@
             value="1"
           />
         </div>
-        <button
+        <input id="product-id" type="hidden" value="{{product.id}}">
+        <button id="to-cart" value="{{product.user_id}}"
           type="submit"
           class="btn btn-dark btn-styling2"
           style="margin-bottom: 5px; margin-top: 8px; width: 200px;"
         >Add to Cart</button>
-        <button
+        {{!-- <button id="buy"
           type="submit"
           class="btn btn-success btn-styling2"
           style="margin-bottom: 5px; width: 200px;"
-        >Buy Now</button>
+        >Buy Now</button> --}}
       </form>
       <p class="text-start" style="font-style: italic; margin-top: 10px;">Listed
         on
@@ -82,8 +83,8 @@
                     id="fttitle"
                   >{{this.product_name}}</h2></a>
                 <p class="product-price">£{{this.price}}</p>
-                <button type="submit" class="btn btn-dark btn-styling2">Add to
-                  Cart</button>
+                <button class="btn btn-dark btn-styling2" 
+                id="main-cart">Add to Cart</button>
               </div>
             </div>
           </div>

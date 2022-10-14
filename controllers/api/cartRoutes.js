@@ -3,7 +3,7 @@ const { Cart, User, Product } = require('../../models');
 const withAuth = require('../../utils/auth');
 
 
-router.get('/', async (req, res) => {
+router.get('/', withAuth, async (req, res) => {
 
     try {
         const products = await Cart.findAll({
@@ -28,11 +28,12 @@ router.get('/', async (req, res) => {
 
 
 // Adds item to Cart
-router.post('/add/:id', async (req, res) => {
+router.post('/add/:id',withAuth, async (req, res) => {
 
     try {
         const cart = await Cart.create({
-            ...req.body
+            ...req.body,
+            user_id: req.session.user_id
         });
 
         res.status(200).json(cart);
@@ -66,7 +67,7 @@ router.delete('/delete/:id', withAuth, async (req, res) => {
 
 
 // Deletes all items from Cart
-router.delete('/checkout/:id', async (req, res) => {
+router.delete('/checkout/:id', withAuth, async (req, res) => {
 
     try {
         const cart = await Cart.destroy({

@@ -44,14 +44,14 @@
               <li><a class="dropdown-item homedropdown" href="/dashboard">Dashboard</a></li>
               <li><a class="dropdown-item homedropdown" href="/dashboard/purchases">Purchases</a></li>
               <li><a class="dropdown-item homedropdown" href="/dashboard/createlisting">Create a listing</a></li>
-              <li><a class="dropdown-item homedropdown" href="/" id="signout-btn"><i class="bi bi-escape"></i> Signout</a></li>
+              <li><a class="dropdown-item homedropdown" href="#" id="logout-btn"><i class="bi bi-escape"></i> Signout</a></li>
             </ul>
           </div>
           <a class="navbar-brand" href="/wishlist" style="margin-top: 5px; margin-left: 2px;"><i class="fa-solid fa-heart"></i> wishlist</a>
           {{else}}
           <a class="navbar-brand active btn" href="/signup" style="margin-top: 5px;">Signup</a>
           <a class="navbar-brand active btn btn-primary" href="/login" style="margin-top: 5px;">Login</a>
-          <a id="wishlist" class="navbar-brand" href="/api/wishlist" style="margin-top: 5px; margin-left: 2px;"><i class="fa-solid fa-heart"></i> wishlist</a>
+          <a id="wishlist" class="navbar-brand" href="/login" style="margin-top: 5px; margin-left: 2px;"><i class="fa-solid fa-heart"></i> wishlist</a>
           {{/if}}
           <a class="navbar-brand" href="/api/cart" style="margin-top: 5px; margin-left: 2px;"><i class="bi bi-cart4"></i> Your basket</a>
         </div>
@@ -119,7 +119,7 @@
   <script src="https://kit.fontawesome.com/0ca80f36f5.js" crossorigin="anonymous"></script>
  
  
-  <script src="/js/signout.js"></script>
+  <script src="/js/logout.js"></script>
 
   
 </body>

@@ -30,12 +30,14 @@
           </h1>
         </a>
         <form class="d-flex justify-content-center" role="search">
-          <input class="form-control me-2" type="search" placeholder="Search for items" aria-label="Search" style="width: 450px;">
-          <button class="btn btn-outline-success" type="submit">Search</button>
+          <input id="item-input" class="form-control me-2" type="search" placeholder="Search for items" aria-label="Search" style="width: 450px;">
+          <button class="btn btn-outline-success" id="search-btn" type="submit">Search</button>
         </form>
         <ul class="d-flex">
             {{#if logged_in}}
-          <a class="nav-link disabled">Hello <p>{{this.user.first_name}},</p></a>
+
+          <a class="nav-link disabled">Hello<p>{{name}}</p></a>
+
           <div class="dropdown container">
             <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" style="margin-top: 10px;">
               Your account
@@ -47,7 +49,7 @@
               <li><a class="dropdown-item homedropdown" href="#" id="logout-btn"><i class="bi bi-escape"></i> Signout</a></li>
             </ul>
           </div>
-          <a class="navbar-brand" href="/wishlist" style="margin-top: 5px; margin-left: 2px;"><i class="fa-solid fa-heart"></i> wishlist</a>
+          <a class="navbar-brand" href="/api/wishlist" style="margin-top: 5px; margin-left: 2px;"><i class="fa-solid fa-heart"></i> wishlist</a>
           {{else}}
           <a class="navbar-brand active btn" href="/signup" style="margin-top: 5px;">Signup</a>
           <a class="navbar-brand active btn btn-primary" href="/login" style="margin-top: 5px;">Login</a>
@@ -120,7 +122,8 @@
  
  {{#if logged_in}}
   <script src="/js/logout.js"></script>
-{{/if}}
+ {{/if}}
+  <script src="/js/search.js"></script>
   
 </body>
 </html>

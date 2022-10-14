@@ -49,7 +49,7 @@ router.post("/login", async (req, res) => {
     }
 
     req.session.save(() => {
-      req.session.first_name = userData.firstName;
+      req.session.first_name = userData.first_name;
       req.session.user_id = userData.id;
       req.session.email = userData.email;
       req.session.logged_in = true;
@@ -59,6 +59,10 @@ router.post("/login", async (req, res) => {
   } catch (err) {
     res.status(400).json({ message: "No user account found!" });
   }
+
+
+
+
 });
 
 router.post("/logout", (req, res) => {

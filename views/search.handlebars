@@ -1,0 +1,24 @@
+<a href="/" class="go-back"> &larr; Back to home</a>
+<div class="categorycont">
+    <h2 id="cattext">Search results: </h2>
+    <div class="bg-col-white">
+        <div class="container text-center">
+           <div class="row parent-row-image-only">
+        <!---EACH INDIVIDUAL ITEM STARTS HERE-->
+               {{#each products}}
+                <div class="col-lg-2 col-md-4 col-sm-6 product-container2" style="margin-bottom: 20px; margin-top: 10px;" id="ftproduct">
+                    <div class="row">
+                        <div class="col product-overview">
+                           <a href="/product/{{this.id}}"><img class="product-image-sizing" src="{{this.image}}" alt="bag"></a>
+                           <a href="/product/{{this.id}}" style="text-decoration: none; color: black;"><h2 class="product-title2" id="fttitle">{{this.product_name}}</h2></a>
+                           <p class="product-price">£{{this.price}}</p>
+                           <button type="submit" class="btn btn-dark btn-styling2">Add to Cart</button>
+                        </div>
+                    </div>
+                </div>
+               {{/each}}
+        <!---EACH INDIVIDUAL ITEM ENDS HERE-->
+           </div>
+        </div>
+    </div>
+</div>

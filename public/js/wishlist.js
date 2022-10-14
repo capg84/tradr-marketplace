@@ -1,27 +1,26 @@
 
 // Function to add item to cart
 const addToCart = async () => {
-console.log("hello")
-// Variables for all the the product information on the wishlist page
-const productId = document.getElementById("product-id").value
-const quantity = document.getElementById("quantity").value
-const id = document.getElementById("wishlist-id").value
 
-console.log(productId, quantity)
-    const response = await fetch(`/api/cart/add`, {
+    // Variables for all the the product information on the wishlist page
+    const productId = document.getElementById("product-id").value
+    const userId = document.getElementById("user-id").value
+
+    console.log(productId);
+    const response = await fetch(`/api/cart/add/${userId}`, {
         method: 'POST',
         body: JSON.stringify({
-            id: productId,
-            quantity: quantity
-
+            quantity: 1,
+            user_id: userId,
+            product_id: productId
         }),
         headers: {
             'Content-Type': 'application/json',
         },
     });
-
     if (response.ok) {
-        document.location.replace(`/api/wishlist/delete/${id}`);
+
+        document.location.replace('/api/cart');
     } else {
         alert('Failed to add to cart');
     }
@@ -34,7 +33,7 @@ const deleteFromWishlist = async () => {
 
     const id = document.getElementById("wishlist-id").value
 
-    const response = await fetch (`/api/wishlist/delete/${id}`, {
+    const response = await fetch(`/api/wishlist/delete/${id}`, {
         method: 'DELETE',
         body: JSON.stringify({
             where: {
@@ -47,7 +46,7 @@ const deleteFromWishlist = async () => {
     });
 
     if (response.ok) {
-        document.location.replace('/');
+        document.location.replace('/api/wishlist');
     } else {
         alert('Failed to delete it item from wishlist');
     }
@@ -55,8 +54,16 @@ const deleteFromWishlist = async () => {
 }
 
 // event listeners for buttons
-const deleteButton = document.querySelector(".cross-btn-styling").addEventListener("click", deleteFromWishlist)
-const addToCartButton = document.getElementById("cart").addEventListener("click", addToCart)
+const deleteButton = document.querySelectorAll("#x");
+deleteButton.forEach(btn => {
+    btn.addEventListener('click', deleteFromWishlist);
+});
 
+
+
+const addToCartButton = document.querySelectorAll(".wl-add-cart-btn");
+addToCartButton.forEach(btn => {
+    btn.addEventListener('click', addToCart);
+});
 
 

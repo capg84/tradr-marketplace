@@ -1,22 +1,27 @@
 const router = require('express').Router();
+const { where } = require('sequelize');
 const { Product, User, Category, Wishlist } = require('../models');
 const withAuth = require('../utils/auth');
+const { Op } = require('sequelize');
 
 // get all products for homepage
 router.get('/', async (req, res) => {
+
   try {
     const productData = await Product.findAll({
-      include: [Category],
+      include: [Category]
+      
     });
 
     const products = productData.map((product) => product.get({ plain: true }));
-
 
     // Pass serialized data and session flag into template
     res.render("home", {
 
       products,
-      logged_in: req.session.logged_in
+      logged_in: req.session.logged_in,
+      name: req.session.first_name
+     
     });
   } catch (err) {
     res.status(500).json(err);
@@ -56,8 +61,8 @@ router.get('/product/:id', async (req, res) => {
       include: [
         {
           model: User,
-          attributes: ['first_name'],
-          include: [{model: Product, attributes: ['id', 'product_name', 'price', 'image']}]
+          attributes: ['id','first_name'],
+          include: [{model: Product, attributes: ['id', 'product_name', 'price', 'image', 'user_id']}]
         },
         {
           model: Category,
@@ -65,7 +70,7 @@ router.get('/product/:id', async (req, res) => {
         },
       ],
     });
-    
+   
     if (productData) {
     const product = productData.get({ plain: true });
     console.log(productData);
@@ -118,6 +123,29 @@ router.get('/wishlist', withAuth, async (req, res) => {
     });
   } catch (err) {
     res.redirect('login');
+  }
+});
+
+// SEARCH
+
+router.get('/search/:id', async (req, res) => {
+  console.log("in search route");
+  try {
+    let input = req.params.id.split("%20").join("|");
+    const productData = await Product.findAll({
+      where: {
+        product_name: {
+          [Op.regexp]: `(${input})`
+        },
+      },
+    });
+    const products = productData.map((product) => product.get({ plain: true }));
+    console.log(products);
+    res.render('search', { 
+        products,
+    });
+  } catch (err) {
+    res.status(500).json(err);
   }
 });
 

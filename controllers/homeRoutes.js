@@ -2,6 +2,7 @@ const router = require('express').Router();
 const { where } = require('sequelize');
 const { Product, User, Category, Wishlist } = require('../models');
 const withAuth = require('../utils/auth');
+const { Op } = require('sequelize');
 
 // get all products for homepage
 router.get('/', async (req, res) => {
@@ -122,6 +123,29 @@ router.get('/wishlist', withAuth, async (req, res) => {
     });
   } catch (err) {
     res.redirect('login');
+  }
+});
+
+// SEARCH
+
+router.get('/search/:id', async (req, res) => {
+  console.log("in search route");
+  try {
+    let input = req.params.id.split("%20").join("|");
+    const productData = await Product.findAll({
+      where: {
+        product_name: {
+          [Op.regexp]: `(${input})`
+        },
+      },
+    });
+    const products = productData.map((product) => product.get({ plain: true }));
+    console.log(products);
+    res.render('search', { 
+        products,
+    });
+  } catch (err) {
+    res.status(500).json(err);
   }
 });
 

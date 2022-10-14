@@ -1,10 +1,10 @@
 
-// Deletes item from cart
-const deleteFromCart = async () => {
+// Deletes one item from cart
+const deleteItemFromCart = async () => {
 
-    const id = document.getElementById("user-id").value
+    const id = document.getElementById("x-button").value
 
-    const response = await fetch (`/api/cart/delete/`, {
+    const response = await fetch(`/api/cart/delete/${id}`, {
         method: 'DELETE',
         body: JSON.stringify({
             where: {
@@ -17,7 +17,7 @@ const deleteFromCart = async () => {
     });
 
     if (response.ok) {
-        document.location.replace('/');
+        document.location.replace('/api/cart');
     } else {
         alert('Failed to delete items from cart');
     }
@@ -27,16 +27,41 @@ const deleteFromCart = async () => {
 
 
 
-const totalPrice = () => {
+// Deletes all items from cart
+const deleteAllFromCart = async () => {
 
+    const id = document.getElementById("user-id").value
 
-const price = document.querySelector(".product-price").value
-const quantity = document.querySelector(".product-price").value   
-const totalPrice = price * quantity 
+    const response = await fetch(`/api/cart/checkout/${id}`, {
+        method: 'DELETE',
+        body: JSON.stringify({
+            where: {
+                id: id
+            }
+        }),
+        headers: {
+            'Content-Type': 'application/json',
+        },
+    });
 
-document.querySelector("total-price").innerHTML = totalPrice
+    if (response.ok) {
+        alert('Thank you for your purchase');
+        document.location.replace('/api/cart');
+    } else {
+        alert('Failed to delete items from cart');
+    }
+
 
 }
 
 
-const checkoutButton = document.getElementById("checkout-btn").addEventListener("click", deleteFromCart)
+
+// event listeners for buttons
+const xButtons = document.querySelectorAll('#x-button');
+xButtons.forEach(btn => {
+    btn.addEventListener('click', deleteItemFromCart);
+});
+
+const checkoutButton =
+    document.querySelector(".checkout-btn")
+        .addEventListener("click", deleteAllFromCart)

@@ -30,28 +30,30 @@ const addToCart = async (event) => {
 }
 
 // Function to delete product from cart
-const deleteFromWishlist = async () => {
+const deleteFromWishlist = async (event) => {
 
-    const id = document.getElementById("wishlist-id").value
+    if (event.target.hasAttribute('data-id')) {
+        const id = event.target.getAttribute('data-id')
 
-    const response = await fetch(`/api/wishlist/delete/${id}`, {
-        method: 'DELETE',
-        body: JSON.stringify({
-            where: {
-                id: id
-            }
-        }),
-        headers: {
-            'Content-Type': 'application/json',
-        },
-    });
 
-    if (response.ok) {
-        document.location.replace('/api/wishlist');
-    } else {
-        alert('Failed to delete it item from wishlist');
+        const response = await fetch(`/api/wishlist/delete/${id}`, {
+            method: 'DELETE',
+            body: JSON.stringify({
+                where: {
+                    id: id
+                }
+            }),
+            headers: {
+                'Content-Type': 'application/json',
+            },
+        });
+
+        if (response.ok) {
+            document.location.replace('/api/wishlist');
+        } else {
+            alert('Failed to delete it item from wishlist');
+        }
     }
-
 }
 
 // event listeners for buttons

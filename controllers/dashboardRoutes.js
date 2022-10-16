@@ -5,22 +5,22 @@ const withAuth = require("../utils/auth");
 // GET ALL ACTIVELISTINGS
 
 router.get('/', withAuth, async (req, res) => {
-    try {
-      const productData = await Product.findAll({
-        where: {
-          user_id: req.session.user_id,
-        },
-      });
-  
-      const products = productData.map((product) => product.get({ plain: true }));
-      
-      res.render('activelistings', {
-        layout: 'dashboard',
-        products, name: req.session.first_name
-      });
-    } catch (err) {
-      res.redirect('login');
-    }
+  try {
+    const productData = await Product.findAll({
+      where: {
+        user_id: req.session.user_id,
+      },
+    });
+
+    const products = productData.map((product) => product.get({ plain: true }));
+
+    res.render('activelistings', {
+      layout: 'dashboard',
+      products, name: req.session.first_name
+    });
+  } catch (err) {
+    res.redirect('login');
+  }
 
 });
 
@@ -49,28 +49,7 @@ router.get("/edit/:id", withAuth, async (req, res) => {
 });
 
 // Get all addresses
-
 router.get('/addresses', withAuth, async (req, res) => {
-    try {
-      const addressData = await Address.findAll({
-        where: {
-          user_id: req.session.user_id,
-        },
-      });
-  
-      const addresses = addressData.map((address) => address.get({ plain: true }));
-      console.log(addresses);
-  
-      res.render('address', {
-        layout: 'dashboard',
-        addresses,
-        name: req.session.first_name
-      });
-    } catch (err) {
-      res.redirect('login');
-    }
-
-router.get("/addresses", withAuth, async (req, res) => {
   try {
     const addressData = await Address.findAll({
       where: {
@@ -78,21 +57,20 @@ router.get("/addresses", withAuth, async (req, res) => {
       },
     });
 
-    const addresses = addressData.map((address) =>
-      address.get({ plain: true })
-    );
+    const addresses = addressData.map((address) => address.get({ plain: true }));
     console.log(addresses);
 
-    res.render("address", {
-      layout: "dashboard",
+    res.render('address', {
+      layout: 'dashboard',
       addresses,
       name: req.session.first_name
     });
   } catch (err) {
-    res.redirect("login");
+    res.redirect('login');
   }
+})
 
-});
+
 
 // Create Address
 router.get("/address/create", withAuth, (req, res) => {
@@ -108,24 +86,16 @@ router.get("/address/edit/:id", withAuth, async (req, res) => {
 
     if (addressData) {
       const address = addressData.get({ plain: true });
-      console.log(address);
 
-
-    res.render('edit-add', {
-      layout: 'dashboard',
-      address,
-      logged_in: req.session.logged_in,
-      name: req.session.first_name
-    });
-  }
-    else {
-
-      res.render("edit-add", {
-        layout: "dashboard",
+      res.render('edit-add', {
+        layout: 'dashboard',
         address,
         logged_in: req.session.logged_in,
+        name: req.session.first_name
       });
-    } else {
+    }
+
+    else {
 
       res.status(404).end();
     }
@@ -137,24 +107,24 @@ router.get("/address/edit/:id", withAuth, async (req, res) => {
 
 // Get all Purchases 
 router.get('/purchases', withAuth, async (req, res) => {
-    try {
-      const purchaseData = await Purchase.findAll({
-        where: {
-          user_id: req.session.user_id,
-        },
-        include: [{model: Product}],
-      });
-  
-      const purchases = purchaseData.map((purchase) => purchase.get({ plain: true }));
-      console.log(purchases);
-      res.render('purchases', {
-        layout: 'dashboard',
-        purchases,
-        name: req.session.first_name
-      });
-    } catch (err) {
-      res.redirect('login');
-    }
+  try {
+    const purchaseData = await Purchase.findAll({
+      where: {
+        user_id: req.session.user_id,
+      },
+      include: [{ model: Product }],
+    });
+
+    const purchases = purchaseData.map((purchase) => purchase.get({ plain: true }));
+
+    res.render('purchases', {
+      layout: 'dashboard',
+      purchases,
+      name: req.session.first_name
+    });
+  } catch (err) {
+    res.redirect('login');
+  }
 
 });
 
@@ -162,20 +132,19 @@ router.get('/purchases', withAuth, async (req, res) => {
 router.get("/createlisting", withAuth, (req, res) => {
   res.render("createlisting", {
     layout: "dashboard",
+    name: req.session.first_name
   });
 });
 
 // Get seller stats
 
 router.get('/stats', withAuth, (req, res) => {
-  res.render('stats', {
-    layout: 'dashboard',
-    name: req.session.first_name
-
-});
+  res.render('stats', {layout: 'dashboard', name: req.session.first_name}
+  )
+})
 
 router.get("/aboutus", (req, res) => {
-  res.render("aboutUs");
+  res.render("aboutUs", { name: req.session.first_name });
 });
 
 module.exports = router;

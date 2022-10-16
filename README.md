@@ -125,3 +125,6 @@ Should you have any questions, please feel free to contact any of the contributo
 ## Live Application URL
 
 The live application is deployed on heroku and can be accessed by visiting [https://calm-gorge-52770.herokuapp.com](https://calm-gorge-52770.herokuapp.com)
+
+## Group Presentation URL
+[Click here to view the PowerPoint Presentation](https://docs.google.com/presentation/d/1pY4_T8iH4wj2MoVnhpgqATKA_R8sb0Oa/edit?usp=sharing&ouid=108844044555454204550&rtpof=true&sd=true)

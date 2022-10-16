@@ -3,4 +3,9 @@ const formatDate = (date) => {
   return date.toLocaleDateString();
 };
 
-module.exports = { formatDate };
+const isfeatured = (obj) => {
+  if (featured)
+  return obj;
+}
+
+module.exports = { formatDate, isfeatured };

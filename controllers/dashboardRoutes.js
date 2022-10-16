@@ -35,7 +35,8 @@ router.get('/edit/:id', withAuth, async (req, res) => {
       res.render('editlisting', {
         layout: 'dashboard',
         product,
-        logged_in: req.session.logged_in
+        logged_in: req.session.logged_in,
+        name: req.session.first_name
       });
     }
       else {
@@ -61,7 +62,7 @@ router.get('/addresses', withAuth, async (req, res) => {
       res.render('address', {
         layout: 'dashboard',
         addresses,
-        name: req.session.first_name,
+        name: req.session.first_name
       });
     } catch (err) {
       res.redirect('login');

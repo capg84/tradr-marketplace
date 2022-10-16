@@ -194,7 +194,7 @@ router.get("/privacy", (req, res) => {
   res.render("privacy");
 });
 
-router.get("/about", (req, res) => {
+router.get("/aboutus", (req, res) => {
   res.render("aboutUs");
 });
 

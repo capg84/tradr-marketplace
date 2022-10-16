@@ -165,6 +165,7 @@ router.get('/stats', withAuth, (req, res) => {
     name: req.session.first_name
 
 });
+});
 
 router.get("/aboutus", (req, res) => {
   res.render("aboutUs");

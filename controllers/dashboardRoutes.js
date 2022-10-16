@@ -5,6 +5,7 @@ const withAuth = require("../utils/auth");
 // GET ALL ACTIVELISTINGS
 
 router.get('/', withAuth, async (req, res) => {
+
     try {
       const productData = await Product.findAll({
         where: {
@@ -22,6 +23,7 @@ router.get('/', withAuth, async (req, res) => {
     } catch (err) {
       res.redirect('login');
     }
+
 
 });
 
@@ -48,29 +50,8 @@ router.get("/edit/:id", withAuth, async (req, res) => {
 });
 
 // Get all addresses
-
 router.get('/addresses', withAuth, async (req, res) => {
-    try {
-      const addressData = await Address.findAll({
-        where: {
-          user_id: req.session.user_id,
-        },
-      });
-  
-      const addresses = addressData.map((address) => address.get({ plain: true }));
-      console.log(addresses);
-  
-      res.render('address', {
-        layout: 'dashboard',
-        addresses,
-        name: req.session.first_name
-      });
-    } catch (err) {
-      res.redirect('login');
-    }
-});
 
-router.get("/addresses", withAuth, async (req, res) => {
   try {
     const addressData = await Address.findAll({
       where: {
@@ -78,21 +59,20 @@ router.get("/addresses", withAuth, async (req, res) => {
       },
     });
 
-    const addresses = addressData.map((address) =>
-      address.get({ plain: true })
-    );
+    const addresses = addressData.map((address) => address.get({ plain: true }));
     console.log(addresses);
 
-    res.render("address", {
-      layout: "dashboard",
+    res.render('address', {
+      layout: 'dashboard',
       addresses,
       name: req.session.first_name
     });
   } catch (err) {
-    res.redirect("login");
+    res.redirect('login');
   }
+})
 
-});
+
 
 // Create Address
 router.get('/address/create', withAuth, (req, res) => {
@@ -104,12 +84,13 @@ router.get('/address/create', withAuth, (req, res) => {
 
 // EDIT ADDRESS
 router.get("/address/edit/:id", withAuth, async (req, res) => {
+
   try {
     const addressData = await Address.findByPk(req.params.id);
 
     if (addressData) {
       const address = addressData.get({ plain: true });
-      console.log(address);
+
 
 
     res.render('edit-add', {
@@ -120,6 +101,7 @@ router.get("/address/edit/:id", withAuth, async (req, res) => {
     });
   }
      else {
+
       res.status(404).end();
     }
   } catch (err) {
@@ -130,6 +112,7 @@ router.get("/address/edit/:id", withAuth, async (req, res) => {
 
 // Get all Purchases 
 router.get('/purchases', withAuth, async (req, res) => {
+
     try {
       const purchaseData = await Purchase.findAll({
         where: {
@@ -156,10 +139,12 @@ router.get('/createlisting', withAuth, (req, res) => {
       layout: 'dashboard',
       name: req.session.first_name
     });
+
 });
 
 // Get seller stats
 router.get('/stats', withAuth, (req, res) => {
+
   res.render('stats', {
     layout: 'dashboard',
     name: req.session.first_name

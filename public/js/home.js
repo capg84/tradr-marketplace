@@ -30,8 +30,11 @@ const addToCart = async (event) => {
 
 
 
-
 const addToCartButton = document.querySelectorAll(".btn-styling2");
 addToCartButton.forEach(btn => {
     btn.addEventListener('click', addToCart);
 });
+
+
+
+sum()

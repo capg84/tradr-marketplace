@@ -1,8 +1,10 @@
 
 // Deletes one item from cart
-const deleteItemFromCart = async () => {
+const deleteItemFromCart = async (event) => {
 
-    const id = document.getElementById("x-button").value
+    if (event.target.hasAttribute('data-id')) {
+        const id = event.target.getAttribute('data-id');
+
 
     const response = await fetch(`/api/cart/delete/${id}`, {
         method: 'DELETE',
@@ -21,10 +23,8 @@ const deleteItemFromCart = async () => {
     } else {
         alert('Failed to delete items from cart');
     }
-
-
 }
-
+}
 
 
 // Deletes all items from cart
@@ -65,3 +65,5 @@ xButtons.forEach(btn => {
 const checkoutButton =
     document.querySelector(".checkout-btn")
         .addEventListener("click", deleteAllFromCart)
+
+

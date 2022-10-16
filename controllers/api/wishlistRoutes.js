@@ -17,7 +17,7 @@ router.get('/', withAuth, async (req, res) => {
             });
             
             const cartSerialized = products.map((product) => product.get({ plain: true }));
-            const obj = { products: cartSerialized, logged_in: req.session.logged_in }
+            const obj = { products: cartSerialized, logged_in: req.session.logged_in, name: req.session.first_name }
 
             res.render('wishlist', obj);
     

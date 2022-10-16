@@ -3,28 +3,28 @@
     "id": 1,
     "email": "dave@gmail.com",
     "password": "dave12345",
-    "first_name": "dave",
-    "last_name": "monaghan"
+    "first_name": "Dave",
+    "last_name": "Monaghan"
   },
   {
     "id": 2,
     "email": "nene@gmail.com",
     "password": "nene12345",
-    "first_name": "nene",
-    "last_name": "beji"
+    "first_name": "Nene",
+    "last_name": "Beji"
   },
   {
     "id": 3,
     "email": "priscilla@gmail.com",
     "password": "priscilla12345",
-    "first_name": "priscilla",
-    "last_name": "luong"
+    "first_name": "Priscilla",
+    "last_name": "Luong"
   },
   {
     "id": 4,
     "email": "cyprian@gmail.com",
     "password": "cyprian12345",
-    "first_name": "cyprian",
-    "last_name": "gomes"
+    "first_name": "Cyprian",
+    "last_name": "Gomes"
   }
 ]

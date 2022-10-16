@@ -42,6 +42,9 @@ router.get("/category/:id", async (req, res) => {
       res.render("category", {
         category,
         logged_in: req.session.logged_in,
+
+        name: req.session.first_name
+
       });
     } else {
       res.status(404).end();
@@ -73,15 +76,18 @@ router.get("/product/:id", async (req, res) => {
     });
 
     if (productData) {
-      const product = productData.get({ plain: true });
-      console.log(productData);
-      res.render("product", {
-        product,
-        logged_in: req.session.logged_in,
-      });
-    } else {
-      res.status(404).end();
-    }
+
+    const product = productData.get({ plain: true });
+    console.log(productData);
+    res.render('product', {
+      product,
+      logged_in: req.session.logged_in,
+      name: req.session.first_name
+    });
+  } else {
+    res.status(404).end();
+  }
+
   } catch (err) {
     res.status(500).json(err);
   }
@@ -101,6 +107,9 @@ router.get("/", withAuth, async (req, res) => {
     res.render("home", {
       user,
       logged_in: true,
+
+      name: req.session.first_name
+
     });
   } catch (err) {
     res.status(500).json(err);
@@ -123,6 +132,9 @@ router.get("/wishlist", withAuth, async (req, res) => {
     res.render("wishlist", {
       wishlists,
       logged_in: req.session.logged_in,
+
+      name: req.session.first_name
+
     });
   } catch (err) {
     res.redirect("login");
@@ -144,8 +156,11 @@ router.get("/search/:id", async (req, res) => {
     });
     const products = productData.map((product) => product.get({ plain: true }));
     console.log(products);
-    res.render("search", {
-      products,
+
+    res.render('search', { 
+        products,
+        name: req.session.first_name
+
     });
   } catch (err) {
     res.status(500).json(err);
@@ -177,6 +192,10 @@ router.get("/signup", (req, res) => {
 
 router.get("/privacy", (req, res) => {
   res.render("privacy");
+});
+
+router.get("/about", (req, res) => {
+  res.render("aboutUs");
 });
 
 router.get("/contactus", (req, res) => {

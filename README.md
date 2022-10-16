@@ -119,6 +119,9 @@ Should you have any questions, please feel free to contact any of the contributo
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
+## Live Application Screenshot
+![TRADR-Screenshot](./public/images/readme-screenshot.png)
+
 ## Live Application URL
 
 The live application is deployed on heroku and can be accessed by visiting [https://calm-gorge-52770.herokuapp.com](https://calm-gorge-52770.herokuapp.com)

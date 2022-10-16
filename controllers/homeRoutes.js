@@ -17,7 +17,7 @@ router.get("/", async (req, res) => {
     res.render("home", {
       products,
       logged_in: req.session.logged_in,
-      name: req.session.first_name,
+      name: req.session.first_name
     });
   } catch (err) {
     res.status(500).json(err);

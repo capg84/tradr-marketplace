@@ -16,6 +16,7 @@ router.get('/', withAuth, async (req, res) => {
       res.render('activelistings', {
         layout: 'dashboard',
         products,
+        name: req.session.first_name
       });
     } catch (err) {
       res.redirect('login');
@@ -60,6 +61,7 @@ router.get('/addresses', withAuth, async (req, res) => {
       res.render('address', {
         layout: 'dashboard',
         addresses,
+        name: req.session.first_name,
       });
     } catch (err) {
       res.redirect('login');
@@ -70,6 +72,7 @@ router.get('/addresses', withAuth, async (req, res) => {
 router.get('/address/create', withAuth, (req, res) => {
   res.render('create-add', {
     layout: 'dashboard',
+    name: req.session.first_name
   });
 });
 
@@ -85,7 +88,8 @@ router.get('/address/edit/:id', withAuth, async (req, res) => {
     res.render('edit-add', {
       layout: 'dashboard',
       address,
-      logged_in: req.session.logged_in
+      logged_in: req.session.logged_in,
+      name: req.session.first_name
     });
   }
     else {
@@ -111,6 +115,7 @@ router.get('/purchases', withAuth, async (req, res) => {
       res.render('purchases', {
         layout: 'dashboard',
         purchases,
+        name: req.session.first_name
       });
     } catch (err) {
       res.redirect('login');
@@ -121,6 +126,7 @@ router.get('/purchases', withAuth, async (req, res) => {
 router.get('/createlisting', withAuth, (req, res) => {
     res.render('createlisting', {
       layout: 'dashboard',
+      name: req.session.first_name
     });
 });
 

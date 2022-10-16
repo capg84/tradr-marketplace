@@ -1,0 +1,35 @@
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.js"></script>
+<br>
+<br>
+<br>
+<canvas id="myChart" style="width:200%;max-width:900px"></canvas>
+
+<script>
+let xValues = ["Jan", "Feb", "Mar", "Apr", "May", "June", "July", "Aug", "Sep", "Oct", "Nov", "Dec"];
+let yValues = [0, 10, 5, 2, 20, 30, 45, 75, 50, 90, 100, 75];
+
+new Chart("myChart", {
+  type: "line",
+  data: {
+    labels: xValues,
+    datasets: [{
+      fill: false,
+      lineTension: 0,
+      backgroundColor: "rgba(0,0,255,1.0)",
+      borderColor: "rgba(0,0,255,0.1)",
+      data: yValues
+    }]
+  },
+  options: {
+    legend: {display: false},
+    scales: {
+      yAxes: [{ticks: {min: 0, max:100}}],
+    },
+    title: {
+    display: true,
+    text: "Net sales in (£) across the year"
+    }
+  }
+});
+</script>
+

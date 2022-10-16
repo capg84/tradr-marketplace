@@ -12,12 +12,12 @@
                     <div class="col product-details-cart">
                         <input id="product-id" type="hidden" value="{{productInfo.product_id}}">
                         <input id="user-id" type="hidden" value="{{productInfo.user_id}}">
-                        <button id="x-button" value="{{id}}" type="submit" class="btn btn-light cross-btn-styling">X</button>
+                        <button id="x-button" data-id="{{id}}"  type="submit" class="btn btn-light cross-btn-styling">X</button>
                         <h2 class="product-title">{{productInfo.product.product_name}}</h2>
-                        <p class="product-price">{{productInfo.products.price}}</p>
+                        <p data-price="{{productInfo.products.price}}" class="product-price">{{productInfo.products.price}}</p>
                         <p class="product-description">{{productInfo.product.description}}</p>
                         <div class="qty">
-                        <label id="quantity" for="quantity">Quantity:</label>
+                        <label id="quantity" data-price="" for="quantity">Quantity:</label>
                         <input type="number" id="quantity" name="quantity" min="1" max="1" value="1"> 
                         </div>
                     </div>
@@ -29,7 +29,7 @@
 
 
         <div class="cart-bottom">
-            <p class="total-price">Total price: £56.95</p>
+            <p class="total-price">Total price: <span id="total-price"></span></p>
             <button type="submit" class="btn btn-dark btn-styling checkout-btn">CHECKOUT</button>
         </div>
     </div>

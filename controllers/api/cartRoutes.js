@@ -1,10 +1,10 @@
 const router = require('express').Router();
-const { Cart, User, Product } = require('../../models');
+const { Cart, Product } = require('../../models');
 const withAuth = require('../../utils/auth');
 
 
 router.get('/', withAuth, async (req, res) => {
-
+    const total = []
     try {
         const products = await Cart.findAll({
             where: {
@@ -16,7 +16,8 @@ router.get('/', withAuth, async (req, res) => {
         });
 
         const cartSerialized = products.map((product) => product.get({ plain: true }));
-        const obj = { products: cartSerialized, logged_in: req.session.logged_in }
+        const obj = { products: cartSerialized, logged_in: req.session.logged_in, name: req.session.first_name }
+
         res.render('cart', obj);
 
     } catch (err) {
@@ -32,8 +33,10 @@ router.post('/add/:id',withAuth, async (req, res) => {
 
     try {
         const cart = await Cart.create({
-            ...req.body,
-            user_id: req.session.user_id
+            quantity: 1,
+            user_id: req.session.user_id,
+            product_id: req.body.product_id,
+            
         });
 
         res.status(200).json(cart);

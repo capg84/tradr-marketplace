@@ -1,8 +1,9 @@
-const router = require('express').Router();
-const {Product, Purchase, Address, Category, Order} = require('../models');
-const withAuth = require('../utils/auth');
+const router = require("express").Router();
+const { Product, Purchase, Address, Category, Order } = require("../models");
+const withAuth = require("../utils/auth");
 
 // GET ALL ACTIVELISTINGS
+
 router.get('/', withAuth, async (req, res) => {
     try {
       const productData = await Product.findAll({
@@ -20,33 +21,35 @@ router.get('/', withAuth, async (req, res) => {
     } catch (err) {
       res.redirect('login');
     }
+
 });
 
 // EDIT A PRODUCT
-router.get('/edit/:id', withAuth, async (req, res) => {
-    try {
-      const productData = await Product.findByPk(req.params.id);
-      
-      if (productData) {
+router.get("/edit/:id", withAuth, async (req, res) => {
+  try {
+    const productData = await Product.findByPk(req.params.id);
+
+    if (productData) {
       const product = productData.get({ plain: true });
 
-
-      res.render('editlisting', {
-        layout: 'dashboard',
+      res.render("editlisting", {
+        layout: "dashboard",
         product,
         logged_in: req.session.logged_in,
+
         name: req.session.first_name
+
       });
+    } else {
+      res.status(404).end();
     }
-      else {
-        res.status(404).end();
-      }
-    } catch (err) {
-      res.redirect('login');
-    }
+  } catch (err) {
+    res.redirect("login");
+  }
 });
 
 // Get all addresses
+
 router.get('/addresses', withAuth, async (req, res) => {
     try {
       const addressData = await Address.findAll({
@@ -66,23 +69,47 @@ router.get('/addresses', withAuth, async (req, res) => {
     } catch (err) {
       res.redirect('login');
     }
+
+router.get("/addresses", withAuth, async (req, res) => {
+  try {
+    const addressData = await Address.findAll({
+      where: {
+        user_id: req.session.user_id,
+      },
+    });
+
+    const addresses = addressData.map((address) =>
+      address.get({ plain: true })
+    );
+    console.log(addresses);
+
+    res.render("address", {
+      layout: "dashboard",
+      addresses,
+      name: req.session.first_name
+    });
+  } catch (err) {
+    res.redirect("login");
+  }
+
 });
 
 // Create Address
-router.get('/address/create', withAuth, (req, res) => {
-  res.render('create-add', {
-    layout: 'dashboard',
+router.get("/address/create", withAuth, (req, res) => {
+  res.render("create-add", {
+    layout: "dashboard",
   });
 });
 
 // EDIT ADDRESS
-router.get('/address/edit/:id', withAuth, async (req, res) => {
+router.get("/address/edit/:id", withAuth, async (req, res) => {
   try {
     const addressData = await Address.findByPk(req.params.id);
-    
+
     if (addressData) {
-    const address = addressData.get({ plain: true });
-    console.log(address);
+      const address = addressData.get({ plain: true });
+      console.log(address);
+
 
     res.render('edit-add', {
       layout: 'dashboard',
@@ -92,12 +119,21 @@ router.get('/address/edit/:id', withAuth, async (req, res) => {
     });
   }
     else {
+
+      res.render("edit-add", {
+        layout: "dashboard",
+        address,
+        logged_in: req.session.logged_in,
+      });
+    } else {
+
       res.status(404).end();
     }
   } catch (err) {
-    res.redirect('login');
+    res.redirect("login");
   }
 });
+
 
 // Get all Purchases 
 router.get('/purchases', withAuth, async (req, res) => {
@@ -119,21 +155,27 @@ router.get('/purchases', withAuth, async (req, res) => {
     } catch (err) {
       res.redirect('login');
     }
+
 });
 
 // Create listing
-router.get('/createlisting', withAuth, (req, res) => {
-    res.render('createlisting', {
-      layout: 'dashboard',
-    });
+router.get("/createlisting", withAuth, (req, res) => {
+  res.render("createlisting", {
+    layout: "dashboard",
+  });
 });
 
 // Get seller stats
+
 router.get('/stats', withAuth, (req, res) => {
   res.render('stats', {
     layout: 'dashboard',
     name: req.session.first_name
-  });
+
+});
+
+router.get("/aboutus", (req, res) => {
+  res.render("aboutUs");
 });
 
 module.exports = router;

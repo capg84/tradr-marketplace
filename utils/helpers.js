@@ -3,9 +3,11 @@ const formatDate = (date) => {
   return date.toLocaleDateString();
 };
 
-const isfeatured = (obj) => {
-  if (featured)
-  return obj;
-}
+const limit =  (arr, limit) => {
+  if (!Array.isArray(arr)) { return []; }
+  const shuffled = arr.sort(() => 0.5 - Math.random());
+  return shuffled.slice(0, limit);
+};
 
-module.exports = { formatDate, isfeatured };
+
+module.exports = { formatDate, limit };

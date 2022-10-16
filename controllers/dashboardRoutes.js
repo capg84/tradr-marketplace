@@ -68,6 +68,7 @@ router.get('/addresses', withAuth, async (req, res) => {
     } catch (err) {
       res.redirect('login');
     }
+});
 
 router.get("/addresses", withAuth, async (req, res) => {
   try {
@@ -147,7 +148,6 @@ router.get('/purchases', withAuth, async (req, res) => {
     } catch (err) {
       res.redirect('login');
     }
-
 });
 
 // Create listing
@@ -163,11 +163,8 @@ router.get('/stats', withAuth, (req, res) => {
   res.render('stats', {
     layout: 'dashboard',
     name: req.session.first_name
-
+  });
 });
 
-router.get("/aboutus", (req, res) => {
-  res.render("aboutUs");
-});
 
 module.exports = router;

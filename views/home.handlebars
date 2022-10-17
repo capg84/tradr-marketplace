@@ -34,7 +34,7 @@
                     id="fttitle"
                   >{{this.product_name}}</h2></a>
                 <p class="product-price">£{{this.price}}</p>
-                <button id="main-cart" type="submit" class="btn btn-dark btn-styling2">Add to
+                <button id="main-cart" data-id="{{this.id}}" type="submit" class="btn btn-dark btn-styling2">Add to
                   Cart</button>
               </div>
             </div>
@@ -74,7 +74,7 @@
                   class="product-title2"
                   id="fttitle"
                 >{{product.product_name}}</h2></a>
-              <p class="product-price">£{{product.price}}</p>
+              <p class="product-price">£ {{product.price}}</p>
               <input id="user-id" type="hidden" value="{{product.user_id}}">
               <button data-id="{{product.id}}" type="submit" class="btn btn-dark btn-styling2">Add to
                 Cart</button>

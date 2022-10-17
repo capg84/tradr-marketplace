@@ -35,6 +35,3 @@ addToCartButton.forEach(btn => {
     btn.addEventListener('click', addToCart);
 });
 
-
-
-sum()

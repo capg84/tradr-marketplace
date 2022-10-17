@@ -1,5 +1,5 @@
 const router = require('express').Router();
-const { Cart, Product } = require('../../models');
+const { Cart, Product, Purchase } = require('../../models');
 const withAuth = require('../../utils/auth');
 
 
@@ -26,19 +26,22 @@ router.get('/', withAuth, async (req, res) => {
 
         let total = 0;
         for (let i = 0; i < prices.length; i++) {
-        
+
             total += prices[i];
 
-        }  
-       
-        const obj = { products: cartSerialized, 
-            price: total, 
-            logged_in: req.session.logged_in, 
-            name: req.session.first_name }
+        }
+
+        const obj = {
+            products: cartSerialized,
+            price: total,
+            logged_in: req.session.logged_in,
+            name: req.session.first_name
+        }
 
         res.render('cart', obj);
 
     } catch (err) {
+        console.log(err)
         res.status(500).json(err);
 
     }
@@ -59,7 +62,7 @@ router.post('/add/:id', withAuth, async (req, res) => {
 
         res.status(200).json(cart);
     } catch (err) {
-
+        console.log(err)
         res.status(500).json(err)
     }
 });
@@ -104,6 +107,10 @@ router.delete('/checkout/:id', withAuth, async (req, res) => {
     } catch (err) {
         res.status(500).json(err);
     }
+
+    
 });
+
+
 
 module.exports = router;

@@ -4,7 +4,7 @@ const withAuth = require('../../utils/auth');
 
 
 router.get('/', withAuth, async (req, res) => {
-    const total = []
+
     try {
         const products = await Cart.findAll({
             where: {
@@ -15,8 +15,26 @@ router.get('/', withAuth, async (req, res) => {
 
         });
 
+        const prices = []
         const cartSerialized = products.map((product) => product.get({ plain: true }));
-        const obj = { products: cartSerialized, logged_in: req.session.logged_in, name: req.session.first_name }
+
+        for (let i = 0; i < cartSerialized.length; i++) {
+
+            let price = parseInt(cartSerialized[i].product.price)
+            prices.push(price)
+        }
+
+        let total = 0;
+        for (let i = 0; i < prices.length; i++) {
+        
+            total += prices[i];
+
+        }  
+       
+        const obj = { products: cartSerialized, 
+            price: total, 
+            logged_in: req.session.logged_in, 
+            name: req.session.first_name }
 
         res.render('cart', obj);
 
@@ -29,14 +47,14 @@ router.get('/', withAuth, async (req, res) => {
 
 
 // Adds item to Cart
-router.post('/add/:id',withAuth, async (req, res) => {
+router.post('/add/:id', withAuth, async (req, res) => {
 
     try {
         const cart = await Cart.create({
             quantity: 1,
             user_id: req.session.user_id,
             product_id: req.body.product_id,
-            
+
         });
 
         res.status(200).json(cart);

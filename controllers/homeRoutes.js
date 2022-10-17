@@ -17,7 +17,7 @@ router.get("/", async (req, res) => {
     res.render("home", {
       products,
       logged_in: req.session.logged_in,
-      name: req.session.first_name,
+      name: req.session.first_name
     });
   } catch (err) {
     res.status(500).json(err);
@@ -178,7 +178,10 @@ router.get("/login", (req, res) => {
 });
 
 router.get("/terms", (req, res) => {
-  res.render("terms");
+  res.render("terms", {
+    logged_in: req.session.logged_in,
+    name: req.session.first_name
+  });
 });
 
 router.get("/signup", (req, res) => {
@@ -191,19 +194,31 @@ router.get("/signup", (req, res) => {
 });
 
 router.get("/privacy", (req, res) => {
-  res.render("privacy");
-});
-
-router.get("/about", (req, res) => {
-  res.render("aboutUs");
-});
-
-router.get("/contactus", (req, res) => {
-  res.render("contactus");
+  res.render("privacy", {
+    logged_in: req.session.logged_in,
+    name: req.session.first_name
+  });
 });
 
 router.get("/aboutus", (req, res) => {
-  res.render("aboutUs");
+  res.render("aboutUs", {
+    logged_in: req.session.logged_in,
+    name: req.session.first_name
+  });
+});
+
+router.get("/contactus", (req, res) => {
+  res.render("contactus", {
+    logged_in: req.session.logged_in,
+    name: req.session.first_name
+  });
+});
+
+router.get("/aboutus", (req, res) => {
+  res.render("aboutUs", {
+    logged_in: req.session.logged_in,
+    name: req.session.first_name
+  });
 });
 
 module.exports = router;

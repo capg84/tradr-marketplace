@@ -12,9 +12,9 @@ router.get('/', withAuth, async (req, res) => {
           user_id: req.session.user_id,
         },
       });
-  
+
       const products = productData.map((product) => product.get({ plain: true }));
-      
+
       res.render('activelistings', {
         layout: 'dashboard',
         products,

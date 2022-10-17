@@ -15,21 +15,19 @@ router.get('/', withAuth, async (req, res) => {
 
         });
 
-        const prices = []
         const cartSerialized = products.map((product) => product.get({ plain: true }));
 
+        // Adds all prices for items in the cart and retruns a total
+        let total = 0;
+        const prices = []
         for (let i = 0; i < cartSerialized.length; i++) {
 
             let price = parseInt(cartSerialized[i].product.price)
             prices.push(price)
-        }
-
-        let total = 0;
-        for (let i = 0; i < prices.length; i++) {
 
             total += prices[i];
-
         }
+
 
         const obj = {
             products: cartSerialized,
